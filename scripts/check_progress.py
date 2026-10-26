@@ -45,6 +45,29 @@ def check(data):
                           if s["file"] in visual["reviewed_sheets"])
                 if visual.get("reviewed_frame_count") != count:
                     errors.append(f"{row['id']}: reviewed sample frame count mismatch")
+        fine = review.get("fine_visual_samples")
+        if fine:
+            # 细抽帧索引页是可复现的派生产物，校验 manifest 哈希与计数，
+            # 不要求每张 JPEG 长期留在磁盘上。
+            fine_manifest_path = ROOT/"cheese/.analysis/fine"/row["id"]/"manifest.json"
+            if not fine_manifest_path.is_file():
+                errors.append(f"{row['id']}: fine visual manifest missing")
+            else:
+                fine_manifest = json.loads(fine_manifest_path.read_text())
+                if fine.get("manifest_sha256") != digest(fine_manifest_path):
+                    errors.append(f"{row['id']}: fine visual manifest hash mismatch")
+                if (fine_manifest.get("video_sha256")
+                        and fine_manifest["video_sha256"] != row["video_sha256"]):
+                    errors.append(f"{row['id']}: fine visual manifest/source hash mismatch")
+                if fine.get("interval_seconds") != fine_manifest.get("interval_seconds"):
+                    errors.append(f"{row['id']}: fine visual interval mismatch")
+                if fine.get("reviewed_sheet_count") != len(fine_manifest.get("sheets", [])):
+                    errors.append(f"{row['id']}: fine visual sheet count mismatch")
+                if fine.get("reviewed_frame_count") != fine_manifest.get("frame_count"):
+                    errors.append(f"{row['id']}: fine visual frame count mismatch")
+            fine_doc = fine.get("document")
+            if fine_doc and (not (ROOT / fine_doc).is_file() or "cheese" in Path(fine_doc).parts):
+                errors.append(f"{row['id']}: invalid fine visual document path")
         asr=review["audio_dialogue_asr"]
         if asr["state"] == "transcribed_full_input":
             path=ROOT/"cheese/.analysis/asr"/f"{row['id']}.json"
@@ -68,17 +91,24 @@ def check(data):
 def summary(data):
     lines=["# 课程证据状态", "", "来源：影视飓风（MediaStorm）付费剪映教学课程；个人学习、非官方。", "",
            "本表由证据账本生成；抽样画面与机器转写均不代表完整音画理解。", "",
-           "| 课号 | 课程 | 字幕条目已读 | 全音轨 ASR | 已看抽样帧 | 连续音画验收 |",
-           "| --- | --- | ---: | --- | ---: | --- |"]
+           "| 课号 | 课程 | 字幕条目已读 | 全音轨 ASR | 已看 20s 抽样帧 | 细抽帧（2s） | 连续音画验收 |",
+           "| --- | --- | ---: | --- | ---: | --- | --- |"]
     total_frames=0
+    total_fine=0
     for row in data["lessons"]:
         review=row["review"]
         frames=review["visual_samples"].get("reviewed_frame_count",0)
         total_frames+=frames
+        fine=review.get("fine_visual_samples")
+        if fine:
+            total_fine+=fine.get("reviewed_frame_count",0)
+            fine_text=f"{fine['reviewed_frame_count']}/{fine['reviewed_sheet_count']} 页"
+        else:
+            fine_text="待完成"
         asr="已处理，非听辨" if review["audio_dialogue_asr"]["state"]=="transcribed_full_input" else "待完成"
         complete="已完成" if review["complete_multimodal_review"] else "待完成"
-        lines.append(f"| {row['id']} | {row['title']} | {review['subtitles']['reviewed_cues']}/{row['subtitle_cues']} | {asr} | {frames} | {complete} |")
-    lines.extend(["", f"合计 {len(data['lessons'])} 课、{sum(r['subtitle_cues'] for r in data['lessons'])} 条字幕、{total_frames} 个抽样画面（不含局部回查图）。", "",
+        lines.append(f"| {row['id']} | {row['title']} | {review['subtitles']['reviewed_cues']}/{row['subtitle_cues']} | {asr} | {frames} | {fine_text} | {complete} |")
+    lines.extend(["", f"合计 {len(data['lessons'])} 课、{sum(r['subtitle_cues'] for r in data['lessons'])} 条字幕、{total_frames} 个 20 秒抽样画面、{total_fine} 个 2 秒细抽帧（不含局部回查图）。", "",
                   "详细时间码、源哈希和各模态状态见 [course-ledger.json](course-ledger.json)；后续所需输入见 [remaining-review.md](remaining-review.md)。", ""])
     return "\n".join(lines)
 
