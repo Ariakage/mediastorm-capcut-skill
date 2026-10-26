@@ -29,6 +29,7 @@ Deliver a project that can be identified, reopened, reviewed, and published with
 - A course table showed `KB/s` with values that appear ambiguous for video bitrate. Preserve that ambiguity and do not convert it into command parameters without fresh official evidence.
 - Do not assume file-embedded cover and platform-page cover are synchronized.
 - Do not upload drafts, sync private projects, or spend on export/membership features without authorization.
+- The 2-second picture pass verified export panel values, the `KB/s` table, codec/audio lists, and the mobile platform table as recorded; current platform rules and final output remain unverified.
 - Treat this skill as provisional until continuous course audio/video review is completed.
 
 Read [references/delivery-checklist.md](references/delivery-checklist.md) for the full gate list and course timecodes.

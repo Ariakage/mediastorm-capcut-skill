@@ -28,6 +28,7 @@ Build layered images that survive the entire shot, not just one inspected frame.
 - `capcut mix-mode` has a CLI contract, but the current bundle has not visually verified CapCut blend results.
 - The local FFmpeg experiment showed `hardlight` blackened a gray base under a black overlay; do not generalize “hard light removes black” to CapCut.
 - No current CLI evidence proves full planar-solver capability. Use the CapCut interface or a dedicated tracking tool where necessary.
+- The 2-second picture pass verified matte/chroma/mask/blend panel values and planar-tracking steps; motion-wide edge quality and tracking stability remain unverified.
 - Treat this skill as provisional until continuous course audio/video review is completed.
 
 Read [references/compositing-playbook.md](references/compositing-playbook.md) for layered checklists and source timecodes.

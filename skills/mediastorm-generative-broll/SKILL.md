@@ -26,6 +26,7 @@ Use generated media as a constrained supplement, not as invisible evidence or an
 - Do not invoke paid generation, upload private source media, or publish generated media without explicit authorization.
 - Do not present generated explanatory shots as documentary evidence.
 - Do not treat the existence of an AI button or CLI command as proof of the course workflow or current product terms.
+- The 2-second picture pass verified the AI panel names, candidate counts, credit prompts, and model labels as recorded; current availability, output quality, and cost remain unverified.
 - Treat this skill as provisional until continuous course audio/video review is completed.
 
 Read [references/generative-workflow.md](references/generative-workflow.md) for prompt and review checklists with course timecodes.

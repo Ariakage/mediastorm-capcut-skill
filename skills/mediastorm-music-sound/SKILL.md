@@ -27,6 +27,8 @@ Make sound an editorial layer with a reason to enter, change, and leave.
 - `capcut loudness` can measure and optionally apply gain, but its command-level `mutates` flag does not capture the conditional `--apply` write; fetch the current contract first.
 - `capcut render` is only a proxy preview and cannot prove final CapCut audio behavior.
 - Do not invent universal J-cut lead times, fade durations, loudness targets, or platform requirements.
+- The 2-second picture pass verified the composite-tail recipe, J-cut placement, `Drone` naming, and sound-library labels; no listening was performed, so tail decay, clarity, and loudness remain unverified.
+- Treat this skill as provisional until continuous course audio/video review is completed.
 
 Read [references/sound-narrative.md](references/sound-narrative.md) for course-derived techniques, checks, and timecodes.
 

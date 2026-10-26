@@ -27,6 +27,7 @@ Protect meaning, breath, and human performance while removing repetition and pro
 - Local ASR is dialogue evidence, not listening evidence for music, effects, tone, or actual sync quality.
 - Prefer improving a re-record through distance and environment before trying to repair everything in post.
 - Do not apply one fixed fade, room-tone duration, gain, or subtitle style as a universal preset.
+- The 2-second picture pass verified waveform 60%, two-cut deletion, smart-script tokens, the 0.1s handle prompt, shadow values, channel options, and the multicam dialog; actual audio, breath repair, and sync quality remain unverified.
 - Treat this skill as provisional until continuous course audio/video review is completed.
 
 Read [references/speech-editing.md](references/speech-editing.md) for decision cards, stop conditions, and timecode sources.

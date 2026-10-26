@@ -23,10 +23,11 @@ Use motion to clarify information, guide attention, and land changes on a stable
 
 ## Boundaries
 
+- Course 08 covers keyframes and easing only; point-tracked labels and number flashes are in course 12, timers in course 15, and planar tracking in course 13. Do not merge them.
 - Course values such as two-frame flashes, 0.4-second movement, 45% opacity, or one-second openings are case parameters, not universal presets.
 - Ordinary keyframes do not provide planar perspective solving. Route planar surfaces to `mediastorm-compositing-tracking`.
 - Prefer current CLI contracts for `keyframe`, `add-text`, `image-anim`, and `text-anim`; alpha keyframes are not a reliable fade mechanism in the previously verified macOS path.
 - JSON writes and FFmpeg proxy previews do not prove the animation looks right in CapCut.
-- Treat this skill as provisional until continuous course audio/video review is completed.
+- Treat this skill as provisional until continuous course audio/video review is completed. The 2-second picture pass verified panel values and curve names, not motion smoothness.
 
 Read [references/motion-design.md](references/motion-design.md) for course-derived patterns, failure checks, and timecodes.

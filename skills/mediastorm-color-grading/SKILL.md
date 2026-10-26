@@ -27,6 +27,7 @@ Correct the technical input before creating a look, then verify the grade across
 - Do not turn stylistic examples such as warm highlights or cool shadows into a universal formula.
 - Current CLI support does not prove access to every course color operation; route unresolved interface work to CapCut.
 - Do not resolve subtitle ambiguities by guessing; verify graph direction and actual visual change.
+- The 2-second picture pass verified LUT sequencing, panel values, scope shapes, curve direction, and color-clone values; moving-shot grade quality remains unverified.
 - Treat this skill as provisional until continuous course audio/video review is completed.
 
 Read [references/color-workflow.md](references/color-workflow.md) for decision order, scope interpretation, and timecodes.

@@ -15,11 +15,13 @@ Route video-editing work by intent and evidence, then apply the matching child s
 
 Treat this bundle as a **provisional draft** until continuous video and original-audio review is completed:
 
-- Use only the completed evidence: all subtitle cues, sampled frames, full-track local ASR, limited local experiments, and capcut-cli 0.31.1 contracts.
-- Do not claim the original course videos were natively understood as continuous audio/video. The current session's Read interface rejected local MP4 paths as binary, and no API upload was authorized.
+- Completed evidence: all subtitle cues; two rounds of still-frame sampling (20-second and **2-second** intervals); full-track local ASR; limited local experiments; capcut-cli 0.31.1 contracts. The 2-second pass covered all 18 lessons — 6,656 frames / 1,658 timestamped sheets — and added targeted full-resolution grabs for interface parameters.
+- Still incomplete: continuous video understanding and original-audio listening. Do not claim the course videos were natively understood as continuous audio/video. The current session's Read interface rejected local MP4 paths as binary, and no API upload was authorized.
 - Preserve uncertainty about music, sound effects, tone, fast motion, frame-level effects, and actual playback quality.
-- Distinguish `[课程]`, `[推论]`, and `[工具]` in decisions that matter.
+- Distinguish `[画面]`, `[字幕]`, `[课程]`, `[推论]`, and `[工具]` in decisions that matter.
 - Keep course videos, full subtitles, extracted audio, frame dumps, and transcript caches out of any skill package or repository commit.
+- Course references in this bundle use **actual file numbers 01–18**. The promo board uses 01–14; 03–16 map to board 01–14, 17–18 are DLC. Say which numbering you mean.
+- Read [references/visual-evidence-2026-10.md](references/visual-evidence-2026-10.md) for the verified picture corrections, course-internal conflicts, and exact case values from the 2-second pass.
 
 ## Route by task
 
@@ -32,7 +34,7 @@ Read [references/routing.md](references/routing.md) for the decision matrix. Rou
 | Edit talking heads, interviews, takes, dialogue cuts, captions, or multicam sync | `mediastorm-dialogue-interview` |
 | Fit music, design sound bridges, J/L-cuts, ambience, effects, or loudness intent | `mediastorm-music-sound` |
 | Slow down, speed ramp, evaluate source frame rate, or reconstruct time around action peaks | `mediastorm-speed-time` |
-| Animate scale/position, ease parameters, track labels, flash numbers, timers, or package motion | `mediastorm-motion-graphics` |
+| Animate scale/position or ease parameters (08), point-tracked labels and flash numbers (12), timers (15), or package motion | `mediastorm-motion-graphics` |
 | Key, mask, layer subjects, use blend modes, or solve planar tracking and failures | `mediastorm-compositing-tracking` |
 | Restore Log footage, use scopes, match shots, apply curves, or unify color | `mediastorm-color-grading` |
 | Generate B-roll, concept shots, or local AI effects with cost and authenticity controls | `mediastorm-generative-broll` |

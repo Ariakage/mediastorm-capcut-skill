@@ -25,6 +25,7 @@ Build the edit around information, viewer attention, and relationships between s
 - Treat course timing examples, opening lengths, channel duration preferences, and “clock” positions as diagnostic examples, not universal rules.
 - Do not let automatic beat markers or scene cuts replace editorial judgment.
 - Do not infer that every project needs music or transitions; information progression can justify restraint.
+- The 2-second picture pass verified specific cut lengths, price ladder, opening blocks, and mind-map branches; clock positions remain a diagnostic, and course 15's own clock pointer conflicts with its 3-point card.
 - Treat this skill as provisional until continuous course audio/video review is completed.
 
 Read [references/structure-playbook.md](references/structure-playbook.md) for practical patterns, checks, and source timecodes.

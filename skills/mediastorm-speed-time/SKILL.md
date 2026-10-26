@@ -26,6 +26,7 @@ Reconstruct time only when the source material and the editorial purpose can sup
 - Ordinary keyframes do not prove curve-speed or frame-interpolation capability.
 - Course values such as 0.3× or 0.1× are case examples, not defaults.
 - The frame-supply formula is an assistant-derived screening aid, not a course guarantee.
+- The 2-second picture pass verified multiplier readouts, frame-grid diagrams, interpolation options, and ramp presets; smoothness, artifacts, and audio pitch remain unverified.
 - Treat this skill as provisional until continuous course audio/video review is completed.
 
 Read [references/time-remapping.md](references/time-remapping.md) for decision cards, checks, and timecodes.

@@ -24,6 +24,7 @@ Prepare the project so later editing decisions rest on reliable media, paths, an
 - Do not upload private media or enable cloud sync without explicit authorization.
 - Do not clean caches or user libraries as a substitute for diagnosing the project; deleting personal files requires separate confirmation.
 - Do not convert course notes into software defaults. The course used a Final Cut Pro shortcut preset, so avoid presenting its demonstrated shortcuts as universal CapCut defaults.
+- The 2-second picture pass verified the four-zone UI, relink dialog, cache panel, and cloud-sync path; it did not verify every codec or import failure.
 - Treat this skill as provisional until continuous course audio/video review is completed.
 
 Read [references/intake-checks.md](references/intake-checks.md) for detailed checks, failure conditions, and course timecode evidence.

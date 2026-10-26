@@ -406,3 +406,13 @@ cheese/.analysis/.venv/bin/python scripts/course_audit.py transcribe 01
   - `scripts/combine_visual_analysis.py`：合并 18 篇分课文档。
 - 重要发现：第 06 课 `Drone` 非 `drum`；第 10 课“变亮组/辅轨”纠正 SRT；第 15 课动画面板 0.5s 与口播 0.3s 冲突、时钟指针与 3 点卡片不一致；第 16 课“往上拖变亮”结案；第 17 课 `Seedance`/“文生视频”；第 08 课不含点跟踪标签/数字闪变/计时器，这些在第 12、15 课。
 - **边界不变**：2 秒抽样不是连续视频，未听音轨；`continuous_video` 与 `audio_listening` 仍为未完成，Skill 仍是 provisional。下一轮若继续，应优先听辨音乐/音效/语气/声道，并对快速动作、变速、跟踪、动画做连续视频复核。
+
+## 14. 2026-10-26 Skill 回写（本次新增）
+
+已把第二轮画面复核中确认的内容回写到组合 Skill：
+
+- 入口新增 `skills/mediastorm-capcut/references/visual-evidence-2026-10.md`：方法边界、字幕/旧笔记纠偏、课程内部矛盾、跨课归属修正、可复算关键数值。
+- 10 个子 Skill 的 reference 补入精确时间码与参数：02/03/16 项目接入、05/12/15/16 结构、04/14/17 口播与多机位、06 声音、09 变速、08/12/15 动效、10/13 合成与跟踪、11/16 调色、17/18 生成、03/07/12/16/18 交付。
+- 重要归属修正：第 08 课只讲关键帧/缓动，不含点跟踪标签、数字闪变、计时器；这些在第 12、15 课，平面跟踪在第 13 课。
+- 已同步到 `~/.codex/skills/mediastorm-*`：11 个安装副本与源码 `diff -qr` 零差异，全部通过 `quick_validate.py`。
+- 所有 Skill 仍保留 `status: provisional-unverified-audiovisual`；本轮只回写静态画面可确认的内容，没有把听辨或连续视频结论写进去。
