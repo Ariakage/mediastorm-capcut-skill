@@ -150,4 +150,5 @@ chore: 添加 .gitignore
 - 用户确认“先调查可用方案，完整音画验收继续待完成”；调查结果见 `notes/multimodal-options.md`，完整缺口见 `progress/remaining-review.md`。
 - 只查公开文档不等于候选接口已通过实测。当前未授权课程上传、付费调用或新增 Omni 模型下载；不能因为找到 API、拿到 Key 或完成转写就自动执行这些步骤。
 - 下一步已建立草稿组合 Skill；完整音画复核仍待完成，不能在未复核前把 Skill 标为最终版。
+- 2026-10-26 细抽帧：18 课按 2 秒间隔抽帧，共 6,656 帧 / 1,658 张时间码索引页，逐张查看并产出 18 篇分课解析；索引与总览见 `notes/visual-analysis/`，工具为 `scripts/fine_frames.py`。这仍是静态抽样，不是连续视频，也没有音轨听辨。
 - 更新进度后运行 `python3 scripts/check_progress.py --write-summary`，使逐课表与账本同步。该检查只能约束记账一致性，不能判断学习质量。

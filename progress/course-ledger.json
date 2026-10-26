@@ -71,7 +71,17 @@
           "state": "initial_notes",
           "file": "notes/course-reading-01-07.md"
         },
-        "complete_multimodal_review": false
+        "complete_multimodal_review": false,
+        "fine_visual_samples": {
+          "state": "reviewed_fine_sheets",
+          "mode": "sampled_stills",
+          "method": "2s interval 2x2 sheets; targeted full-resolution grabs for UI parameters",
+          "interval_seconds": 2.0,
+          "reviewed_sheet_count": 14,
+          "reviewed_frame_count": 56,
+          "manifest_sha256": "034707922904cde41c7e99537f29746a78dd34192a89bd338e10670d7575cf95",
+          "document": "notes/visual-analysis/01-课程定位与宣传片.md"
+        }
       }
     },
     {
@@ -138,7 +148,17 @@
           "state": "initial_notes",
           "file": "notes/course-reading-01-07.md"
         },
-        "complete_multimodal_review": false
+        "complete_multimodal_review": false,
+        "fine_visual_samples": {
+          "state": "reviewed_fine_sheets",
+          "mode": "sampled_stills",
+          "method": "2s interval 2x2 sheets; targeted full-resolution grabs for UI parameters",
+          "interval_seconds": 2.0,
+          "reviewed_sheet_count": 39,
+          "reviewed_frame_count": 153,
+          "manifest_sha256": "bb5c4d79cf641aa90969ce0ed02f9437c7e57f8834745cd0373718e776c65058",
+          "document": "notes/visual-analysis/02-导学与学习方法.md"
+        }
       }
     },
     {
@@ -216,7 +236,17 @@
           "state": "initial_notes",
           "file": "notes/course-reading-01-07.md"
         },
-        "complete_multimodal_review": false
+        "complete_multimodal_review": false,
+        "fine_visual_samples": {
+          "state": "reviewed_fine_sheets",
+          "mode": "sampled_stills",
+          "method": "2s interval 2x2 sheets; targeted full-resolution grabs for UI parameters",
+          "interval_seconds": 2.0,
+          "reviewed_sheet_count": 87,
+          "reviewed_frame_count": 348,
+          "manifest_sha256": "8a39e98686bc7531ab38a61aa8e82c79feca0a36ed216a533cfb90b43a77b422",
+          "document": "notes/visual-analysis/03-初试成片全流程.md"
+        }
       }
     },
     {
@@ -296,7 +326,17 @@
           "state": "initial_notes",
           "file": "notes/course-reading-01-07.md"
         },
-        "complete_multimodal_review": false
+        "complete_multimodal_review": false,
+        "fine_visual_samples": {
+          "state": "reviewed_fine_sheets",
+          "mode": "sampled_stills",
+          "method": "2s interval 2x2 sheets; targeted full-resolution grabs for UI parameters",
+          "interval_seconds": 2.0,
+          "reviewed_sheet_count": 120,
+          "reviewed_frame_count": 479,
+          "manifest_sha256": "346f9fdcd8508f1bc912cf4336c8a52b0d024befe90cd9255ecfc3e1d46ecb3b",
+          "document": "notes/visual-analysis/04-口播精剪与ABroll.md"
+        }
       }
     },
     {
@@ -380,7 +420,17 @@
           "state": "initial_notes",
           "file": "notes/course-reading-01-07.md"
         },
-        "complete_multimodal_review": false
+        "complete_multimodal_review": false,
+        "fine_visual_samples": {
+          "state": "reviewed_fine_sheets",
+          "mode": "sampled_stills",
+          "method": "2s interval 2x2 sheets; targeted full-resolution grabs for UI parameters",
+          "interval_seconds": 2.0,
+          "reviewed_sheet_count": 87,
+          "reviewed_frame_count": 347,
+          "manifest_sha256": "dd136e756f9adf41444f31cf1520852f392682748d077568c8e8502ad8ad3d5b",
+          "document": "notes/visual-analysis/05-混剪与蒙太奇.md"
+        }
       }
     },
     {
@@ -478,7 +528,17 @@
           "state": "initial_notes",
           "file": "notes/course-reading-01-07.md"
         },
-        "complete_multimodal_review": false
+        "complete_multimodal_review": false,
+        "fine_visual_samples": {
+          "state": "reviewed_fine_sheets",
+          "mode": "sampled_stills",
+          "method": "2s interval 2x2 sheets; targeted full-resolution grabs for UI parameters",
+          "interval_seconds": 2.0,
+          "reviewed_sheet_count": 87,
+          "reviewed_frame_count": 345,
+          "manifest_sha256": "3b5d1af62f5db048d801cad9ab9b6cca93e432be206fdb0ea101ff2d6c0c1e6c",
+          "document": "notes/visual-analysis/06-音乐处理与音效设计.md"
+        }
       }
     },
     {
@@ -555,7 +615,17 @@
           "state": "initial_notes",
           "file": "notes/course-reading-01-07.md"
         },
-        "complete_multimodal_review": false
+        "complete_multimodal_review": false,
+        "fine_visual_samples": {
+          "state": "reviewed_fine_sheets",
+          "mode": "sampled_stills",
+          "method": "2s interval 2x2 sheets; targeted full-resolution grabs for UI parameters",
+          "interval_seconds": 2.0,
+          "reviewed_sheet_count": 112,
+          "reviewed_frame_count": 446,
+          "manifest_sha256": "ed6b9ead3b7c4ba878656cb986620c569d96c6c6e6fe9c638687ab2e96758052",
+          "document": "notes/visual-analysis/07-导出管理与发布.md"
+        }
       }
     },
     {
@@ -629,7 +699,17 @@
           "state": "initial_notes",
           "file": "notes/course-reading-08-18.md"
         },
-        "complete_multimodal_review": false
+        "complete_multimodal_review": false,
+        "fine_visual_samples": {
+          "state": "reviewed_fine_sheets",
+          "mode": "sampled_stills",
+          "method": "2s interval 2x2 sheets; targeted full-resolution grabs for UI parameters",
+          "interval_seconds": 2.0,
+          "reviewed_sheet_count": 82,
+          "reviewed_frame_count": 327,
+          "manifest_sha256": "169303765cf5a900d99ca1017d159c855095bebd9400e906af7ff7149c29c97d",
+          "document": "notes/visual-analysis/08-关键帧与曲线运动.md"
+        }
       }
     },
     {
@@ -712,7 +792,17 @@
           "state": "initial_notes",
           "file": "notes/course-reading-08-18.md"
         },
-        "complete_multimodal_review": false
+        "complete_multimodal_review": false,
+        "fine_visual_samples": {
+          "state": "reviewed_fine_sheets",
+          "mode": "sampled_stills",
+          "method": "2s interval 2x2 sheets; targeted full-resolution grabs for UI parameters",
+          "interval_seconds": 2.0,
+          "reviewed_sheet_count": 82,
+          "reviewed_frame_count": 325,
+          "manifest_sha256": "c8e956b6997865f018fe3f92182dbdfbaf6ac41edee85d728ece800e764e4048",
+          "document": "notes/visual-analysis/09-曲线变速与素材帧率.md"
+        }
       }
     },
     {
@@ -789,7 +879,17 @@
           "state": "initial_notes",
           "file": "notes/course-reading-08-18.md"
         },
-        "complete_multimodal_review": false
+        "complete_multimodal_review": false,
+        "fine_visual_samples": {
+          "state": "reviewed_fine_sheets",
+          "mode": "sampled_stills",
+          "method": "2s interval 2x2 sheets; targeted full-resolution grabs for UI parameters",
+          "interval_seconds": 2.0,
+          "reviewed_sheet_count": 92,
+          "reviewed_frame_count": 365,
+          "manifest_sha256": "d9bbee95c227c6c71cc61305e2b68b03fcd8f5df8bd38859ec2a3ae93c16752f",
+          "document": "notes/visual-analysis/10-抠像与蒙版合成.md"
+        }
       }
     },
     {
@@ -875,7 +975,17 @@
           "state": "initial_notes",
           "file": "notes/course-reading-08-18.md"
         },
-        "complete_multimodal_review": false
+        "complete_multimodal_review": false,
+        "fine_visual_samples": {
+          "state": "reviewed_fine_sheets",
+          "mode": "sampled_stills",
+          "method": "2s interval 2x2 sheets; targeted full-resolution grabs for UI parameters",
+          "interval_seconds": 2.0,
+          "reviewed_sheet_count": 97,
+          "reviewed_frame_count": 386,
+          "manifest_sha256": "07e85612f952ed28877710889210d4724706fee39ca62799d7cd07a4dd4ee73b",
+          "document": "notes/visual-analysis/11-一级调色.md"
+        }
       }
     },
     {
@@ -963,7 +1073,17 @@
           "state": "initial_notes",
           "file": "notes/course-reading-08-18.md"
         },
-        "complete_multimodal_review": false
+        "complete_multimodal_review": false,
+        "fine_visual_samples": {
+          "state": "reviewed_fine_sheets",
+          "mode": "sampled_stills",
+          "method": "2s interval 2x2 sheets; targeted full-resolution grabs for UI parameters",
+          "interval_seconds": 2.0,
+          "reviewed_sheet_count": 141,
+          "reviewed_frame_count": 561,
+          "manifest_sha256": "0b1e5a15474d5fc09af6506c6ab1fe7538d8556f3e83f32fffa2ebf30bd565ad",
+          "document": "notes/visual-analysis/12-飓多多综艺包装.md"
+        }
       }
     },
     {
@@ -1042,7 +1162,17 @@
           "state": "initial_notes",
           "file": "notes/course-reading-08-18.md"
         },
-        "complete_multimodal_review": false
+        "complete_multimodal_review": false,
+        "fine_visual_samples": {
+          "state": "reviewed_fine_sheets",
+          "mode": "sampled_stills",
+          "method": "2s interval 2x2 sheets; targeted full-resolution grabs for UI parameters",
+          "interval_seconds": 2.0,
+          "reviewed_sheet_count": 82,
+          "reviewed_frame_count": 327,
+          "manifest_sha256": "57c74941d11d8bdfe17a49bfded6ec0eaedc3fae28f28d7574705b62b4f56bb8",
+          "document": "notes/visual-analysis/13-进阶平面跟踪.md"
+        }
       }
     },
     {
@@ -1116,7 +1246,17 @@
           "state": "initial_notes",
           "file": "notes/course-reading-08-18.md"
         },
-        "complete_multimodal_review": false
+        "complete_multimodal_review": false,
+        "fine_visual_samples": {
+          "state": "reviewed_fine_sheets",
+          "mode": "sampled_stills",
+          "method": "2s interval 2x2 sheets; targeted full-resolution grabs for UI parameters",
+          "interval_seconds": 2.0,
+          "reviewed_sheet_count": 66,
+          "reviewed_frame_count": 262,
+          "manifest_sha256": "bc283807d77cc9a07c2ea9d6c226a004a16caf8952cff6cf8de4e9aedf53f826",
+          "document": "notes/visual-analysis/14-多机位采访.md"
+        }
       }
     },
     {
@@ -1200,7 +1340,17 @@
           "state": "initial_notes",
           "file": "notes/course-reading-08-18.md"
         },
-        "complete_multimodal_review": false
+        "complete_multimodal_review": false,
+        "fine_visual_samples": {
+          "state": "reviewed_fine_sheets",
+          "mode": "sampled_stills",
+          "method": "2s interval 2x2 sheets; targeted full-resolution grabs for UI parameters",
+          "interval_seconds": 2.0,
+          "reviewed_sheet_count": 155,
+          "reviewed_frame_count": 617,
+          "manifest_sha256": "330847580ae5cbbebf71406a566ae0d54fc3103ee40806bbf721ef2fce86fa51",
+          "document": "notes/visual-analysis/15-时钟理论实操.md"
+        }
       }
     },
     {
@@ -1274,7 +1424,17 @@
           "state": "initial_notes",
           "file": "notes/course-reading-08-18.md"
         },
-        "complete_multimodal_review": false
+        "complete_multimodal_review": false,
+        "fine_visual_samples": {
+          "state": "reviewed_fine_sheets",
+          "mode": "sampled_stills",
+          "method": "2s interval 2x2 sheets; targeted full-resolution grabs for UI parameters",
+          "interval_seconds": 2.0,
+          "reviewed_sheet_count": 112,
+          "reviewed_frame_count": 445,
+          "manifest_sha256": "1a8a3eebf58dac33f282258cc6bb246fc035da69f1c2a0e4c39f4222e15cfa89",
+          "document": "notes/visual-analysis/16-Vlog结构与色彩.md"
+        }
       }
     },
     {
@@ -1351,7 +1511,17 @@
           "state": "initial_notes",
           "file": "notes/course-reading-08-18.md"
         },
-        "complete_multimodal_review": false
+        "complete_multimodal_review": false,
+        "fine_visual_samples": {
+          "state": "reviewed_fine_sheets",
+          "mode": "sampled_stills",
+          "method": "2s interval 2x2 sheets; targeted full-resolution grabs for UI parameters",
+          "interval_seconds": 2.0,
+          "reviewed_sheet_count": 109,
+          "reviewed_frame_count": 435,
+          "manifest_sha256": "0ef8d58369d60556b5b203d129157bbfe5d7052b02357416f5834ade7a335219",
+          "document": "notes/visual-analysis/17-剪映AI工具.md"
+        }
       }
     },
     {
@@ -1428,7 +1598,17 @@
           "state": "initial_notes",
           "file": "notes/course-reading-08-18.md"
         },
-        "complete_multimodal_review": false
+        "complete_multimodal_review": false,
+        "fine_visual_samples": {
+          "state": "reviewed_fine_sheets",
+          "mode": "sampled_stills",
+          "method": "2s interval 2x2 sheets; targeted full-resolution grabs for UI parameters",
+          "interval_seconds": 2.0,
+          "reviewed_sheet_count": 108,
+          "reviewed_frame_count": 432,
+          "manifest_sha256": "df0524c73ebb065703c55d3e3a00f297b1f2a0027958fc9d192786175ec409f4",
+          "document": "notes/visual-analysis/18-手机剪辑与社媒.md"
+        }
       }
     }
   ]

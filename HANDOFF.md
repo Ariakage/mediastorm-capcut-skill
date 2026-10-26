@@ -391,3 +391,18 @@ cheese/.analysis/.venv/bin/python scripts/course_audit.py transcribe 01
 - 没有课程媒体进入 Git 索引，`check_progress.py` 已通过。
 - 当前磁盘空间非常紧张，不要在未确认空间前下载模型或生成大量转码副本。
 - 交接完成后必须继续保留两项事实：**视频没有完成多模态读取；完整课程音画学习和 Skill 最终视听验收仍未完成。**
+
+## 13. 2026-10-26 细粒度画面解析（本次新增）
+
+用户要求不再停留在“视频无法理解”，而是把视频切细、逐张识图并输出详细文档。本轮已完成：
+
+- 18 课全部按 **2 秒间隔**抽帧，共 **6,656 帧 / 1,658 张 2×2 时间码索引页**（单格 960×540）；索引页逐张查看，界面参数用全分辨率定点抓帧和局部裁剪复核。
+- 18 篇分课文档：`notes/visual-analysis/01-*.md` … `18-*.md`，合计约 4,600 行；索引见 `notes/visual-analysis/README.md`。
+- 合并全文：`notes/visual-analysis/全课程细粒度画面解析.md`；跨课总览：`notes/visual-analysis/全课程关键发现与差异修正.md`。
+- 逐课覆盖台账：`progress/fine-visual-review.md`；账本新增 `fine_visual_samples`，`python3 scripts/check_progress.py --write-summary` 已通过。
+- 新增工具：
+  - `scripts/fine_frames.py`：2 秒索引页 + 定点抓帧（`--crop x:y:w:h` 已修正为 ffmpeg 的 `w:h:x:y`）。
+  - `scripts/update_fine_visual_ledger.py`：把完成的细抽帧写入账本。
+  - `scripts/combine_visual_analysis.py`：合并 18 篇分课文档。
+- 重要发现：第 06 课 `Drone` 非 `drum`；第 10 课“变亮组/辅轨”纠正 SRT；第 15 课动画面板 0.5s 与口播 0.3s 冲突、时钟指针与 3 点卡片不一致；第 16 课“往上拖变亮”结案；第 17 课 `Seedance`/“文生视频”；第 08 课不含点跟踪标签/数字闪变/计时器，这些在第 12、15 课。
+- **边界不变**：2 秒抽样不是连续视频，未听音轨；`continuous_video` 与 `audio_listening` 仍为未完成，Skill 仍是 provisional。下一轮若继续，应优先听辨音乐/音效/语气/声道，并对快速动作、变速、跟踪、动画做连续视频复核。

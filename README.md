@@ -40,11 +40,13 @@ Use $mediastorm-capcut to route this CapCut editing task.
 - [逐课证据状态表](progress/status.md)
 - [01–07 课初轮笔记](notes/course-reading-01-07.md)
 - [08–18 课初轮笔记](notes/course-reading-08-18.md)
+- [18 课细粒度画面解析（2 秒抽帧）](notes/visual-analysis/README.md)
+- [全课程关键发现与差异修正](notes/visual-analysis/全课程关键发现与差异修正.md)
 - [音画理解接口方案调查](notes/multimodal-options.md)
 - [完整音画待验清单](progress/remaining-review.md)
 - [组合 Skill 源码](skills/)（草稿版，未完成音画验收）
 
-18 课共 03:41:55，全部 6,198 条字幕已研读；全音轨本地 ASR 与 453 个分窗比对已完成，36 页索引中的 674 个静态抽样画面已查看。上述证据仍不包含完整原声听辨与连续视频理解，18 课的完整音画验收均待完成。
+18 课共 03:41:55，全部 6,198 条字幕已研读；全音轨本地 ASR 与 453 个分窗比对已完成。2026-10-26 又完成第二轮 **2 秒细抽帧画面解析**：6,656 个采样帧、1,658 张带时间码索引页逐张查看，形成 18 篇分课文档和跨课总览。上述证据仍不包含原声听辨与连续视频理解，18 课的完整音画验收均待完成。
 
 2026-10-26 后续会话已按用户指示暂缓视频读取，并建立 `skills/` 组合 Skill 草稿：1 个入口 Skill 与 10 个按任务边界划分的子 Skill。用户两次以 `@` 引用本地 MP4 时，当前上下文只提供路径，Read 接口返回二进制不可显示；Kimi API 的 Base64/video_url 路线尚未获授权执行。因此该 Skill 是未验收草稿，不表示课程已经完整学完。
 
