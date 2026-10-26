@@ -4,9 +4,9 @@
 
 ## 项目概述
 
-`mediastorm-capcut-skill`：基于影视飓风（MediaStorm）付费教学内容整理的剪映（CapCut）剪辑技巧 AI Skill / 个人学习笔记。
+`mediastorm-capcut-skill`：基于影视飓风（MediaStorm）付费教学内容整理的剪映（CapCut）与 Remotion 剪辑技巧 AI Skill / 个人学习笔记。
 
-- 主要语言：Markdown（中文）
+- 主要语言：Markdown（中文项目文档 + 英文 Skill prompt/references）
 - 性质：个人学习项目，非官方、非商业
 
 ## 目录结构
@@ -71,6 +71,8 @@ chore: 添加 .gitignore
 
 **不符合以上格式的提交信息一律视为无效，需通过 `git commit --amend` 或 rebase 修正后方可推送。**
 
+默认不自动推送。2026-10-26 用户明确要求本次推送到 `origin/main`，属于单次授权；后续推送仍需再次确认。
+
 ## 文档维护约定
 
 - 修改本文件涉及的任何规范、结构或流程时，必须同步更新本文件。
@@ -86,16 +88,24 @@ chore: 添加 .gitignore
 - 按有实质价值的阶段成果进行本地 Conventional Commits 提交，不强制逐课提交，不自动推送。
 - 原始课程始终只读。所有字幕全文、截图、音频、视频副本及分析缓存位于被忽略的 `cheese/` 下。
 - 2026-10-26 后续会话中，用户明确指示“先不要读取视频了，做 skill，并记录视频没有多模态读取”。因此当前 `skills/` 是未验收草稿版；它只基于字幕、抽样画面、ASR 和工具契约，不代表课程音画学习完成。
+- 2026-10-26 后续补充：18 课完成 2 秒细抽帧画面解析；`skills/` 的 prompt 与 references 以英文为主；新增 Remotion/TypeScript 第二条实现路径与合成示例；这些不改变“课程连续音画未验收”的结论。
 
 ## Remotion 适配约定（2026-10-26）
 
 - 项目主路径仍是 CapCut；Remotion 是第二条实现路径，用 React / TypeScript 组合表达同一剪辑判断。
-- README 与子 Skill 增加 Remotion / TypeScript 工具映射；这些是基于官方文档的 API 建议，不代表本仓库已创建工程、运行 Studio 或渲染验收。
+- README 与子 Skill 增加 Remotion / TypeScript 工具映射；仓库已有 `remotion/` 合成示例工程并渲染了 24 秒成片，但仍不代表课程音画、CapCut 路径或平台验收。
 - 课程参数、CapCut 专属界面（智能剪口播、平面跟踪求解、多机位宫格、回音预设、示波器）不能假装 Remotion 有等价内置能力；需要外部数据或外部处理时明确写出。
 - 修改 Remotion 适配内容时同步检查 README 的“支持的两条路径”表与各子 Skill 的“Remotion / TypeScript Adapter”段。
 - `skills/` 的 prompt 与 references 以英文为主；中文界面标签只作为界面证据保留在反引号或引号中，并附英文释义，不作为第二语言正文。
 - `remotion/` 是可运行的合成演示工程；`assets/demo/skill-atlas.mp4` 是其渲染副本，不含课程原片或课程音频。渲染成功不等于课程音画验收或平台验收。
 - 合成演示媒体只能通过 `assets/demo/synthetic-media.json` 的路径 + SHA256 白名单入库；清单外或哈希不匹配的媒体仍按课程媒体拦截，`check_progress.py` 会报错。
+
+## Skill 语言约定（2026-10-26）
+
+- `skills/` 的 `SKILL.md` 与 `references/` 以英文为主；中文只作为**界面证据**保留在反引号或引号中，并附英文释义。
+- 证据标签统一为 `[course evidence]`、`[sampled stills]`、`[course narration]`、`[inference]`、`[tool boundary]`、`[pending verification]`。
+- 修改 Skill 时不要重新引入中文正文；确需引用中文界面文字时，保留原文并加英文释义。
+- 课程参数、界面标签和平台规则仍按原证据边界处理；英文翻译不提升证据等级。
 
 ## 详细执行计划与验收标准
 
@@ -164,4 +174,7 @@ chore: 添加 .gitignore
 - 下一步已建立草稿组合 Skill；完整音画复核仍待完成，不能在未复核前把 Skill 标为最终版。
 - 2026-10-26 细抽帧：18 课按 2 秒间隔抽帧，共 6,656 帧 / 1,658 张时间码索引页，逐张查看并产出 18 篇分课解析；索引与总览见 `notes/visual-analysis/`，工具为 `scripts/fine_frames.py`。这仍是静态抽样，不是连续视频，也没有音轨听辨。
 - 2026-10-26 Skill 回写：入口新增 `references/visual-evidence-2026-10.md`，10 个子 Skill 补入 2 秒复核的精确时间码/参数，并修正 08/12/13/15 的内容归属；安装副本已同步并通过 quick_validate。Skill 仍为 provisional。
+- 2026-10-26 Remotion/英文：新增 `remotion/` 可运行示例与 24 秒合成成片；11 个 SKILL.md 细化到约 1,080 行，references 英文化，证据标签统一；11 个安装副本零差异。
+- 2026-10-26 合成媒体白名单：`assets/demo/synthetic-media.json` 用路径 + SHA256 放行合成演示媒体；课程媒体仍被 `check_progress.py` 拦截。
+- 2026-10-26 推送：用户明确授权本次 `git push origin main`；此前 22 个本地提交将同步到远程。
 - 更新进度后运行 `python3 scripts/check_progress.py --write-summary`，使逐课表与账本同步。该检查只能约束记账一致性，不能判断学习质量。

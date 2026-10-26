@@ -1,6 +1,6 @@
 # 接手说明：MediaStorm 课程学习与组合 Skill
 
-更新时间：2026-10-26 17:05（Asia/Shanghai）。本文保存当前会话的决定、进度、产物和真实验收边界，不包含课程全文或媒体。
+更新时间：2026-10-26 19:27（Asia/Shanghai）。本文保存当前会话的决定、进度、产物和真实验收边界，不包含课程全文或媒体。
 
 来源为影视飓风（MediaStorm）付费剪映课程的个人学习整理，与影视飓风官方无关联，也未获得官方授权或背书。
 
@@ -12,21 +12,23 @@
 /Users/ariakage/Documents/New project 10/cc/mediastorm-capcut-skill
 ```
 
-**当前状态：组合 Skill 草稿已经建立、验证并安装到 Codex；完整课程音画学习仍未完成。**
+**当前状态：组合 Skill 已安装、完成 2 秒画面层细化与英文化，并有可运行的 Remotion 合成示例；完整课程音画学习仍未完成。**
 
-- 已完成：18 课全部字幕阅读、全音轨本地 ASR、抽样画面查看、部分局部回查、原创笔记、逐课证据账本。
-- 已完成：1 个入口 Skill + 10 个按任务边界划分的子 Skill，源码在 `skills/`，已安装到 `~/.codex/skills/mediastorm-*`。
-- 已完成：Skill 结构、命名、Markdown 链接、界面 YAML、源码与安装副本一致性验证。
+- 已完成：18 课全部字幕阅读、全音轨本地 ASR、20 秒与 2 秒两轮画面抽样、局部回查、原创笔记、逐课证据账本。
+- 已完成：18 课按 2 秒间隔抽帧，6,656 帧 / 1,658 张时间码索引页逐张查看；18 篇分课解析合计约 4,600 行。
+- 已完成：1 个入口 Skill + 10 个按任务边界划分的子 Skill，源码在 `skills/`，已安装到 `~/.codex/skills/mediastorm-*`；11 个 SKILL.md 已细化为约 1,080 行，references 已英文化。
+- 已完成：Remotion 4.0.538 + React 19 + TypeScript 合成示例（24 秒 / 1080p / 30fps），源码在 `remotion/`，成片在 `assets/demo/skill-atlas.mp4`。
+- 已完成：Skill 结构、命名、Markdown 链接、界面 YAML、源码与安装副本一致性验证；11 个源码与安装副本均通过 `quick_validate.py`。
 - 已完成：capcut-cli 0.31.1 的运行时契约检查脚本；实测 24 个相关命令契约齐全。
 - 未完成：18 课连续视频理解、原声听辨、音乐/音效/语气/节奏感知、快速动作和音画同步验收。
-- 因此：当前 Skill 是 **provisional / 未验收草稿版**，不得宣称课程已完整学完或 Skill 已通过最终音画验收。
+- 因此：当前 Skill 仍是 **provisional / 未验收草稿版**，不得宣称课程已完整学完或 Skill 已通过最终音画验收。
 
 最新用户决定：
 
-1. 暂不继续读取课程视频，先制作 Skill。
-2. 明确记录：本轮视频**没有**完成多模态读取。
-3. Skill 名称和安装目录恢复为 `mediastorm-*`。
-4. 用户已自行检查并确认技能注入成功。
+1. 用 2 秒细抽帧 + 识图完成画面层取证，并写入 18 篇文档。
+2. 把已验证的画面修正回写进 `mediastorm-*` Skill。
+3. 增加 Remotion/TypeScript 路径、README 头图与示例视频；把 Skill prompt 与 references 改为英文。
+4. 本次明确授权更新 HANDOFF/AGENTS 并推送到 `origin/main`。
 
 ## 2. 接手阅读顺序
 
@@ -35,8 +37,10 @@
 3. [逐课状态表](progress/status.md) 与 [证据账本](progress/course-ledger.json)。
 4. [完整音画待验清单](progress/remaining-review.md)。
 5. [01–07 课笔记](notes/course-reading-01-07.md)、[08–18 课笔记](notes/course-reading-08-18.md)。
-6. [工具观察](notes/tool-observations.md)、[音画接口方案调查](notes/multimodal-options.md)。
-7. Skill 入口：[skills/mediastorm-capcut/SKILL.md](skills/mediastorm-capcut/SKILL.md)。
+6. [18 课细粒度画面解析](notes/visual-analysis/README.md) 与 [跨课关键发现](notes/visual-analysis/全课程关键发现与差异修正.md)。
+7. [工具观察](notes/tool-observations.md)、[音画接口方案调查](notes/multimodal-options.md)。
+8. Skill 入口：[skills/mediastorm-capcut/SKILL.md](skills/mediastorm-capcut/SKILL.md)；Remotion 适配：[remotion-adapter.md](skills/mediastorm-capcut/references/remotion-adapter.md)。
+9. Remotion 示例工程：[remotion/README.md](remotion/README.md)；成片 `assets/demo/skill-atlas.mp4`。
 
 不要重新批量转写、抽帧或重装已经可用的环境，先核对现有产物和缺口。
 
@@ -50,8 +54,9 @@
 - 采用“入口 Skill → 分类路由 → 具体 Skill”，不按课号或 CLI 命令硬分。
 - 完整学习应包含音频、画面和字幕，不能以转写或抽样静帧替代。
 - 允许本地 ASR，用于补充对白证据。
-- 只对实质阶段成果做本地 Conventional Commits 提交，不逐课提交，不自动推送。
+- 只对实质阶段成果做本地 Conventional Commits 提交，不逐课提交；默认不自动推送。
 - 原始课程只读，所有媒体、字幕、抽帧、音频、全文转写和分析缓存留在被忽略的 `cheese/`。
+- 2026-10-26 本次用户明确要求推送到 `origin/main`；这是一次单独授权，不改变“以后仍需单独授权”的默认规则。
 
 当前授权状态：
 
@@ -63,7 +68,8 @@
 | 将课程上传第三方 API | 未授权，未执行 |
 | 云端模型费用、剪映积分、会员功能消费 | 未授权，未执行 |
 | 下载/试装新的 Omni 模型 | 未授权，未执行 |
-| Git 远程推送、发布视频、分发付费素材 | 未授权，未执行 |
+| Git 远程推送 | 已授权（2026-10-26 本次），已执行/以实际推送结果为准 |
+| 发布视频、分发付费素材 | 未授权，未执行 |
 | 清理缓存、删除个人文件或其他项目资料 | 未授权，未执行 |
 
 ## 4. 证据覆盖与层级
@@ -76,6 +82,9 @@
 | 本地 ASR | 18 课完整音轨均提交本地识别 | 不代表音乐、音效、语气、声道、节奏感知 |
 | 文本比对 | 453 个 30 秒窗口；10 个低相似度窗口的两份文本已回查 | 文本相似不证明正确，低相似也不自动证明字幕错误 |
 | 局部重识别 | 第 06、09、11、15 课各一段；原始全轨结果保留 | 减少重复幻觉不等于原声已确认 |
+| 2 秒细抽帧 | 18 课 6,656 帧 / 1,658 张索引页逐张查看；18 篇分课解析 | 仍是静态抽样，不是连续视频 |
+| 画面修正 | 修正 Drone、变亮组、辅轨、初版、Seedance、往上拖变亮等 | 不证明音乐、语气或运动观感 |
+| Remotion 示例 | 24 秒 / 1080p / 30fps 合成视频，已渲染并通过 tsc | 不含课程素材，不是课程或平台验收 |
 | 原件保护 | 36 个视频/字幕 SHA256 与初始清单一致 | 后续操作仍需避免改写原件 |
 | 连续视频 | 18 课均为 `pending` | 不能以静态帧或“提交成功”替代 |
 | 原声听辨 | 18 课均未完成 | ASR 不能替代听感 |
@@ -90,7 +99,7 @@
 - 对 MP4 调用图片查看接口，返回 `unsupported format: .mp4`。
 - 因此当前 WorkBuddy 会话**没有完成原生连续视频输入**，也没有完成原声听辨。
 - 视频编码为 AV1 1080p / AAC；第 01 课约 112.17 秒、12.93 MB。
-- 当前磁盘仅约 179 MiB 可用，任何模型下载或大体积转码都必须先评估空间。
+- 当前磁盘约 13 GiB 可用（2026-10-26 19:27）；Remotion 的 `node_modules/` 与 `out/` 不提交，生成大文件前仍应评估空间。
 
 ### 4.2 Kimi/外部接口调查
 
@@ -138,7 +147,7 @@ $mediastorm-capcut
 | `mediastorm-dialogue-interview` | 口播、take、气口、字幕、A/B-roll、多机位与采访 |
 | `mediastorm-music-sound` | 音乐裁切、尾音、J/L-cut、环境声、设计音效、响度 |
 | `mediastorm-speed-time` | 常速变速、慢放、曲线变速、源帧率与补帧风险 |
-| `mediastorm-motion-graphics` | 缩放/位置关键帧、缓动、点跟踪标签、数字闪变、计时器 |
+| `mediastorm-motion-graphics` | 缩放/位置关键帧与缓动（08）、点跟踪标签/数字闪变（12）、计时器（15） |
 | `mediastorm-compositing-tracking` | 抠像、蒙版、混合模式、图层合成、平面跟踪与失效 |
 | `mediastorm-color-grading` | Log 还原、示波器、曲线、肤色、镜头匹配与风格 |
 | `mediastorm-generative-broll` | 生成 B-roll、成本授权、提示词、真实性与审看 |
@@ -147,16 +156,19 @@ $mediastorm-capcut
 ### 5.2 设计原则
 
 - 入口只负责识别目标、检查前提、写出路由顺序、汇总验收和全局安全边界。
-- 每个子 Skill 自带最小 references，不依赖仓库内 `notes/` 或 `cheese/.analysis/`。
+- 每个子 Skill 自带最小 references，不依赖仓库内 `notes/` 或 `cheese/.analysis/`；references 以英文为主。
 - 通用 CapCut 草稿读写继续使用现有 `capcut-edit`，本组合 Skill 不复制命令手册。
-- 课程知识以原创归纳为主，不复制完整讲稿。
-- 证据标签：
-  - `[课程]`：课程字幕、抽样画面、局部回查支持的归纳。
-  - `[推论]`：助手推导，不冒充讲师原话。
-  - `[工具]`：CLI 契约或本机实验，不自动外推到剪映界面。
-  - `[待验]`：仍需连续音画或界面确认。
+- 课程知识以原创归纳为主，不复制完整讲稿；中文界面标签只作为界面证据保留并附英文释义。
+- 证据标签（英文）：
+  - `[course evidence]`：课程字幕、抽样画面、局部回查支持的归纳。
+  - `[sampled stills]`：2 秒索引页或全分辨率抓帧中直接可见的事实。
+  - `[course narration]`：烧录字幕或讲师口述，未由画面独立验证。
+  - `[inference]`：助手推导，不冒充讲师原话。
+  - `[tool boundary]`：CLI 契约或本机实验，不自动外推到剪映界面。
+  - `[pending verification]`：仍需连续音画或界面确认。
 - 所有具体数值默认是案例参数，不是通用预设，包括 2–3 秒、0.3×/0.1×、约 2 帧、0.4 秒、45%、1080p/30fps、4K/60fps 等。
 - 所有 Skill 的 metadata 标记 `status: provisional-unverified-audiovisual`。
+- Remotion 适配参考在 `skills/mediastorm-capcut/references/remotion-adapter.md`；示例工程在 `remotion/`，不改变 CapCut 主路径和证据边界。
 
 ### 5.3 确定性工具
 
@@ -168,6 +180,14 @@ $mediastorm-capcut
 - 默认验证 24 个命令，支持用 `--command` 缩小或扩展。
 - 解析 JSON，检查 schema 2 和命令缺失。
 - 不调用写入命令、渲染或草稿修改。
+
+其他确定性工具：
+
+- `scripts/fine_frames.py`：2 秒时间码索引页、定点抓帧与裁剪放大；`--crop x:y:w:h` 已修正为 ffmpeg 的 `w:h:x:y`。
+- `scripts/update_fine_visual_ledger.py`：把已完成的细抽帧写入课程账本。
+- `scripts/combine_visual_analysis.py`：合并 18 篇分课解析。
+- `scripts/check_progress.py`：账本一致性、原件哈希、课程媒体拦截；合成演示媒体通过 `assets/demo/synthetic-media.json` 的 SHA256 白名单放行。
+- `remotion/scripts/make-assets.sh`：重新生成合成演示视频与环境音。
 
 ## 6. Skill 验证与安装状态
 
@@ -182,12 +202,16 @@ $mediastorm-capcut
 - 完整契约脚本验证：CLI 0.31.1、schema 2、88 个命令、24 个所需契约全部存在。
 - 用户检查确认技能注入成功。
 - 命名最终恢复为 `mediastorm-*`。
+- 11 个 SKILL.md 已扩写为约 1,080 行，references 已英文化，证据标签统一为英文。
+- Remotion 示例 `npx tsc --noEmit` 通过；24 秒 1080p 成片已渲染（H.264/AAC）。
+- `check_progress.py` 通过；合成演示媒体通过 SHA256 白名单，课程媒体仍被拦截。
 
 未完成：
 
-- 两个独立前向测试子任务都因 429 频率限制失败，不能算通过。
+- 两个独立前向测试子任务都因 429 频率限制失败，不能算通过；本轮未重跑。
 - 没有在真实剪映工程中完成本 Skill 的端到端任务验收。
 - 没有完成课程连续音画学习，因此内容层仍是草稿。
+- Remotion 示例只验证合成素材与实现路径，不代表课程音画、CapCut 路径或平台验收。
 
 ### 6.1 Codex 技能清单注意事项
 
@@ -209,14 +233,18 @@ $mediastorm-capcut
 | --- | --- |
 | OS | macOS / Apple Silicon |
 | `capcut` / `capcut-cli` | `0.31.1`，schema 2，88 个命令 |
-| `node` | `v22.22.2`，由 fnm 管理；路径会变化，运行时用 `command -v` |
+| `node` | `v22.23.0`，由 fnm 管理；路径会变化，运行时用 `command -v` |
+| `npm` | `10.9.8` |
 | `codex` | `codex-cli 0.144.1` |
-| Skill 源码 | 11 个目录，35 个文件 |
+| Skill 源码 | 11 个目录，38 个文件（其中 25 个 Markdown） |
 | Skill 安装 | `~/.codex/skills/mediastorm-*`，11 个目录 |
-| 可用磁盘 | 约 179 MiB（会变化，当前非常紧张） |
+| Remotion | `4.0.538`；React `19.2.3`；TypeScript `5.9.3` |
+| Remotion 依赖 | `remotion/node_modules` 约 268 MB；Headless Shell 已下载 |
+| 可用磁盘 | 约 13 GiB（2026-10-26 19:27） |
 | ASR Python | `cheese/.analysis/.venv/bin/python`，Python 3.12 |
 | ASR 模型 | `mlx-community/whisper-small-mlx`，revision `45f3915923c7a79a5a5b5a7d909d39aeb0e5630e` |
 | 验证依赖 | ASR 环境已含 PyYAML；系统 Python 3 当前缺 `yaml` |
+| ffmpeg | 8.1.2 |
 
 其他环境事实：
 
@@ -247,11 +275,21 @@ $mediastorm-capcut
 | `notes/course-reading-08-18.md` | 08–18 课原创归纳与时间码 |
 | `notes/tool-observations.md` | CLI、混合模式和 ASR 局限 |
 | `notes/multimodal-options.md` | 音画接口调查 |
-| `skills/mediastorm-capcut/` | 入口 Skill、路由、证据边界、契约脚本 |
-| `skills/mediastorm-*/` | 10 个任务子 Skill 与各自 references |
+| `notes/visual-analysis/` | 18 课 2 秒细抽帧解析、索引、合并版、跨课总览 |
+| `progress/fine-visual-review.md` | 逐课细抽帧覆盖台账 |
+| `assets/readme-header.svg` | README 头图（1280×320） |
+| `assets/demo/skill-atlas.mp4` | Remotion 合成示例成片（24 秒 / 1080p） |
+| `assets/demo/skill-atlas-poster.jpg` | 示例海报 |
+| `assets/demo/synthetic-media.json` | 合成媒体路径与 SHA256 白名单 |
+| `remotion/` | Remotion 4 + React 19 + TypeScript 示例工程；`node_modules/`、`out/` 不提交 |
+| `skills/mediastorm-capcut/` | 入口 Skill、路由、证据边界、Remotion 适配参考、契约脚本 |
+| `skills/mediastorm-*/` | 10 个任务子 Skill 与各自英文 references |
 | `scripts/course_audit.py` | 清单、字幕阅读稿、抽帧、ASR |
 | `scripts/compare_dialogue.py` | 本地转写比对 |
-| `scripts/check_progress.py` | 账本一致性、原件哈希和 Git 媒体排除 |
+| `scripts/fine_frames.py` | 2 秒索引页、定点抓帧与裁剪 |
+| `scripts/update_fine_visual_ledger.py` | 细抽帧写入课程账本 |
+| `scripts/combine_visual_analysis.py` | 合并 18 篇分课解析 |
+| `scripts/check_progress.py` | 账本一致性、原件哈希、课程媒体拦截、合成媒体白名单 |
 | `scripts/course-analysis-requirements.txt` | 分析环境依赖 |
 
 本地私有、被 `/cheese/` 忽略：
@@ -267,7 +305,10 @@ cheese/
     ├── asr/01.json ... 18.json
     ├── asr-checks/
     ├── dialogue-comparison/
-    ├── visual/01 ... 18/
+    ├── visual/01 ... 18/        # 20 秒抽样索引页
+    ├── fine/01 ... 18/          # 2 秒细抽帧索引页与 manifest
+    ├── grabs/                   # 全分辨率定点抓帧
+    ├── fine-pilot/              # 早期 01 课试点（已并入 fine/01）
     ├── details/
     ├── cli-command-index.json
     ├── asr-run.log
@@ -292,6 +333,20 @@ cheese/
 - `matting` 配置写入不等于抠像像素完成。
 - `render` 代理预览不等于剪映最终导出。
 
+### 2 秒细抽帧新增/确认
+
+- 第 06 课 07:06 画面烧录字幕为 `sub 或者 Drone`；SRT 的 `drum` 是误识别，2 秒复核再次确认。
+- 第 10 课混合模式共 11 项，课程把 `强光` 放在变亮组；SRT 的“变量组”是“变亮组”误识别，“浮轨”是“辅轨”误识别。
+- 第 14 课四机位时码 A `1:10:04:27`、B `1:10:03:24`、C/D `1:10:03:26`；A 与 B 相差约 1 秒 3 帧，旧笔记“约 3 秒”应以此修正。
+- 第 15 课动画面板读数 `0.5s`，口播说“0.3 秒左右”；“完成测试题”卡片在 3 点、时钟指针指向 6 点，是课程画面内部不一致。
+- 第 16 课烧录字幕为“往上拖**变亮**”；SRT 的“往上拖变暗”是误识别，旧笔记的“自相矛盾”疑问可结案。
+- 第 17 课模型名为 `Seedance 2.0 Fast / Mini / 1.0`；SRT 的 `CNAS`、`CDX` 是误识别，“纹身视频”应为“文生视频”。
+- 第 18 课 SRT 的“出版/简历的云空间/设备创作”应分别为“初版/剪映的云空间/社媒创作”。
+- 第 08 课只讲关键帧与缓动，不含点跟踪标签、数字闪变、计时器；这些分别在第 12、15 课，平面跟踪在第 13 课。
+- 第 12 课数字闪变口播说“约 2 帧/段”，完成片帧网格实际为第一段 8 值/15 帧、第二段 6 值/11 帧，单值 1–3 帧；0.4s 是面板设置，预览可见重叠约 5 帧。
+- 第 07 课码率表单位为 `KB/s`，导出面板为 `Kbps`，字面差 8 倍；课程没有解释，不能直接转成 FFmpeg 参数或平台规则。
+- 第 18 课手机平台导出表是录制时经验预设，不是平台永久规则；当前要求需另查官方资料。
+
 ## 10. 后续执行顺序
 
 ### A. 如果继续完成课程音画验收
@@ -303,7 +358,7 @@ cheese/
 5. 分段覆盖 18 课，边界重叠，核对并集无遗漏。
 6. 对音乐、音效、语气、快速动作、变速和运镜做实际听视觉复核。
 7. 只有所有模态和疑点完成，才把 `complete_multimodal_review` 更新为 true。
-8. 依据新证据修正 Skill references 中标注 `[待验]` 的内容。
+8. 依据新证据修正 Skill references 中标注 `[pending verification]` 的内容。
 
 ### B. 如果继续完善 Skill 而不重看视频
 
@@ -313,7 +368,15 @@ cheese/
 4. 把“结构成功、代理预览成功、界面成功、最终听视觉成功”分别记录。
 5. 继续保留 provisional 标记，直到课程和工具两层都达到验收。
 
-### C. 任何时候都不要
+### C. 如果继续完善 Remotion 示例
+
+1. 用 `npm run dev` 在 Studio 看六个场景，逐段检查文字、图层、字幕和转场。
+2. 需要更多镜头时，按 `remotion/README.md` 的场景表扩展；保持合成素材，不使用课程原片。
+3. 修改 `public/demo.mp4` 或 `tone.mp3` 后，重新计算哈希并更新 `assets/demo/synthetic-media.json`，否则 `check_progress.py` 会拦截。
+4. 重新渲染后更新 `assets/demo/skill-atlas.mp4` 与海报；只在确认 `ffprobe`、`tsc`、画面检查通过后替换。
+5. Remotion 示例通过不等于课程音画、CapCut 路径或平台验收；不要据此改变 `provisional` 状态。
+
+### D. 任何时候都不要
 
 - 把字幕、抽帧、ASR 或技能注入成功当成完整音画理解。
 - 把课程案例数值写成所有项目固定预设。
@@ -321,12 +384,14 @@ cheese/
 - 把 `matting` 的 JSON 配置当成像素结果。
 - 未授权上传课程、花积分、调用外部 API 或发布内容。
 - 修改、删除或强制写入既有加密剪映草稿。
+- 把 Remotion 合成示例当成课程素材、课程验收或平台发布验证。
 
 ## 11. 快速复核命令
 
 ```sh
 git status --short
-git log -5 --oneline
+git status -sb
+git log -8 --oneline
 python3 scripts/check_progress.py
 ```
 
@@ -370,29 +435,60 @@ cheese/.analysis/.venv/bin/python scripts/course_audit.py transcribe 01
 
 `inventory` 会复算源哈希并保留 review；`sheets` / `transcribe` 在匹配缓存时复用，不会自动提升已读状态。
 
+2 秒细抽帧与合并文档：
+
+```sh
+cheese/.analysis/.venv/bin/python scripts/fine_frames.py sheets 03 --interval 2 --out cheese/.analysis/fine --clean
+cheese/.analysis/.venv/bin/python scripts/update_fine_visual_ledger.py
+python3 scripts/combine_visual_analysis.py
+```
+
+Remotion 示例：
+
+```sh
+cd remotion
+npm install
+npm run dev
+npx tsc --noEmit
+npm run render
+```
+
+推送（仅在用户明确授权时）：
+
+```sh
+git push origin main
+```
+
 ## 12. Git 与收尾状态
 
-生成本文前工作区干净，最近 5 个提交：
+本次推送前工作区干净，`main` 相对 `origin/main` 领先 22 个提交。最近提交（节选）：
 
 | 提交 | 内容 |
 | --- | --- |
-| `eec5a7c` | `refactor(skills): 恢复 mediastorm 前缀命名` |
-| `d2e1fae` | `feat(skills): 新增影视飓风剪映组合 Skill 草稿` |
-| `a14fc25` | `docs(handoff): 保存当前上下文与接手说明` |
-| `01dd5d2` | `docs(course): 补充音画证据与接口方案评估` |
-| `1979ed4` | `docs(course): 建立全课程研读计划与首轮笔记` |
+| `87e5009` | `fix(progress): 允许合成演示媒体并校验哈希` |
+| `50169e7` | `docs(skills): 细化 Skill prompt 并统一英文` |
+| `7922e83` | `feat(remotion): 新增可渲染的 Skill Atlas 演示` |
+| `fcc2fa6` | `fix(assets): 修复 README 头图文字溢出` |
+| `8a79dcd` | `docs(remotion): 新增双路径适配与 README 头图` |
+| `e14e6ca` | `docs(skills): 补齐第 05–07 课画面参数` |
+| `995ba96` | `docs(visual): 补齐第 05–07 课画面复核` |
+| `213f910` | `docs(visual): 新增 18 课 2 秒细抽帧画面解析` |
 
-本文这次更新会在提交后进入 `docs(handoff)` 记录；实际哈希以 `git log` 为准，本文不自引用未来哈希。
+远程与推送：
+
+- `origin`：`https://github.com/Ariakage/mediastorm-capcut-skill`。
+- 2026-10-26 用户明确授权本次推送到 `origin/main`；这是一次单独授权，不改变默认“不自动推送”。
+- 推送后以 `git status -sb` 为准；正常状态应为 `## main...origin/main`，无 ahead/behind。
+- 本文更新本身也会进入提交；实际哈希以 `git log` 为准，本文不自引用未来哈希。
 
 状态：
 
-- 没有执行远程推送。
 - 没有安排自动后台任务、定时任务或自动上传。
-- 没有课程媒体进入 Git 索引，`check_progress.py` 已通过。
-- 当前磁盘空间非常紧张，不要在未确认空间前下载模型或生成大量转码副本。
-- 交接完成后必须继续保留两项事实：**视频没有完成多模态读取；完整课程音画学习和 Skill 最终视听验收仍未完成。**
+- 课程媒体没有进入 Git 索引；`assets/demo/` 的合成演示媒体通过 `synthetic-media.json` 的 SHA256 白名单；`check_progress.py` 已通过。
+- 当前磁盘约 13 GiB；`remotion/node_modules` 约 268MB，`remotion/out/` 不入库。
+- 必须继续保留三项事实：**视频没有完成连续多模态读取；完整课程音画学习和 Skill 最终视听验收仍未完成；Remotion 合成示例不是课程素材、课程验收或平台发布验证。**
 
-## 13. 2026-10-26 细粒度画面解析（本次新增）
+## 13. 2026-10-26 细粒度画面解析
 
 用户要求不再停留在“视频无法理解”，而是把视频切细、逐张识图并输出详细文档。本轮已完成：
 
@@ -407,7 +503,7 @@ cheese/.analysis/.venv/bin/python scripts/course_audit.py transcribe 01
 - 重要发现：第 06 课 `Drone` 非 `drum`；第 10 课“变亮组/辅轨”纠正 SRT；第 15 课动画面板 0.5s 与口播 0.3s 冲突、时钟指针与 3 点卡片不一致；第 16 课“往上拖变亮”结案；第 17 课 `Seedance`/“文生视频”；第 08 课不含点跟踪标签/数字闪变/计时器，这些在第 12、15 课。
 - **边界不变**：2 秒抽样不是连续视频，未听音轨；`continuous_video` 与 `audio_listening` 仍为未完成，Skill 仍是 provisional。下一轮若继续，应优先听辨音乐/音效/语气/声道，并对快速动作、变速、跟踪、动画做连续视频复核。
 
-## 14. 2026-10-26 Skill 回写（本次新增）
+## 14. 2026-10-26 Skill 回写
 
 已把第二轮画面复核中确认的内容回写到组合 Skill：
 
@@ -422,8 +518,8 @@ cheese/.analysis/.venv/bin/python scripts/course_audit.py transcribe 01
 - README 重写为 CapCut + Remotion 双路径：新增 SVG 头图、安装方式、10 个子 Skill 的 TypeScript 工具表、剪辑/调色技巧地图、Star History。
 - 新增 `assets/readme-header.svg`（1280×320，时间线/波形/关键帧/色卡主题）。
 - 入口新增 `skills/mediastorm-capcut/references/remotion-adapter.md`：官方包映射、代码骨架、不能直接映射的边界。
-- 10 个子 Skill 各增加“Remotion / TypeScript 适配”段；安装副本已同步并通过 quick_validate。
-- **未创建 Remotion 工程、未运行 Studio、未渲染成片**；该路径是基于官方文档的 API 建议，不是本仓库的已验收产物。
+- 10 个子 Skill 各增加“Remotion / TypeScript Adapter”段；安装副本已同步并通过 quick_validate。
+- **该提交时点**只做了文档适配，未创建工程、未运行 Studio、未渲染成片；后续第 16 节已建立工程并渲染，当前状态以第 16 节为准。
 - 项目主路径仍是 CapCut；Remotion 适配不改变现有课程证据边界，也不把 Skill 标为最终版。
 
 ## 16. 2026-10-26 Remotion 示例与 Skill 细化
