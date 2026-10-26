@@ -1,204 +1,332 @@
 # 接手说明：MediaStorm 课程学习与组合 Skill
 
-更新时间：2026-10-26（Asia/Shanghai）。本文保存本次会话的决策、成果和真实验收边界，不包含课程全文或媒体。来源为影视飓风（MediaStorm）付费剪映课程的个人学习整理，与官方无关联。
+更新时间：2026-10-26 17:05（Asia/Shanghai）。本文保存当前会话的决定、进度、产物和真实验收边界，不包含课程全文或媒体。
 
-## 1. 接手时先看这里
+来源为影视飓风（MediaStorm）付费剪映课程的个人学习整理，与影视飓风官方无关联，也未获得官方授权或背书。
 
-项目目录：`/Users/ariakage/Documents/New project 10/cc/mediastorm-capcut-skill`。
+## 1. 当前结论
 
-**当前任务仍未达到最终验收：18 课的字幕研读、全音轨本地 ASR 和静态抽样画面观察已完成，但原声听辨与连续视频理解未完成。组合 Skill 已按用户后续指示建立草稿源码，但仍属于未验收草稿，不能视为课程完整学习成果。** 用户已接受该缺口继续待完成，并要求先调查可用音画理解方案；调查报告已经完成。
+项目目录：
 
-后续最新用户指示是：暂不读取视频，先制作 Skill，并明确记录本轮视频没有多模态读取。当前 `skills/` 草稿不新增任何课程音画证据；原授权边界中“未授权课程上传、云端付费或模型下载”仍有效。
+```text
+/Users/ariakage/Documents/New project 10/cc/mediastorm-capcut-skill
+```
 
-建议接手阅读顺序：
+**当前状态：组合 Skill 草稿已经建立、验证并安装到 Codex；完整课程音画学习仍未完成。**
 
-1. [AGENTS.md](AGENTS.md)：项目规范、已确认要求、五阶段计划及验收标准。
-2. [逐课状态表](progress/status.md) 和 [证据账本](progress/course-ledger.json)：当前覆盖范围。
-3. [待验清单](progress/remaining-review.md)：全课程缺口与优先回查时间段。
-4. [接口方案调查](notes/multimodal-options.md)：候选模型、采样限制、数据处理、费用估算及试点方法。
-5. [01–07 课笔记](notes/course-reading-01-07.md)、[08–18 课笔记](notes/course-reading-08-18.md)、[工具观察](notes/tool-observations.md)。
+- 已完成：18 课全部字幕阅读、全音轨本地 ASR、抽样画面查看、部分局部回查、原创笔记、逐课证据账本。
+- 已完成：1 个入口 Skill + 10 个按任务边界划分的子 Skill，源码在 `skills/`，已安装到 `~/.codex/skills/mediastorm-*`。
+- 已完成：Skill 结构、命名、Markdown 链接、界面 YAML、源码与安装副本一致性验证。
+- 已完成：capcut-cli 0.31.1 的运行时契约检查脚本；实测 24 个相关命令契约齐全。
+- 未完成：18 课连续视频理解、原声听辨、音乐/音效/语气/节奏感知、快速动作和音画同步验收。
+- 因此：当前 Skill 是 **provisional / 未验收草稿版**，不得宣称课程已完整学完或 Skill 已通过最终音画验收。
 
-不要重新批量转写、抽帧或重装已可用环境。先核对现有产物和状态，针对缺口继续。
+最新用户决定：
 
-## 2. 用户目标与授权
+1. 暂不继续读取课程视频，先制作 Skill。
+2. 明确记录：本轮视频**没有**完成多模态读取。
+3. Skill 名称和安装目录恢复为 `mediastorm-*`。
+4. 用户已自行检查并确认技能注入成功。
 
-原始目标：安装 [capcut-cli](https://github.com/renezander030/capcut-cli)，完整学习 `./cheese` 中的 MediaStorm 课程，再制作支持 capcut-cli 及其他视频制作流程的组合 Skill。知识应涵盖剪辑技巧、经验、手法、判断、制作、交付与发布，不只是命令清单。
+## 2. 接手阅读顺序
 
-用户明确确认：
+1. [AGENTS.md](AGENTS.md)：项目规范、五阶段计划、内容红线和验收要求。
+2. 本文件：当前状态、Skill 交付、视频输入限制、提交记录。
+3. [逐课状态表](progress/status.md) 与 [证据账本](progress/course-ledger.json)。
+4. [完整音画待验清单](progress/remaining-review.md)。
+5. [01–07 课笔记](notes/course-reading-01-07.md)、[08–18 课笔记](notes/course-reading-08-18.md)。
+6. [工具观察](notes/tool-observations.md)、[音画接口方案调查](notes/multimodal-options.md)。
+7. Skill 入口：[skills/mediastorm-capcut/SKILL.md](skills/mediastorm-capcut/SKILL.md)。
 
-- 允许使用助手的多模态能力。
-- 采用“入口 Skill → 分类路由 → 具体 Skill”的组合；**先完整学习课程，再确定具体分类**。
-- 完整读取应包括音频、画面、字幕；不能以转写或抽样静帧替代全部音画学习。
-- 开始前提出必要问题，将详细计划写入 AGENTS.md，持续记录逐课进度。
-- 只有重要且有实质价值的阶段成果再提交，不需要逐课提交。
-- 允许安装本地语音识别，补充全音轨对白核对。
-- 对音画理解能力不足的最新答复为：**“先调查可用方案，完整音画验收继续待完成”**。
+不要重新批量转写、抽帧或重装已经可用的环境，先核对现有产物和缺口。
 
-授权边界：
+## 3. 原始目标与授权边界
 
-| 操作 | 当前状态 |
+原始目标：安装 [capcut-cli](https://github.com/renezander030/capcut-cli)，完整学习 `./cheese` 中的 MediaStorm 课程，并把剪辑判断、经验、手法、制作、交付和发布知识组织为支持 capcut-cli 及其他流程的组合 Skill。
+
+用户已确认：
+
+- 允许助手使用多模态能力。
+- 采用“入口 Skill → 分类路由 → 具体 Skill”，不按课号或 CLI 命令硬分。
+- 完整学习应包含音频、画面和字幕，不能以转写或抽样静帧替代。
+- 允许本地 ASR，用于补充对白证据。
+- 只对实质阶段成果做本地 Conventional Commits 提交，不逐课提交，不自动推送。
+- 原始课程只读，所有媒体、字幕、抽帧、音频、全文转写和分析缓存留在被忽略的 `cheese/`。
+
+当前授权状态：
+
+| 操作 | 状态 |
 | --- | --- |
-| 本地读取课程、字幕、查看图片、运行已授权本地 ASR | 已授权；主要处理已完成 |
-| 整理原创笔记、维护计划/证据、阶段性本地 Git 提交 | 已授权 |
-| 查询公开接口和模型文档 | 已授权；调查已完成 |
-| 将课程或派生课程内容上传第三方 | 尚未授权 |
-| 云端模型调用费用、剪映积分等消费 | 尚未授权 |
-| 下载/试装新的 Omni 模型 | 最新约定仅调查，尚未执行或获得新增授权 |
-| Git 远程推送、发布视频或分发付费素材 | 尚未授权 |
+| 本地读取字幕/图片、运行本地 ASR、整理笔记 | 已授权且已执行 |
+| 制作、验证、安装本地 Skill | 已授权且已执行 |
+| 本地 Git 提交 | 已授权且已执行 |
+| 将课程上传第三方 API | 未授权，未执行 |
+| 云端模型费用、剪映积分、会员功能消费 | 未授权，未执行 |
+| 下载/试装新的 Omni 模型 | 未授权，未执行 |
+| Git 远程推送、发布视频、分发付费素材 | 未授权，未执行 |
+| 清理缓存、删除个人文件或其他项目资料 | 未授权，未执行 |
 
-不要重复询问已确认的组合形式、ASR 许可或提交频率；新增云端操作应先明确提供商、账户地区、上传范围、数据处理方式和费用上限。
-
-## 3. 规范与原件保护
-
-- 先阅读 AGENTS.md，遵循 Conventional Commits。
-- 原始课程始终只读；完整视频、录屏、字幕、音频、图片、全文转写和分析缓存不得进入 Git 或 Skill 分发包。
-- `.gitignore` 排除了整个 `/cheese/`，包含其下所有派生产物；不要强制添加这些文件。
-- 仓库只保留原创总结、课程编号/时间码来源、证据指标和工具脚本；不声称获得 MediaStorm 官方授权或背书。
-- MIT 仅覆盖仓库原创内容，不覆盖课程素材，不擅自修改许可证。
-- 版权/免责声明变更需同步检查 README.md、SECURITY.md；发现侵权或敏感内容按 AGENTS.md 处理。
-- 不覆盖已有 `capcut-edit` Skill，不直接修改既有加密剪映草稿，不清理其他项目或模型。
-
-## 4. 已完成成果与证据层级
-
-以下汇总已在生成本交接文件时通过账本与检查脚本核对：
+## 4. 证据覆盖与层级
 
 | 项目 | 实际结果 | 不代表什么 |
 | --- | --- | --- |
-| 素材盘点 | 18 个视频、18 份 AI 中文字幕，共 13,315.178668 秒，即 03:41:55 | 不代表已理解全部音画 |
-| 字幕研读 | 全部 6,198 条实际读完；已形成分课原创笔记 | 不代表已听原声 |
-| 静态画面 | 20 秒间隔，36 页索引、674 个抽样画面均已实际查看；另有局部回查 | 不代表连续视频或每帧验收 |
-| 本地 ASR | 18 课完整音轨均提交本地识别 | 不代表音乐、音效、节奏和语气感知 |
-| 文本比对 | 453 个 30 秒窗口；10 个低相似度窗口的两份文本已回查 | 相似不证明正确，不相似不证明已有字幕错误 |
-| 局部重新识别 | 第 06、09、11、15 课各一段；原始全轨结果保留 | 幻觉减少不等于原声内容已确认 |
-| 原件保护 | 上一阶段重新计算全部 36 个视频/字幕 SHA256，与初始清单一致 | 后续操作仍需保护原件 |
-| 完整音画验收 | 18 课均为 false；本地 MP4 的 `@` 路径引用仍只提供路径，Read 返回二进制不可显示 | 不可宣布全课程学完；草稿 Skill 不能冒充已验收知识 |
-| 组合 Skill | `skills/` 已建立 1 入口 + 10 子 Skill 草稿，官方结构验证通过 | 未经过完整课程音画复核和剪映界面最终验收 |
-| Skill 安装与发现 | 已安装为 `~/.codex/skills/mediastorm-*`；用户检查确认技能注入成功 | 只证明可发现、结构和链接正确，不证明路由质量与成片效果 |
-| 独立前向测试 | 两个只读测试子任务均因 429 频率限制未执行 | 不能记为测试通过；当前仅有本地结构与发现性验证 |
+| 素材盘点 | 18 个视频、18 份 AI 中文字幕，共 13,315.178668 秒（03:41:55） | 不代表理解全部音画 |
+| 字幕研读 | 6,198 条字幕全部实际读完，形成两份分课原创笔记 | 不代表听过原声 |
+| 静态画面 | 20 秒间隔、36 页索引、674 个抽样画面实际查看，并有局部回查 | 不代表连续视频、运动或每帧验收 |
+| 本地 ASR | 18 课完整音轨均提交本地识别 | 不代表音乐、音效、语气、声道、节奏感知 |
+| 文本比对 | 453 个 30 秒窗口；10 个低相似度窗口的两份文本已回查 | 文本相似不证明正确，低相似也不自动证明字幕错误 |
+| 局部重识别 | 第 06、09、11、15 课各一段；原始全轨结果保留 | 减少重复幻觉不等于原声已确认 |
+| 原件保护 | 36 个视频/字幕 SHA256 与初始清单一致 | 后续操作仍需避免改写原件 |
+| 连续视频 | 18 课均为 `pending` | 不能以静态帧或“提交成功”替代 |
+| 原声听辨 | 18 课均未完成 | ASR 不能替代听感 |
+| 完整音画验收 | 18 课均为 `false` | 不可宣布全课程学完 |
 
-输入能力的实际探针：
+### 4.1 当前视频/音频输入事实
 
-- 本地图片输入成功，可查看课程画面。
+- 本地图片输入成功，曾实际查看第 01 课 00:20 等画面。
 - 8 秒本地 WAV 经工具提交，返回 `audio content omitted because you do not support audio input`。
-- 当前会话没有验证通过的连续视频理解接口。
-- 接手环境若更换模型或工具，可以重新做小型能力探针；不能直接沿用旧环境的能力结论，也不能因工具出现了上传入口就宣称理解成功。
+- 用户把 18 个 MP4 以 `@` 本地路径形式加入对话；系统上下文只提供路径，明确不是已上传的视频内容。
+- 对第 01 课 MP4 再次调用 Read，返回 `Cannot display content of binary file`。
+- 对 MP4 调用图片查看接口，返回 `unsupported format: .mp4`。
+- 因此当前 WorkBuddy 会话**没有完成原生连续视频输入**，也没有完成原声听辨。
+- 视频编码为 AV1 1080p / AAC；第 01 课约 112.17 秒、12.93 MB。
+- 当前磁盘仅约 179 MiB 可用，任何模型下载或大体积转码都必须先评估空间。
 
-## 5. 文件与本地产物位置
+### 4.2 Kimi/外部接口调查
 
-公开可提交文件：
+公开文档核对结果：
+
+- Kimi K3.1 Pro 文档支持视频视觉理解。
+- Chat Completions 支持 `video_url`：可用 `data:video/mp4;base64,...` 或 `ms://<file-id>`。
+- 文件上传支持 `purpose="video"`；文件接口单文件上限 100 MiB。
+- Base64 适合较小文件；大文件应使用文件上传。
+- 视频理解仍属于关键帧/采样理解，不应自动宣称覆盖每一帧和完整音轨。
+- 文档主要说明视觉理解，不能据此确认音乐、音效、语气、声道等听觉验收。
+
+本地发现：
+
+- `kimi` CLI 存在。
+- `hermes` 启动器存在，但其目标 `~/.hermes/hermes-agent/venv/bin/hermes` 不存在，当前不可用。
+- 没有执行外部 API 调用、Base64 上传或费用消费。
+
+如果未来恢复视频验收，需要重新取得：
+
+1. 明确的提供商、模型、账户地区。
+2. 上传范围与数据处理/保留条款确认。
+3. 费用上限或预算授权。
+4. 小型合成素材能力探针。
+5. 课内短片试点，再覆盖全部课程。
+
+## 5. 组合 Skill 交付
+
+### 5.1 架构
+
+源码目录：`skills/`。安装目录：`~/.codex/skills/mediastorm-*`。
+
+入口：
+
+```text
+$mediastorm-capcut
+```
+
+部署形态：入口路由 + 10 个按编辑意图和验收对象划分的子 Skill。一个复杂任务可以按顺序调用多个子 Skill。
+
+| 子 Skill | 适用任务 |
+| --- | --- |
+| `mediastorm-project-prep` | 素材盘点、编码/帧率、目录、重链接、代理、接入门 |
+| `mediastorm-story-structure` | 叙事结构、信息密度、镜头组接、B-roll 意义、长短片节奏 |
+| `mediastorm-dialogue-interview` | 口播、take、气口、字幕、A/B-roll、多机位与采访 |
+| `mediastorm-music-sound` | 音乐裁切、尾音、J/L-cut、环境声、设计音效、响度 |
+| `mediastorm-speed-time` | 常速变速、慢放、曲线变速、源帧率与补帧风险 |
+| `mediastorm-motion-graphics` | 缩放/位置关键帧、缓动、点跟踪标签、数字闪变、计时器 |
+| `mediastorm-compositing-tracking` | 抠像、蒙版、混合模式、图层合成、平面跟踪与失效 |
+| `mediastorm-color-grading` | Log 还原、示波器、曲线、肤色、镜头匹配与风格 |
+| `mediastorm-generative-broll` | 生成 B-roll、成本授权、提示词、真实性与审看 |
+| `mediastorm-delivery-handoff` | 封面、版本、导出、归档、AI 超分补帧、跨端与发布检查 |
+
+### 5.2 设计原则
+
+- 入口只负责识别目标、检查前提、写出路由顺序、汇总验收和全局安全边界。
+- 每个子 Skill 自带最小 references，不依赖仓库内 `notes/` 或 `cheese/.analysis/`。
+- 通用 CapCut 草稿读写继续使用现有 `capcut-edit`，本组合 Skill 不复制命令手册。
+- 课程知识以原创归纳为主，不复制完整讲稿。
+- 证据标签：
+  - `[课程]`：课程字幕、抽样画面、局部回查支持的归纳。
+  - `[推论]`：助手推导，不冒充讲师原话。
+  - `[工具]`：CLI 契约或本机实验，不自动外推到剪映界面。
+  - `[待验]`：仍需连续音画或界面确认。
+- 所有具体数值默认是案例参数，不是通用预设，包括 2–3 秒、0.3×/0.1×、约 2 帧、0.4 秒、45%、1080p/30fps、4K/60fps 等。
+- 所有 Skill 的 metadata 标记 `status: provisional-unverified-audiovisual`。
+
+### 5.3 确定性工具
+
+`skills/mediastorm-capcut/scripts/check_capcut_contract.py`：
+
+- 只读检查 CLI 版本与契约。
+- 先运行 `describe --compact`，再按命令运行 `describe --command`。
+- 不使用裸 `capcut describe`；本机 0.31.1 观察到此输出在 65,536 字节处截断。
+- 默认验证 24 个命令，支持用 `--command` 缩小或扩展。
+- 解析 JSON，检查 schema 2 和命令缺失。
+- 不调用写入命令、渲染或草稿修改。
+
+## 6. Skill 验证与安装状态
+
+已完成：
+
+- 11 个源码 Skill 和 11 个安装副本通过官方 `quick_validate.py`。
+- 11 个前端目录名与 SKILL.md `name` 完全一致。
+- 所有 Markdown 相对链接存在。
+- 11 个 `agents/openai.yaml` 可被 YAML 解析。
+- 源码与安装副本逐目录 `diff -qr` 一致。
+- 入口契约脚本从源码和安装目录均可运行。
+- 完整契约脚本验证：CLI 0.31.1、schema 2、88 个命令、24 个所需契约全部存在。
+- 用户检查确认技能注入成功。
+- 命名最终恢复为 `mediastorm-*`。
+
+未完成：
+
+- 两个独立前向测试子任务都因 429 频率限制失败，不能算通过。
+- 没有在真实剪映工程中完成本 Skill 的端到端任务验收。
+- 没有完成课程连续音画学习，因此内容层仍是草稿。
+
+### 6.1 Codex 技能清单注意事项
+
+本机 Codex 0.144.1 的初始技能目录受上下文预算限制，`codex debug prompt-input` 曾观察到只展示前 154 条技能，后面的名称被省略。
+
+曾尝试把名称改为 `capcut-mediastorm-*` 以进入可见区间；用户随后要求恢复 `mediastorm-*`，并确认技能注入实际成功。
+
+因此：
+
+- 不要因为某次初始清单未显示全部 `mediastorm-*` 就再次自动改名。
+- 精确名调用以用户当前环境和验证结果为准。
+- 如需再次排查，使用 `$mediastorm-capcut` 显式调用并检查实际加载，而不是只看目录列表长度。
+
+## 7. 本机环境
+
+当前实测：
+
+| 项目 | 当前值 |
+| --- | --- |
+| OS | macOS / Apple Silicon |
+| `capcut` / `capcut-cli` | `0.31.1`，schema 2，88 个命令 |
+| `node` | `v22.22.2`，由 fnm 管理；路径会变化，运行时用 `command -v` |
+| `codex` | `codex-cli 0.144.1` |
+| Skill 源码 | 11 个目录，35 个文件 |
+| Skill 安装 | `~/.codex/skills/mediastorm-*`，11 个目录 |
+| 可用磁盘 | 约 179 MiB（会变化，当前非常紧张） |
+| ASR Python | `cheese/.analysis/.venv/bin/python`，Python 3.12 |
+| ASR 模型 | `mlx-community/whisper-small-mlx`，revision `45f3915923c7a79a5a5b5a7d909d39aeb0e5630e` |
+| 验证依赖 | ASR 环境已含 PyYAML；系统 Python 3 当前缺 `yaml` |
+
+其他环境事实：
+
+- `ffmpeg` / `ffprobe` 可用。
+- 此前隔离临时新草稿 `init / info / lint` 冒烟通过。
+- 既有加密剪映草稿不能直接用 CLI 读改；不要修改或清理它们。
+- `render` 是 FFmpeg 代理预览，不是剪映最终渲染。
+- `matting` 写智能抠像配置，不等于像素抠像已经完成。
+- `detect-silence`、`detect-scenes`、`detect-retakes` 只产生候选。
+- 当前 CLI 支持 `keyframe` 的 `linear / ease-in / ease-out / ease-in-out / hold`，但不等于完整曲线变速或平面跟踪。
+- `loudness` 默认只测量，只有 `--apply` 才写入音量；命令级 `mutates` 不能完整表示选项副作用。
+- 使用任何写命令前继续读取对应 `capcut describe --command <name>` 完整契约。
+
+## 8. 文件位置
+
+公开可提交：
 
 | 路径 | 作用 |
 | --- | --- |
-| `AGENTS.md` | 项目规范、完整计划、验收要求 |
-| `progress/README.md` | 进度时间线、状态语义、本地命令 |
-| `progress/course-ledger.json` | 源路径/哈希、逐课模态状态、比对指标、局部回查记录 |
-| `progress/status.md` | 由账本生成的人类可读状态表 |
-| `progress/remaining-review.md` | 全课程缺口、试点优先时间段、完成证据要求 |
-| `notes/course-reading-01-07.md`、`notes/course-reading-08-18.md` | 初轮原创归纳与时间码，非最终 Skill |
-| `notes/tool-observations.md` | CLI 契约观察、混合模式合成实验、ASR 局限 |
-| `notes/multimodal-options.md` | 2026-10-26 官方文档调查；候选接口均未实测 |
-| `skills/` | 草稿组合 Skill 源码；入口 `mediastorm-capcut` 与 10 个任务子 Skill，均标注未完成音画验收 |
-| `scripts/course_audit.py` | 清单、无遗漏字幕输出、抽帧索引、本地 ASR；支持缓存复用 |
-| `scripts/compare_dialogue.py` | 本地转写比对；完整文本结果只写私有目录 |
-| `scripts/check_progress.py` | 状态一致性、私有证据哈希、Git 媒体排除检查及状态表生成 |
-| `scripts/course-analysis-requirements.txt` | 分析环境依赖版本 |
+| `AGENTS.md` | 规范、计划、内容红线和验收标准 |
+| `README.md` | 项目简介、当前状态和使用入口 |
+| `HANDOFF.md` | 本文，完整接手快照 |
+| `progress/README.md` | 时间线、状态语义、分析命令 |
+| `progress/course-ledger.json` | 逐课源哈希、模态状态、ASR/比对指标 |
+| `progress/status.md` | 由账本生成的状态表 |
+| `progress/remaining-review.md` | 连续音画缺口和优先回查段落 |
+| `notes/course-reading-01-07.md` | 01–07 课原创归纳与时间码 |
+| `notes/course-reading-08-18.md` | 08–18 课原创归纳与时间码 |
+| `notes/tool-observations.md` | CLI、混合模式和 ASR 局限 |
+| `notes/multimodal-options.md` | 音画接口调查 |
+| `skills/mediastorm-capcut/` | 入口 Skill、路由、证据边界、契约脚本 |
+| `skills/mediastorm-*/` | 10 个任务子 Skill 与各自 references |
+| `scripts/course_audit.py` | 清单、字幕阅读稿、抽帧、ASR |
+| `scripts/compare_dialogue.py` | 本地转写比对 |
+| `scripts/check_progress.py` | 账本一致性、原件哈希和 Git 媒体排除 |
+| `scripts/course-analysis-requirements.txt` | 分析环境依赖 |
 
-以下全部被 Git 忽略，不分发：
+本地私有、被 `/cheese/` 忽略：
 
 ```text
 cheese/
 ├── 视频/                         # 18 个 AV1 1080p / AAC MP4
 ├── 字幕/                         # 18 份 .ai-zh.srt
 └── .analysis/
-    ├── .venv/                    # 隔离 Python 3.12 环境
-    ├── models/                   # 本地 Whisper 权重缓存
-    ├── tiktoken/                 # tokenizer 缓存
-    ├── asr/01.json ... 18.json    # 全音轨 ASR，含私有课程文本
-    ├── asr-checks/                # 四处局部重新识别结果
-    ├── dialogue-comparison/       # 全部窗口的两份文本比对
-    ├── visual/01 ... 18/          # manifest.json 与 sheet-*.jpg
-    ├── details/                  # 局部回查截图
-    ├── cli-command-index.json     # 当时读取的 CLI 摘要
+    ├── .venv/                    # Python 3.12 + MLX/ASR/验证依赖
+    ├── models/                   # Whisper 权重缓存
+    ├── tiktoken/
+    ├── asr/01.json ... 18.json
+    ├── asr-checks/
+    ├── dialogue-comparison/
+    ├── visual/01 ... 18/
+    ├── details/
+    ├── cli-command-index.json
     ├── asr-run.log
     └── sheets-run.log
 ```
 
-局部 ASR 的原课程秒数：06 `[488,520]`、09 `[86,108]`、11 `[75,96]`、15 `[74,96]`。文件路径、SHA256 和范围也已写入账本。这里不复制完整转写。
+局部 ASR 原课程秒数：06 `[488,520]`、09 `[86,108]`、11 `[75,96]`、15 `[74,96]`。完整文本不得进入提交或 Skill 包。
 
-## 6. 本机环境与 capcut-cli
-
-本次交接核查：
-
-- `capcut --version`：`0.31.1`；此前已通过 npm 全局安装，入口为 `capcut` / `capcut-cli`。
-- `node --version`：`v22.23.0`，由 fnm 管理。multishell 路径会变化，后续用 `command -v capcut` 定位，不写死临时 shell 路径。
-- `uv`：`/opt/homebrew/bin/uv`。
-- 已安装 Skill：`/Users/ariakage/.codex/skills/capcut-edit/SKILL.md`；本次核实文件存在。
-- 用户指定的创建规范：`/Users/ariakage/.codex/skills/.system/skill-creator/SKILL.md`；此前已完整读取。实际开始编写 Skill 时应遵循它，并用其验证工具。
-- Apple Silicon、24 GiB 统一内存为此前环境核查结果；磁盘空间会变化。本次 `df -h .` 显示可用约 **2.1 GiB**；调查报告内约 655 MiB 是当时快照，不是当前固定值。
-
-之前完成的工具验证，交接本轮未重复全部执行：
-
-- ffmpeg / ffprobe 可用；临时新草稿 init / info / lint 冒烟检查通过。
-- doctor 当时看到 23 个既有加密 JianYing 草稿；不能直接用 CLI 读改。该数量不是本轮重新核查结果。
-- 全局 doctor 未发现 whisper 命令，不影响项目独立 MLX ASR 环境。
-- `render` 为 FFmpeg 代理预览，不等于剪映最终渲染；`matting` 写配置不等于像素抠像已算完。
-- `detect-silence` 和 `detect-retakes` 只给候选，不能替代语义、情绪和 take 判断。
-- 使用具体功能前运行 `capcut describe --command <name>`，不要从命令摘要推导全部参数或能力。
-
-ASR 环境：
-
-- 路径：`cheese/.analysis/.venv/bin/python`，Python 3.12；系统 Python 3.15 曾因依赖无匹配 wheel 失败，未修改系统 Python。
-- mlx-whisper `0.4.3`、Pillow `13.0.0`、opencc-python-reimplemented `0.1.7`。
-- 模型：`mlx-community/whisper-small-mlx`；本次使用 revision `45f3915923c7a79a5a5b5a7d909d39aeb0e5630e`。
-- 所有课程识别在本机执行。模型下载不等于上传课程。
-- 为缓解空间，仅从本次新建环境移除了未被 MLX 转写入口导入的 Torch；随后已做过实际 ASR 推理验证。此环境只用于现成 MLX 权重，不用于 PyTorch 权重转换。
-- 默认重新安装依赖可能重新拉入 Torch，不要无理由重装。
-
-## 7. 已确认的重要纠偏
-
-这些只是帮助接手避免重复错误，完整依据仍看两份课程笔记：
+## 9. 已确认的重要纠偏
 
 - 课程采用 Final Cut Pro 快捷键预设，不能写成剪映通用默认快捷键。
-- 第 06 课 07:06 烧录字幕为 `Drone`，不是现有 SRT 中的 `drum`；尚未直接听原声。
-- 第 07 课 10:38 码率表印为 `KB/s`，单位歧义仍在，不能直接转成 FFmpeg 参数或平台现行要求。
-- 第 10 课表格确实把“强光”放在相关分组，不能简单怪字幕。合成像素实验显示 FFmpeg 的 hardlight 对纯黑覆盖层会压黑灰底；仅为 FFmpeg 实测，剪映对应模式未验。
-- 第 11 课 03:05 的 Apple Log2 / C-Log3 并列属于错误 LUT 演示，不能把截图当正确匹配。
-- 第 12 课跟踪面板、字幕阴影等单帧可能处于修改过程；中间值不等于最终预设。两帧数字动画不能用每秒 1–2 帧的默认采样验收。
-- 第 15 课时长和“时钟理论”是讲师经验，不是生理学定律或平台保证。
-- 第 16 课音乐段 ASR 有幻觉；两份识别相同也不证明真的有这些对白。
-- 第 17 课 10:05 画面模型名为 `Seedance 2.0 Fast`，只是录课界面记录，不保证现在可用或积分不变。
-- 桌面与手机课程的导出参数适用于不同场景，不应强行合并成统一平台规则。
+- 第 06 课 07:06 烧录字幕为 `Drone`，不是 SRT 中的 `drum`；尚未直接听原声。
+- 第 07 课 10:38 码率表印为 `KB/s`，单位和数值含义仍有歧义，不能直接生成 FFmpeg 参数或平台规则。
+- 第 10 课画面确实把“强光”放在变亮相关分组；FFmpeg 实验只证明本机 `hardlight` 对灰底加纯黑覆盖会压黑，不证明剪映同名模式。
+- 第 11 课 03:05 的 Apple Log2 / C-Log3 同屏是错误 LUT 匹配示范。
+- 第 12 课跟踪面板、字幕阴影等单帧可能处于调整过程；中间值不是最终预设，两帧数字动画不能用低采样验收。
+- 第 15 课时长和“时钟理论”是频道经验，不是生理学定律或平台保证。
+- 第 16 课音乐段 ASR 有幻觉；两份识别相同也不证明真的有那些对白。
+- 第 17 课 10:05 的 `Seedance 2.0 Fast` 只是录课界面记录，不保证当前可用或价格不变。
+- 桌面 4K/60fps 与手机 1080p/30fps 是不同条件的示例，不能合并为统一平台规则。
+- 已还原素材不能重复套技术 LUT。
+- `matting` 配置写入不等于抠像像素完成。
+- `render` 代理预览不等于剪映最终导出。
 
-## 8. 接口调查结论与待决策点
+## 10. 后续执行顺序
 
-调查仅查询公开官方资料，未调用模型、上传课程或产生模型调用费用。报告中的型号、价格与条款均为调查日信息，实际选型时重新核对。
+### A. 如果继续完成课程音画验收
 
-- Gemini API：官方支持视频与原音轨输入、时间定位和自定义帧采样。默认静态 1 fps 会漏快速动作。报告给出基础输入约 $0.98–2.90 的估算，**未含输出、思考、重试、加密采样等，不是账单或预算授权**。免费与付费数据使用条款不同，付费也不等于绝不保留。
-- Qwen-Omni：官方区分含音轨的视频文件和纯图像列表；Base64 也是云端上传，不是离线。地区决定端点、Key、模型与价格；不能为 URL 示例把课程放到公开地址，也不能未经核对承诺 ZDR。
-- 本地 Omni：MLX-VLM 的 MiniCPM-o 示例支持图像与音频联合输入，但同步视频链路还没验证。Qwen 官方 BF16 资源需求不能直接外推到这台 Mac 的量化/Metal 路线；尚未下载或试装。
+1. 明确可用的视频/音频输入接口和授权边界。
+2. 用自制合成素材验证闪帧、连续运动、提示音、混响尾音和左右声道。
+3. 做课内短片试点，先不提供字幕和笔记答案。
+4. 记录源哈希、时间范围、音轨传入、采样/分辨率、模型、用量和截断情况。
+5. 分段覆盖 18 课，边界重叠，核对并集无遗漏。
+6. 对音乐、音效、语气、快速动作、变速和运镜做实际听视觉复核。
+7. 只有所有模态和疑点完成，才把 `complete_multimodal_review` 更新为 true。
+8. 依据新证据修正 Skill references 中标注 `[待验]` 的内容。
 
-下一步真正需要确定的是：可使用的接口/硬件，以及云端上传和费用是否获准。未选路线前，保持完整音画状态待完成。
+### B. 如果继续完善 Skill 而不重看视频
 
-## 9. 后续执行顺序
+1. 用真实但隔离的剪映草稿测试技能路由和 capcut-cli 写入。
+2. 对每个子 Skill 做真实任务前向测试，记录误路由和缺失判断。
+3. 完成一次剪映界面重开、保存、听视觉验收。
+4. 把“结构成功、代理预览成功、界面成功、最终听视觉成功”分别记录。
+5. 继续保留 provisional 标记，直到课程和工具两层都达到验收。
 
-1. 读取上述文件，核对仓库与本地产物；若环境变化，重新做小型输入能力探针。
-2. 选定可用链路和资源。云端需明确课程上传范围、提供商/地区、数据处理、总预算；本地需确认存储位置、模型与同步音画实现。
-3. 用自制素材验证已知闪帧、运动、提示音、混响尾音及声道变化，区分联合/仅视觉/仅音频结果；不要先花钱跑全课程。
-4. 路径和授权满足后做课内短片试点。先不给字幕或笔记答案，让模型返回时间码、声音事件、运动变化、界面文字和不确定项，再交叉核对。
-5. 通过试点后连续分段覆盖全部 18 课，边界重叠；记录源哈希、时间范围、音轨输入、采样/分辨率、输出截断、模型和用量。快速演示加密采样并回查原帧；静音减速不能替代原速节奏听验。
-6. 审核所有时间段的实际观察和疑点。完整输入已提交、模型已返回、语义已复核是不同状态，不互相替代。
-7. 满足全部模态标准后，再确定子 Skill 分类、入口路由和共享 references；不提前按课程标题或 CLI 命令凑分类。
-8. 落地工具适配，用隔离合成素材/新草稿验证。区分草稿结构、代理预览、剪映重开保存和最终听视觉验收。
-9. 按 skill-creator 验证入口/子 Skill、资源路径、路由和安装后可发现性；保留现有 `capcut-edit`。
-10. 更新计划、进度与免责声明，重要阶段本地提交；不自动推送。
+### C. 任何时候都不要
 
-## 10. 快速复核命令与已做检查
+- 把字幕、抽帧、ASR 或技能注入成功当成完整音画理解。
+- 把课程案例数值写成所有项目固定预设。
+- 把 `capcut render` 当成最终渲染。
+- 把 `matting` 的 JSON 配置当成像素结果。
+- 未授权上传课程、花积分、调用外部 API 或发布内容。
+- 修改、删除或强制写入既有加密剪映草稿。
 
-在项目根目录执行：
+## 11. 快速复核命令
 
 ```sh
 git status --short
-git log -3 --oneline
+git log -5 --oneline
 python3 scripts/check_progress.py
 ```
 
@@ -208,7 +336,30 @@ python3 scripts/check_progress.py
 python3 scripts/check_progress.py --write-summary
 ```
 
-现有本地产物确实需要重新核对时，可使用下列命令；比对含原文输出不要贴进公开文档：
+验证全部 Skill：
+
+```sh
+PY="cheese/.analysis/.venv/bin/python"
+for dir in skills/mediastorm-*; do
+  "$PY" "$HOME/.codex/skills/.system/skill-creator/scripts/quick_validate.py" "$dir"
+done
+```
+
+验证 CLI 契约：
+
+```sh
+skills/mediastorm-capcut/scripts/check_capcut_contract.py
+```
+
+验证安装副本：
+
+```sh
+for dir in skills/mediastorm-*; do
+  diff -qr "$dir" "$HOME/.codex/skills/$(basename "$dir")"
+done
+```
+
+课程缓存需要复核时：
 
 ```sh
 python3 scripts/course_audit.py inventory
@@ -217,22 +368,26 @@ cheese/.analysis/.venv/bin/python scripts/course_audit.py sheets 01 --interval 2
 cheese/.analysis/.venv/bin/python scripts/course_audit.py transcribe 01
 ```
 
-`inventory` 会复算源哈希并保留已有 review 和字幕空档元数据；发现源变化会报错。`sheets` / `transcribe` 在匹配缓存时复用，不会自动提升已读状态。
+`inventory` 会复算源哈希并保留 review；`sheets` / `transcribe` 在匹配缓存时复用，不会自动提升已读状态。
 
-上一阶段验证通过：原件哈希一致、缓存复用、账本检查、Markdown 本地链接、`git diff --check`。伪造完整验收、改动抽样计数、改动 ASR 哈希的负例均被检查脚本拒绝。本次交接又运行账本检查通过；脚本只能证明记账一致性，不能验证人或模型确实理解了内容。
+## 12. Git 与收尾状态
 
-## 11. Git 与任务收尾状态
-
-创建本文件前工作区干净，最近三个提交为：
+生成本文前工作区干净，最近 5 个提交：
 
 | 提交 | 内容 |
 | --- | --- |
+| `eec5a7c` | `refactor(skills): 恢复 mediastorm 前缀命名` |
+| `d2e1fae` | `feat(skills): 新增影视飓风剪映组合 Skill 草稿` |
+| `a14fc25` | `docs(handoff): 保存当前上下文与接手说明` |
 | `01dd5d2` | `docs(course): 补充音画证据与接口方案评估` |
 | `1979ed4` | `docs(course): 建立全课程研读计划与首轮笔记` |
-| `5749052` | `docs: 添加项目文档并配置课程素材 gitignore` |
 
-本文件的提交记录请以 `git log` 为准，避免自引用提交哈希。此前没有执行远程推送。本地 ASR、抽帧与局部识别任务已结束，没有安排自动后台续跑或定时任务。
+本文这次更新会在提交后进入 `docs(handoff)` 记录；实际哈希以 `git log` 为准，本文不自引用未来哈希。
 
-本轮新增阶段提交（哈希以 `git log` 为准）为 `feat(skills): 新增影视飓风剪映组合 Skill 草稿`，包含 1 个入口、10 个子 Skill、CLI 契约检查脚本及“未做多模态视频读取”的证据更新；不包含课程媒体或全文转写。随后按用户要求恢复 `mediastorm-*` 前缀，另以 `refactor(skills)` 提交命名调整；用户已检查确认技能注入成功。
+状态：
 
-交接完成后应继续保留两项事实：**调查已经完成，完整音画学习及最终组合 Skill 交付仍未完成。**
+- 没有执行远程推送。
+- 没有安排自动后台任务、定时任务或自动上传。
+- 没有课程媒体进入 Git 索引，`check_progress.py` 已通过。
+- 当前磁盘空间非常紧张，不要在未确认空间前下载模型或生成大量转码副本。
+- 交接完成后必须继续保留两项事实：**视频没有完成多模态读取；完整课程音画学习和 Skill 最终视听验收仍未完成。**
