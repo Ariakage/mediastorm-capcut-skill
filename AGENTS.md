@@ -18,7 +18,7 @@
 - `scripts/`：课程盘点、证据检查等可复用工具。
 - `assets/`：README 头图、Remotion 示例海报与成片等静态资源。
 - `remotion/`：可运行的 Remotion 示例工程（合成素材，24 秒 Skill Atlas 演示）；`node_modules/` 与 `out/` 不提交。
-- `skills/`：组合 Skill 源码（一个入口 `mediastorm-capcut` 与按任务边界划分的 10 个子 Skill）；当前为未完成音画验收的草稿版，已安装到 Codex 用户技能目录。
+- `skills/`：组合 Skill 源码（一个入口 `mediastorm-capcut` 与按任务边界划分的 10 个子 Skill）；当前为未完成音画验收的草稿版，已安装到 `~/.agents/skills/mediastorm-*`。
 - `HANDOFF.md`：会话交接快照、已确认约定、现有产物与后续执行入口；实时进度以 `progress/` 和实际核查为准。
 - Skill 采用一个入口 Skill 路由至具体 Skill；源码在 `skills/` 维护，验证后复制安装到 Codex。
 
@@ -107,6 +107,13 @@ chore: 添加 .gitignore
 - 修改 Skill 时不要重新引入中文正文；确需引用中文界面文字时，保留原文并加英文释义。
 - 课程参数、界面标签和平台规则仍按原证据边界处理；英文翻译不提升证据等级。
 
+## 安装位置约定（2026-10-26）
+
+- 本组合 Skill 的当前安装目录是 `~/.agents/skills/mediastorm-*`。
+- 2026-10-26 已从 `~/.codex/skills` 卸载 11 个 `mediastorm-*`，移到 `~/.codex/uninstalled-skills/mediastorm-2026-10-26/` 备份；`capcut-edit` 仍保留在 Codex。
+- 未经用户明确要求，不要把本组合重新装回 `~/.codex/skills`；README 与安装命令以 `.agents` 为准。
+- 安装副本应与 `skills/` 源码保持 `diff -qr` 零差异，并分别通过 `quick_validate.py`。
+
 ## 详细执行计划与验收标准
 
 ### 阶段一：建立清单和真实证据边界
@@ -177,4 +184,6 @@ chore: 添加 .gitignore
 - 2026-10-26 Remotion/英文：新增 `remotion/` 可运行示例与 24 秒合成成片；11 个 SKILL.md 细化到约 1,080 行，references 英文化，证据标签统一；11 个安装副本零差异。
 - 2026-10-26 合成媒体白名单：`assets/demo/synthetic-media.json` 用路径 + SHA256 放行合成演示媒体；课程媒体仍被 `check_progress.py` 拦截。
 - 2026-10-26 推送：用户明确授权本次 `git push origin main`；已推送 `5749052..910e0b5`，`main` 与 `origin/main` 同步。
+- 2026-10-26 GitHub 元数据：仓库简介更新为 CapCut + Remotion 双路径说明；topics 含 `capcut`、`capcut-cli`、`remotion`、`video-editing`、`ai-skill`、`codex-skill`、`motion-graphics`、`color-grading`、`typescript`、`react`、`mediastorm`。
+- 2026-10-26 安装迁移：11 个 `mediastorm-*` 从 `~/.codex/skills` 移到备份并安装到 `~/.agents/skills`；安装副本与源码零差异，`quick_validate.py` 通过。
 - 更新进度后运行 `python3 scripts/check_progress.py --write-summary`，使逐课表与账本同步。该检查只能约束记账一致性，不能判断学习质量。

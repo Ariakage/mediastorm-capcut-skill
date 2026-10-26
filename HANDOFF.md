@@ -16,7 +16,7 @@
 
 - 已完成：18 课全部字幕阅读、全音轨本地 ASR、20 秒与 2 秒两轮画面抽样、局部回查、原创笔记、逐课证据账本。
 - 已完成：18 课按 2 秒间隔抽帧，6,656 帧 / 1,658 张时间码索引页逐张查看；18 篇分课解析合计约 4,600 行。
-- 已完成：1 个入口 Skill + 10 个按任务边界划分的子 Skill，源码在 `skills/`，已安装到 `~/.codex/skills/mediastorm-*`；11 个 SKILL.md 已细化为约 1,080 行，references 已英文化。
+- 已完成：1 个入口 Skill + 10 个按任务边界划分的子 Skill，源码在 `skills/`，已安装到 `~/.agents/skills/mediastorm-*`；11 个 SKILL.md 已细化为约 1,080 行，references 已英文化。旧 Codex 副本已移到 `~/.codex/uninstalled-skills/mediastorm-2026-10-26/` 备份。
 - 已完成：Remotion 4.0.538 + React 19 + TypeScript 合成示例（24 秒 / 1080p / 30fps），源码在 `remotion/`，成片在 `assets/demo/skill-atlas.mp4`。
 - 已完成：Skill 结构、命名、Markdown 链接、界面 YAML、源码与安装副本一致性验证；11 个源码与安装副本均通过 `quick_validate.py`。
 - 已完成：capcut-cli 0.31.1 的运行时契约检查脚本；实测 24 个相关命令契约齐全。
@@ -130,7 +130,7 @@
 
 ### 5.1 架构
 
-源码目录：`skills/`。安装目录：`~/.codex/skills/mediastorm-*`。
+源码目录：`skills/`。安装目录：`~/.agents/skills/mediastorm-*`。`~/.codex/skills/capcut-edit` 仍作为通用 CapCut 参考 Skill 保留，不属于本组合。
 
 入口：
 
@@ -237,7 +237,8 @@ $mediastorm-capcut
 | `npm` | `10.9.8` |
 | `codex` | `codex-cli 0.144.1` |
 | Skill 源码 | 11 个目录，38 个文件（其中 25 个 Markdown） |
-| Skill 安装 | `~/.codex/skills/mediastorm-*`，11 个目录 |
+| Skill 安装 | `~/.agents/skills/mediastorm-*`，11 个目录 |
+| Codex 旧副本 | `~/.codex/uninstalled-skills/mediastorm-2026-10-26/`，11 个目录备份 |
 | Remotion | `4.0.538`；React `19.2.3`；TypeScript `5.9.3` |
 | Remotion 依赖 | `remotion/node_modules` 约 268 MB；Headless Shell 已下载 |
 | 可用磁盘 | 约 13 GiB（2026-10-26 19:27） |
@@ -420,7 +421,7 @@ skills/mediastorm-capcut/scripts/check_capcut_contract.py
 
 ```sh
 for dir in skills/mediastorm-*; do
-  diff -qr "$dir" "$HOME/.codex/skills/$(basename "$dir")"
+  diff -qr "$dir" "$HOME/.agents/skills/$(basename "$dir")"
 done
 ```
 
@@ -510,7 +511,7 @@ git push origin main
 - 入口新增 `skills/mediastorm-capcut/references/visual-evidence-2026-10.md`：方法边界、字幕/旧笔记纠偏、课程内部矛盾、跨课归属修正、可复算关键数值。
 - 10 个子 Skill 的 reference 补入精确时间码与参数：02/03/16 项目接入、05/12/15/16 结构、04/14/17 口播与多机位、06 声音、09 变速、08/12/15 动效、10/13 合成与跟踪、11/16 调色、17/18 生成、03/07/12/16/18 交付。
 - 重要归属修正：第 08 课只讲关键帧/缓动，不含点跟踪标签、数字闪变、计时器；这些在第 12、15 课，平面跟踪在第 13 课。
-- 已同步到 `~/.codex/skills/mediastorm-*`：11 个安装副本与源码 `diff -qr` 零差异，全部通过 `quick_validate.py`。
+- 已同步到 `~/.agents/skills/mediastorm-*`：11 个安装副本与源码 `diff -qr` 零差异，全部通过 `quick_validate.py`。
 - 所有 Skill 仍保留 `status: provisional-unverified-audiovisual`；本轮只回写静态画面可确认的内容，没有把听辨或连续视频结论写进去。
 
 ## 15. 2026-10-26 Remotion 适配与 README 重做
@@ -532,3 +533,12 @@ git push origin main
 - 全部 Skill references 已翻译为英文；证据标签统一为 `[course evidence]`、`[sampled stills]`、`[course narration]`、`[inference]`、`[tool boundary]`、`[pending verification]`。中文 UI 标签只作为界面证据保留并附英文释义。
 - 11 个源码 Skill 通过 `quick_validate.py`；安装副本已同步，`diff -qr` 为零。
 - 边界：示例视频是 Remotion 实现路径的视觉冒烟测试，不含课程媒体，也没有经过听辨或平台验收；Skill 仍是 provisional。
+
+## 17. 2026-10-26 GitHub 元数据与安装迁移
+
+- GitHub 仓库：`https://github.com/Ariakage/mediastorm-capcut-skill`。
+- 简介已更新为：`MediaStorm-inspired CapCut + Remotion editing skills: 18-lesson visual study, 10 editorial sub-skills, and a synthetic Remotion demo.`
+- topics：`capcut`、`capcut-cli`、`remotion`、`video-editing`、`ai-skill`、`codex-skill`、`motion-graphics`、`color-grading`、`typescript`、`react`、`mediastorm`。
+- Codex 卸载：11 个 `~/.codex/skills/mediastorm-*` 已移到 `~/.codex/uninstalled-skills/mediastorm-2026-10-26/` 备份；`~/.codex/skills/capcut-edit` 保留。
+- `.agents` 安装：11 个目录复制到 `~/.agents/skills/mediastorm-*`，与 `skills/` 源码 `diff -qr` 零差异，全部通过 `quick_validate.py`。
+- 安装位置以本节的 `~/.agents/skills` 为准；README、AGENTS 与快速命令已同步。

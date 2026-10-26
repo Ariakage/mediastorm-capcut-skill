@@ -22,22 +22,22 @@
   - **Remotion**：React / TypeScript 组合，使用 `@remotion/media`、`@remotion/transitions`、`@remotion/captions`、`@remotion/effects` 等官方包。
 - 课程知识以原创归纳为主，逐课细节见 [18 课细粒度画面解析](notes/visual-analysis/README.md)。
 
-> 证据边界：本轮完成的是**静态画面层**取证，不是连续视频理解，也没有原声听辨。Remotion 路径是**官方 API 映射与工程建议**，尚未在本仓库实际渲染验收；CapCut 路径有课程画面证据，但同样不等同于剪映最终听视觉验收。
+> 证据边界：本轮完成的是**静态画面层**取证，不是连续视频理解，也没有原声听辨。Remotion 路径已有**合成素材示例并完成渲染**，但仍不代表课程素材、CapCut 路径或平台验收；CapCut 路径有课程画面证据，但同样不等同于剪映最终听视觉验收。
 
 ## 支持的两条路径
 
 | 环节 | CapCut 路径 | Remotion / TypeScript 路径 | 当前证据 |
 | --- | --- | --- | --- |
-| 工程与素材 | `capcut-cli` 读草稿；`capcut-edit` 做通用写入 | `mediabunny` 读时长/尺寸；`calculateMetadata` 设画布与时长；`staticFile()` 管素材 | CapCut 已实测；Remotion 为官方 API 映射 |
-| 时间线 | CapCut 多轨、主轨磁吸、复合片段 | `<Sequence>` / `<Series>` / `TransitionSeries` | CapCut 有画面证据；Remotion 未渲染 |
-| 口播与字幕 | 智能剪口播、字幕识别、安全区 | `@remotion/captions` 的 `Caption` 类型；SRT 导入；`@remotion/layout-utils` | CapCut 有画面证据；Remotion 未渲染 |
-| 声音 | 音频轨、复合片段、回音、声道配置 | `@remotion/media` 的 `<Audio>`；`trimBefore`、`volume`、`playbackRate`；`@remotion/media-utils` | CapCut 有画面/波形证据；**未听辨** |
-| 变速 | 常规变速、曲线变速、智能补帧 | `<Video playbackRate>`、`trimBefore`、`durationInFrames`；`@remotion/motion-blur` | CapCut 有面板读数；Remotion 未渲染 |
-| 动效 | 关键帧、缓动、跟踪标签、数字闪变、计时器 | `interpolate`、`Easing`、`spring`、`useCurrentFrame`；`@remotion/shapes` | CapCut 有参数证据；Remotion 未渲染 |
+| 工程与素材 | `capcut-cli` 读草稿；`capcut-edit` 做通用写入 | `mediabunny` 读时长/尺寸；`calculateMetadata` 设画布与时长；`staticFile()` 管素材 | CapCut 已实测；Remotion 示例已渲染（合成素材） |
+| 时间线 | CapCut 多轨、主轨磁吸、复合片段 | `<Sequence>` / `<Series>` / `TransitionSeries` | CapCut 有画面证据；Remotion 示例已渲染 |
+| 口播与字幕 | 智能剪口播、字幕识别、安全区 | `@remotion/captions` 的 `Caption` 类型；SRT 导入；`@remotion/layout-utils` | CapCut 有画面证据；Remotion 示例已渲染字幕 |
+| 声音 | 音频轨、复合片段、回音、声道配置 | `@remotion/media` 的 `<Audio>`；`trimBefore`、`volume`、`playbackRate`；`@remotion/media-utils` | CapCut 有画面/波形证据；**未听辨**；Remotion 示例仅有合成环境音 |
+| 变速 | 常规变速、曲线变速、智能补帧 | `<Video playbackRate>`、`trimBefore`、`durationInFrames`；`@remotion/motion-blur` | CapCut 有面板读数；Remotion 示例未覆盖变速 |
+| 动效 | 关键帧、缓动、跟踪标签、数字闪变、计时器 | `interpolate`、`Easing`、`spring`、`useCurrentFrame`；`@remotion/shapes` | CapCut 有参数证据；Remotion 示例已渲染关键帧/曲线 |
 | 抠像与跟踪 | 智能抠像、色度抠图、蒙版、混合模式、平面跟踪 | `@remotion/effects` 的 `colorKey` / `cornerPin`；平面求解需外部数据 | CapCut 有界面证据；Remotion 仅部分可映射 |
-| 调色 | Log 还原、LUT、基础/HSL/色轮、曲线、示波器 | `colorCorrection()`、`lut()`、`@remotion/effects` | CapCut 有参数证据；Remotion 未渲染 |
-| 生成式 B-roll | 剪映 AI 生成、手机 AI 特效 | 外部生成 API + `staticFile()`；`@remotion/player` 审看 | 仅录课界面证据 |
-| 交付 | 封面、命名、导出、归档、跨端 | `@remotion/renderer`、`@remotion/cli`、`@remotion/lambda` | CapCut 有导出面板证据；平台规则需另查 |
+| 调色 | Log 还原、LUT、基础/HSL/色轮、曲线、示波器 | `colorCorrection()`、`lut()`、`@remotion/effects` | CapCut 有参数证据；Remotion 示例已渲染 colorCorrection |
+| 生成式 B-roll | 剪映 AI 生成、手机 AI 特效 | 外部生成 API + `staticFile()`；`@remotion/player` 审看 | 仅录课界面证据；示例未覆盖生成 |
+| 交付 | 封面、命名、导出、归档、跨端 | `@remotion/renderer`、`@remotion/cli`、`@remotion/lambda` | CapCut 有导出面板证据；Remotion 示例已渲染本地成片；平台规则需另查 |
 
 ## Remotion 示例视频
 
@@ -51,18 +51,18 @@
 
 ## Skill 安装
 
-### 1. 安装到 Codex 用户技能目录
+### 1. 安装到 `.agents` 技能目录
 
 ```bash
-mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
+mkdir -p "$HOME/.agents/skills"
 for dir in skills/mediastorm-*; do
-  rsync -a "$dir/" "${CODEX_HOME:-$HOME/.codex}/skills/$(basename "$dir")/"
+  rsync -a "$dir/" "$HOME/.agents/skills/$(basename "$dir")/"
 done
 ```
 
 更新时重复执行即可；不带 `--delete`，不会删除你手动加在安装目录里的文件。Windows 可把 `rsync -a` 换成资源管理器复制或 `robocopy`。
 
-`capcut-edit` 是本项目参考的通用 CapCut 草稿编辑 Skill，单独安装/维护，不包含在 `skills/` 中。
+当前机器的安装状态：11 个 `mediastorm-*` 已从 `~/.codex/skills` 卸载并移到 `~/.codex/uninstalled-skills/mediastorm-2026-10-26/` 备份，随后安装到 `~/.agents/skills/mediastorm-*`。`capcut-edit` 仍保留在 `~/.codex/skills/capcut-edit`，不随本组合 Skill 迁移。
 
 ### 2. 调用入口
 
@@ -81,7 +81,7 @@ $mediastorm-capcut 帮我把这段口播做成 60 秒短片：
 
 ```bash
 python3 "$HOME/.codex/skills/.system/skill-creator/scripts/quick_validate.py" \
-  "$HOME/.codex/skills/mediastorm-capcut"
+  "$HOME/.agents/skills/mediastorm-capcut"
 ```
 
 ### 4. 创建 Remotion 工程（可选）
