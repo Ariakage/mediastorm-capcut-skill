@@ -87,6 +87,8 @@ def inventory() -> None:
             "video_sha256": sha, "subtitle_sha256": digest(subtitle),
             "duration_seconds": duration, "streams": data["streams"],
             "subtitle_cues": len(entries), "subtitle_last_end": entries[-1]["end"],
+            **({"subtitle_gap_candidates": prior["subtitle_gap_candidates"]}
+               if "subtitle_gap_candidates" in prior else {}),
             "review": prior.get("review", {
                 "subtitles": {"state": "pending", "reviewed_cues": 0},
                 "visual_samples": {"state": "pending", "reviewed_sheets": [], "interval_seconds": None},
@@ -126,6 +128,14 @@ def sheets(ids: list[str], interval: float) -> None:
             continue
         out = PRIVATE / "visual" / row["id"]
         out.mkdir(parents=True, exist_ok=True)
+        manifest_file=out/"manifest.json"
+        if manifest_file.is_file():
+            existing=json.loads(manifest_file.read_text())
+            if (existing.get("video_sha256")==row["video_sha256"]
+                    and existing.get("interval_seconds")==interval
+                    and all((out/s["file"]).is_file() for s in existing["sheets"])):
+                print(f"Visual {row['id']} cached; not newly reviewed",flush=True)
+                continue
         # Frame 0, then one frame each interval. Samples are never recorded as continuous viewing.
         with tempfile.TemporaryDirectory(prefix="frames-", dir=PRIVATE) as working:
             decoded = subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "info", "-threads", "2",
@@ -137,10 +147,11 @@ def sheets(ids: list[str], interval: float) -> None:
             timestamps = [float(t) for t in re.findall(r"pts_time:([0-9.]+)", decoded.stderr)]
             if len(timestamps) != len(frames):
                 raise ValueError(f"Frame/timestamp mismatch for {row['id']}")
-            manifest = {"lesson": row["id"], "interval_seconds": interval, "mode": "sampled_stills", "sheets": []}
+            manifest = {"lesson": row["id"], "video_sha256":row["video_sha256"],
+                        "interval_seconds": interval, "mode": "sampled_stills", "sheets": []}
             for base in range(0, len(frames), 24):
                 group = frames[base:base+24]
-                canvas = Image.new("RGB", (1920, 6 * 298), "#121212")
+                canvas = Image.new("RGB", (1920, math.ceil(len(group)/4) * 298), "#121212")
                 draw = ImageDraw.Draw(canvas)
                 times = []
                 for j, frame in enumerate(group):
@@ -157,7 +168,7 @@ def sheets(ids: list[str], interval: float) -> None:
             print(json.dumps({"id":row["id"],"samples":len(frames),"sheets":len(manifest["sheets"]),"directory":str(out)},ensure_ascii=False),flush=True)
 
 
-def transcribe(model: str) -> None:
+def transcribe(model: str, ids: list[str]) -> None:
     import os
     os.environ.setdefault("HF_HOME", str(PRIVATE/"models"))
     os.environ.setdefault("HF_HUB_DISABLE_TELEMETRY", "1")
@@ -165,8 +176,15 @@ def transcribe(model: str) -> None:
     out = PRIVATE/"asr"
     out.mkdir(parents=True,exist_ok=True)
     for row in load()["lessons"]:
+        if row["id"] not in ids:
+            continue
         target = out/f"{row['id']}.json"
         if target.exists():
+            cached=json.loads(target.read_text())
+            if cached.get("audit",{}).get("video_sha256") != row["video_sha256"]:
+                raise ValueError(f"Cached ASR/source mismatch for {row['id']}")
+            if cached.get("audit",{}).get("model") != model:
+                raise ValueError(f"Cached ASR model differs for {row['id']}; use a separate output directory")
             print(f"ASR {row['id']} cached",flush=True)
             continue
         print(f"ASR {row['id']} start {row['title']}",flush=True)
@@ -180,6 +198,12 @@ def transcribe(model: str) -> None:
         tmp.write_text(json.dumps(result,ensure_ascii=False,indent=2))
         tmp.replace(target)
         print(f"ASR {row['id']} completed: {len(result.get('segments',[]))} segments",flush=True)
+        # Release per-lesson tensors/cached allocations before opening the next long file.
+        del result
+        import gc
+        import mlx.core as mx
+        gc.collect()
+        mx.clear_cache()
 
 
 def main() -> None:
@@ -196,7 +220,7 @@ def main() -> None:
     if args.command=="inventory": inventory()
     elif args.command=="read": read(ids)
     elif args.command=="sheets": sheets(ids,args.interval)
-    else: transcribe(args.model)
+    else: transcribe(args.model,ids)
 
 
 if __name__=="__main__":

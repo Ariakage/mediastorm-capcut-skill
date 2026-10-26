@@ -28,6 +28,7 @@
       ],
       "subtitle_cues": 59,
       "subtitle_last_end": 112.14,
+      "subtitle_gap_candidates": [],
       "review": {
         "subtitles": {
           "state": "read_all_cues",
@@ -42,14 +43,25 @@
           "interval_seconds": 20,
           "detail_timestamps": [
             20
-          ]
+          ],
+          "reviewed_frame_count": 6,
+          "manifest_sha256": "af0073f53bed1b556d5231985a225d7e5619eeb6e04ae8daa84c1dd308ade90f"
         },
         "continuous_video": {
           "state": "pending",
           "reason": "No verified continuous-video input"
         },
         "audio_dialogue_asr": {
-          "state": "pending"
+          "state": "transcribed_full_input",
+          "segments": 64,
+          "model": "mlx-community/whisper-small-mlx",
+          "comparison": "completed_full_window_comparison; not listening",
+          "actual_listening": false,
+          "asr_sha256": "d2599e9774fcc85a663e7fa8cfaee2930a8828c943616672abf8b258d1a8b593",
+          "comparison_windows": 4,
+          "low_similarity_windows": 0,
+          "automatic_comparison": "completed; not human review",
+          "low_similarity_review": "all 0 flagged windows read; not actual listening"
         },
         "audio_listening": {
           "state": "unavailable",
@@ -86,6 +98,7 @@
       ],
       "subtitle_cues": 144,
       "subtitle_last_end": 303.1,
+      "subtitle_gap_candidates": [],
       "review": {
         "subtitles": {
           "state": "read_all_cues",
@@ -97,14 +110,25 @@
           "reviewed_sheets": [
             "sheet-001.jpg"
           ],
-          "interval_seconds": 20
+          "interval_seconds": 20,
+          "reviewed_frame_count": 16,
+          "manifest_sha256": "7071ed9b21c2ed4dfa29d7f685e7f0bbcd2f30ac4e97a850fdd67b5b29cb5259"
         },
         "continuous_video": {
           "state": "pending",
           "reason": "No verified continuous-video input"
         },
         "audio_dialogue_asr": {
-          "state": "pending"
+          "state": "transcribed_full_input",
+          "segments": 148,
+          "model": "mlx-community/whisper-small-mlx",
+          "comparison": "completed_full_window_comparison; not listening",
+          "actual_listening": false,
+          "asr_sha256": "ab632cf4f9ad414482e25d9ed04789b22ddfa7ad6c65d0651d3108d2a1e1eaae",
+          "comparison_windows": 11,
+          "low_similarity_windows": 0,
+          "automatic_comparison": "completed; not human review",
+          "low_similarity_review": "all 0 flagged windows read; not actual listening"
         },
         "audio_listening": {
           "state": "unavailable",
@@ -141,6 +165,13 @@
       ],
       "subtitle_cues": 302,
       "subtitle_last_end": 695.96,
+      "subtitle_gap_candidates": [
+        {
+          "start": 34.93,
+          "end": 52.2,
+          "kind": "subtitle_gap; not proof of silence"
+        }
+      ],
       "review": {
         "subtitles": {
           "state": "read_all_cues",
@@ -155,15 +186,27 @@
           ],
           "interval_seconds": 20,
           "detail_timestamps": [
-            650
-          ]
+            650,
+            657
+          ],
+          "reviewed_frame_count": 35,
+          "manifest_sha256": "d6e6179f47ad3309544c3474b9e1f3c1bd0662825719b2d4c7a5c4bc634cc691"
         },
         "continuous_video": {
           "state": "pending",
           "reason": "No verified continuous-video input"
         },
         "audio_dialogue_asr": {
-          "state": "pending"
+          "state": "transcribed_full_input",
+          "segments": 375,
+          "model": "mlx-community/whisper-small-mlx",
+          "comparison": "completed_full_window_comparison; not listening",
+          "actual_listening": false,
+          "asr_sha256": "98ee890ee55ccb2d2bbc461ba9a24d68ae651f007d28ad189f0088d141f49330",
+          "comparison_windows": 24,
+          "low_similarity_windows": 0,
+          "automatic_comparison": "completed; not human review",
+          "low_similarity_review": "all 0 flagged windows read; not actual listening"
         },
         "audio_listening": {
           "state": "unavailable",
@@ -200,6 +243,13 @@
       ],
       "subtitle_cues": 459,
       "subtitle_last_end": 956.0,
+      "subtitle_gap_candidates": [
+        {
+          "start": 47.57,
+          "end": 63.22,
+          "kind": "subtitle_gap; not proof of silence"
+        }
+      ],
       "review": {
         "subtitles": {
           "state": "read_all_cues",
@@ -207,20 +257,36 @@
           "evidence": "notes/course-reading-01-07.md"
         },
         "visual_samples": {
-          "state": "pending",
-          "reviewed_sheets": [],
-          "interval_seconds": null,
+          "state": "reviewed_sample_sheets",
+          "reviewed_sheets": [
+            "sheet-001.jpg",
+            "sheet-002.jpg"
+          ],
+          "interval_seconds": 20,
           "detail_timestamps": [
             160,
-            833
-          ]
+            165,
+            833,
+            837
+          ],
+          "reviewed_frame_count": 48,
+          "manifest_sha256": "b1084d0117784585c0de3fb1a382f8467e2d8a4272ca677db0185d3e1c752bdf"
         },
         "continuous_video": {
           "state": "pending",
           "reason": "No verified continuous-video input"
         },
         "audio_dialogue_asr": {
-          "state": "pending"
+          "state": "transcribed_full_input",
+          "segments": 528,
+          "model": "mlx-community/whisper-small-mlx",
+          "comparison": "completed_full_window_comparison; not listening",
+          "actual_listening": false,
+          "asr_sha256": "5f0bb2160d1fe5fcf57d8b35d1b799ce902f6d9bd7d12912d2014f56b6a2dda4",
+          "comparison_windows": 32,
+          "low_similarity_windows": 0,
+          "automatic_comparison": "completed; not human review",
+          "low_similarity_review": "all 0 flagged windows read; not actual listening"
         },
         "audio_listening": {
           "state": "unavailable",
@@ -257,6 +323,23 @@
       ],
       "subtitle_cues": 283,
       "subtitle_last_end": 693.62,
+      "subtitle_gap_candidates": [
+        {
+          "start": 32.43,
+          "end": 49.56,
+          "kind": "subtitle_gap; not proof of silence"
+        },
+        {
+          "start": 118.41,
+          "end": 143.46,
+          "kind": "subtitle_gap; not proof of silence"
+        },
+        {
+          "start": 473.1,
+          "end": 503.3,
+          "kind": "subtitle_gap; not proof of silence"
+        }
+      ],
       "review": {
         "subtitles": {
           "state": "read_all_cues",
@@ -264,16 +347,30 @@
           "evidence": "notes/course-reading-01-07.md"
         },
         "visual_samples": {
-          "state": "pending",
-          "reviewed_sheets": [],
-          "interval_seconds": null
+          "state": "reviewed_sample_sheets",
+          "reviewed_sheets": [
+            "sheet-001.jpg",
+            "sheet-002.jpg"
+          ],
+          "interval_seconds": 20,
+          "reviewed_frame_count": 35,
+          "manifest_sha256": "cd0940caf7f3ab5646a7c14936e98ae73d7df5c2ec06fcd1672ca8cf195c0f3a"
         },
         "continuous_video": {
           "state": "pending",
           "reason": "No verified continuous-video input"
         },
         "audio_dialogue_asr": {
-          "state": "pending"
+          "state": "transcribed_full_input",
+          "segments": 325,
+          "model": "mlx-community/whisper-small-mlx",
+          "comparison": "completed_full_window_comparison; not listening",
+          "actual_listening": false,
+          "asr_sha256": "d36162a7bf54588e878cf4c6452b9f15d04c94405a4a6aaddcad7d7d279e2091",
+          "comparison_windows": 24,
+          "low_similarity_windows": 2,
+          "automatic_comparison": "completed; not human review",
+          "low_similarity_review": "all 2 flagged windows read; not actual listening"
         },
         "audio_listening": {
           "state": "unavailable",
@@ -310,6 +407,23 @@
       ],
       "subtitle_cues": 296,
       "subtitle_last_end": 688.62,
+      "subtitle_gap_candidates": [
+        {
+          "start": 12.61,
+          "end": 30.06,
+          "kind": "subtitle_gap; not proof of silence"
+        },
+        {
+          "start": 400.79,
+          "end": 411.18,
+          "kind": "subtitle_gap; not proof of silence"
+        },
+        {
+          "start": 449.01,
+          "end": 487.48,
+          "kind": "subtitle_gap; not proof of silence"
+        }
+      ],
       "review": {
         "subtitles": {
           "state": "read_all_cues",
@@ -317,19 +431,44 @@
           "evidence": "notes/course-reading-01-07.md"
         },
         "visual_samples": {
-          "state": "pending",
-          "reviewed_sheets": [],
-          "interval_seconds": null,
+          "state": "reviewed_sample_sheets",
+          "reviewed_sheets": [
+            "sheet-001.jpg",
+            "sheet-002.jpg"
+          ],
+          "interval_seconds": 20,
           "detail_timestamps": [
-            510
-          ]
+            426,
+            510,
+            518
+          ],
+          "reviewed_frame_count": 35,
+          "manifest_sha256": "14ecde310a54b5cedfae6d90b41651b9dd14094874ba6c5c7ea53e7216ce43eb"
         },
         "continuous_video": {
           "state": "pending",
           "reason": "No verified continuous-video input"
         },
         "audio_dialogue_asr": {
-          "state": "pending"
+          "state": "transcribed_full_input",
+          "segments": 323,
+          "model": "mlx-community/whisper-small-mlx",
+          "comparison": "completed_full_window_comparison; not listening",
+          "actual_listening": false,
+          "asr_sha256": "fe6adfeb92fa7f45ae1e7d03d022d7da938f0176065310dc58397a84612b16eb",
+          "comparison_windows": 24,
+          "low_similarity_windows": 3,
+          "automatic_comparison": "completed; not human review",
+          "low_similarity_review": "all 3 flagged windows read; not actual listening",
+          "targeted_retry": {
+            "source_range_seconds": [
+              488,
+              520
+            ],
+            "file": "cheese/.analysis/asr-checks/06-488-520.json",
+            "sha256": "05217b04e6ec3b98f45a724a372a901f6449bed969a36d53b6a5fc667fef938e",
+            "scope": "supplemental local speech recognition; no actual listening; original full-input ASR preserved"
+          }
         },
         "audio_listening": {
           "state": "unavailable",
@@ -366,6 +505,13 @@
       ],
       "subtitle_cues": 446,
       "subtitle_last_end": 892.28,
+      "subtitle_gap_candidates": [
+        {
+          "start": 46.53,
+          "end": 63.3,
+          "kind": "subtitle_gap; not proof of silence"
+        }
+      ],
       "review": {
         "subtitles": {
           "state": "read_all_cues",
@@ -373,19 +519,33 @@
           "evidence": "notes/course-reading-01-07.md"
         },
         "visual_samples": {
-          "state": "pending",
-          "reviewed_sheets": [],
-          "interval_seconds": null,
+          "state": "reviewed_sample_sheets",
+          "reviewed_sheets": [
+            "sheet-001.jpg",
+            "sheet-002.jpg"
+          ],
+          "interval_seconds": 20,
           "detail_timestamps": [
             638
-          ]
+          ],
+          "reviewed_frame_count": 45,
+          "manifest_sha256": "be69cfec0812583014db208da761363c8098a4a7260483763ec3fd9e080be078"
         },
         "continuous_video": {
           "state": "pending",
           "reason": "No verified continuous-video input"
         },
         "audio_dialogue_asr": {
-          "state": "pending"
+          "state": "transcribed_full_input",
+          "segments": 486,
+          "model": "mlx-community/whisper-small-mlx",
+          "comparison": "completed_full_window_comparison; not listening",
+          "actual_listening": false,
+          "asr_sha256": "97c3d6e038fd7436a843eb238666bef16efe7841106438e684be47b45fd50df5",
+          "comparison_windows": 30,
+          "low_similarity_windows": 0,
+          "automatic_comparison": "completed; not human review",
+          "low_similarity_review": "all 0 flagged windows read; not actual listening"
         },
         "audio_listening": {
           "state": "unavailable",
@@ -422,6 +582,13 @@
       ],
       "subtitle_cues": 301,
       "subtitle_last_end": 653.86,
+      "subtitle_gap_candidates": [
+        {
+          "start": 33.44,
+          "end": 50.5,
+          "kind": "subtitle_gap; not proof of silence"
+        }
+      ],
       "review": {
         "subtitles": {
           "state": "read_all_cues",
@@ -429,16 +596,30 @@
           "evidence": "notes/course-reading-08-18.md"
         },
         "visual_samples": {
-          "state": "pending",
-          "reviewed_sheets": [],
-          "interval_seconds": null
+          "state": "reviewed_sample_sheets",
+          "reviewed_sheets": [
+            "sheet-001.jpg",
+            "sheet-002.jpg"
+          ],
+          "interval_seconds": 20,
+          "reviewed_frame_count": 33,
+          "manifest_sha256": "c85d544916e633564b51d1daa735a5e44f7f7359c7721423f40280d6febaac7a"
         },
         "continuous_video": {
           "state": "pending",
           "reason": "No verified continuous-video input"
         },
         "audio_dialogue_asr": {
-          "state": "pending"
+          "state": "transcribed_full_input",
+          "segments": 313,
+          "model": "mlx-community/whisper-small-mlx",
+          "comparison": "completed_full_window_comparison; not listening",
+          "actual_listening": false,
+          "asr_sha256": "1195496a00d26f5495efc573ca7b92113743a6e0fe4347dfb1f9f670ec039859",
+          "comparison_windows": 22,
+          "low_similarity_windows": 0,
+          "automatic_comparison": "completed; not human review",
+          "low_similarity_review": "all 0 flagged windows read; not actual listening"
         },
         "audio_listening": {
           "state": "unavailable",
@@ -475,6 +656,13 @@
       ],
       "subtitle_cues": 307,
       "subtitle_last_end": 650.46,
+      "subtitle_gap_candidates": [
+        {
+          "start": 68.78,
+          "end": 86.58,
+          "kind": "subtitle_gap; not proof of silence"
+        }
+      ],
       "review": {
         "subtitles": {
           "state": "read_all_cues",
@@ -482,16 +670,39 @@
           "evidence": "notes/course-reading-08-18.md"
         },
         "visual_samples": {
-          "state": "pending",
-          "reviewed_sheets": [],
-          "interval_seconds": null
+          "state": "reviewed_sample_sheets",
+          "reviewed_sheets": [
+            "sheet-001.jpg",
+            "sheet-002.jpg"
+          ],
+          "interval_seconds": 20,
+          "reviewed_frame_count": 33,
+          "manifest_sha256": "75b33fde68c0550afe3c4bab0bb3320b3aa9f881861b614bc819fda4df73dbe8"
         },
         "continuous_video": {
           "state": "pending",
           "reason": "No verified continuous-video input"
         },
         "audio_dialogue_asr": {
-          "state": "pending"
+          "state": "transcribed_full_input",
+          "model": "mlx-community/whisper-small-mlx",
+          "segments": 371,
+          "asr_sha256": "0318b9d6d5802799b6b210e5abfe09b1071009a8e9df41634b488be5734791b6",
+          "comparison_windows": 22,
+          "low_similarity_windows": 1,
+          "automatic_comparison": "completed; not human review",
+          "actual_listening": false,
+          "low_similarity_review": "all 1 flagged windows read; not actual listening",
+          "comparison": "completed_full_window_comparison; not listening",
+          "targeted_retry": {
+            "source_range_seconds": [
+              86,
+              108
+            ],
+            "file": "cheese/.analysis/asr-checks/09-86-108.json",
+            "sha256": "41e9dab96498337d452fad47e2c86a7ec36fcff1e3fa609b74d876ae07e5676c",
+            "scope": "supplemental local speech recognition; no actual listening; original full-input ASR preserved"
+          }
         },
         "audio_listening": {
           "state": "unavailable",
@@ -528,6 +739,13 @@
       ],
       "subtitle_cues": 349,
       "subtitle_last_end": 729.26,
+      "subtitle_gap_candidates": [
+        {
+          "start": 41.66,
+          "end": 57.8,
+          "kind": "subtitle_gap; not proof of silence"
+        }
+      ],
       "review": {
         "subtitles": {
           "state": "read_all_cues",
@@ -535,16 +753,33 @@
           "evidence": "notes/course-reading-08-18.md"
         },
         "visual_samples": {
-          "state": "pending",
-          "reviewed_sheets": [],
-          "interval_seconds": null
+          "state": "reviewed_sample_sheets",
+          "reviewed_sheets": [
+            "sheet-001.jpg",
+            "sheet-002.jpg"
+          ],
+          "interval_seconds": 20,
+          "detail_timestamps": [
+            625
+          ],
+          "reviewed_frame_count": 37,
+          "manifest_sha256": "a0a968cf978032566d681ded85e040574ce4af1d0707a4ac947d250edd1843cd"
         },
         "continuous_video": {
           "state": "pending",
           "reason": "No verified continuous-video input"
         },
         "audio_dialogue_asr": {
-          "state": "pending"
+          "state": "transcribed_full_input",
+          "model": "mlx-community/whisper-small-mlx",
+          "segments": 385,
+          "asr_sha256": "63600d4fd1c683f7f5d58a20e6f2a3c31ff4cd67828ecdd3d3083fd9e13c2a5f",
+          "comparison_windows": 25,
+          "low_similarity_windows": 0,
+          "automatic_comparison": "completed; not human review",
+          "actual_listening": false,
+          "low_similarity_review": "all 0 flagged windows read; not actual listening",
+          "comparison": "completed_full_window_comparison; not listening"
         },
         "audio_listening": {
           "state": "unavailable",
@@ -581,6 +816,13 @@
       ],
       "subtitle_cues": 358,
       "subtitle_last_end": 771.7,
+      "subtitle_gap_candidates": [
+        {
+          "start": 57.56,
+          "end": 74.96000000000001,
+          "kind": "subtitle_gap; not proof of silence"
+        }
+      ],
       "review": {
         "subtitles": {
           "state": "read_all_cues",
@@ -588,16 +830,42 @@
           "evidence": "notes/course-reading-08-18.md"
         },
         "visual_samples": {
-          "state": "pending",
-          "reviewed_sheets": [],
-          "interval_seconds": null
+          "state": "reviewed_sample_sheets",
+          "reviewed_sheets": [
+            "sheet-001.jpg",
+            "sheet-002.jpg"
+          ],
+          "interval_seconds": 20,
+          "detail_timestamps": [
+            185
+          ],
+          "reviewed_frame_count": 39,
+          "manifest_sha256": "732cb73e7d42faa4481dfad3fd0568afabc8cde59a3738f226aff0d24129ee45"
         },
         "continuous_video": {
           "state": "pending",
           "reason": "No verified continuous-video input"
         },
         "audio_dialogue_asr": {
-          "state": "pending"
+          "state": "transcribed_full_input",
+          "model": "mlx-community/whisper-small-mlx",
+          "segments": 393,
+          "asr_sha256": "f389fa2713d0d5257fc65f822556de47d9efa472774654c7b5e29f0ec241f128",
+          "comparison_windows": 26,
+          "low_similarity_windows": 1,
+          "automatic_comparison": "completed; not human review",
+          "actual_listening": false,
+          "low_similarity_review": "all 1 flagged windows read; not actual listening",
+          "comparison": "completed_full_window_comparison; not listening",
+          "targeted_retry": {
+            "source_range_seconds": [
+              75,
+              96
+            ],
+            "file": "cheese/.analysis/asr-checks/11-75-96.json",
+            "sha256": "b6ff0c1d844505bc24f170528b219ca8b10ff3b2eb3c89b5557c17c7e5c681ae",
+            "scope": "supplemental local speech recognition; no actual listening; original full-input ASR preserved"
+          }
         },
         "audio_listening": {
           "state": "unavailable",
@@ -634,6 +902,23 @@
       ],
       "subtitle_cues": 509,
       "subtitle_last_end": 1122.46,
+      "subtitle_gap_candidates": [
+        {
+          "start": 24.5,
+          "end": 40.72,
+          "kind": "subtitle_gap; not proof of silence"
+        },
+        {
+          "start": 753.35,
+          "end": 768.6,
+          "kind": "subtitle_gap; not proof of silence"
+        },
+        {
+          "start": 1073.31,
+          "end": 1089.24,
+          "kind": "subtitle_gap; not proof of silence"
+        }
+      ],
       "review": {
         "subtitles": {
           "state": "read_all_cues",
@@ -641,16 +926,34 @@
           "evidence": "notes/course-reading-08-18.md"
         },
         "visual_samples": {
-          "state": "pending",
-          "reviewed_sheets": [],
-          "interval_seconds": null
+          "state": "reviewed_sample_sheets",
+          "reviewed_sheets": [
+            "sheet-001.jpg",
+            "sheet-002.jpg",
+            "sheet-003.jpg"
+          ],
+          "interval_seconds": 20,
+          "detail_timestamps": [
+            504
+          ],
+          "reviewed_frame_count": 57,
+          "manifest_sha256": "6c9798332873c7ca2f48a5106b9b3ca14c4ce6a8426bfd21f8c02017ec4442f8"
         },
         "continuous_video": {
           "state": "pending",
           "reason": "No verified continuous-video input"
         },
         "audio_dialogue_asr": {
-          "state": "pending"
+          "state": "transcribed_full_input",
+          "model": "mlx-community/whisper-small-mlx",
+          "segments": 546,
+          "asr_sha256": "ce7fc6c4a1f6c1d0490a358e3a06633e95cf2d987ebc563fafb3a7a388ebb125",
+          "comparison_windows": 38,
+          "low_similarity_windows": 0,
+          "automatic_comparison": "completed; not human review",
+          "actual_listening": false,
+          "low_similarity_review": "all 0 flagged windows read; not actual listening",
+          "comparison": "completed_full_window_comparison; not listening"
         },
         "audio_listening": {
           "state": "unavailable",
@@ -687,6 +990,18 @@
       ],
       "subtitle_cues": 286,
       "subtitle_last_end": 654.0,
+      "subtitle_gap_candidates": [
+        {
+          "start": 49.04,
+          "end": 66.08,
+          "kind": "subtitle_gap; not proof of silence"
+        },
+        {
+          "start": 621.47,
+          "end": 636.86,
+          "kind": "subtitle_gap; not proof of silence"
+        }
+      ],
       "review": {
         "subtitles": {
           "state": "read_all_cues",
@@ -694,16 +1009,30 @@
           "evidence": "notes/course-reading-08-18.md"
         },
         "visual_samples": {
-          "state": "pending",
-          "reviewed_sheets": [],
-          "interval_seconds": null
+          "state": "reviewed_sample_sheets",
+          "reviewed_sheets": [
+            "sheet-001.jpg",
+            "sheet-002.jpg"
+          ],
+          "interval_seconds": 20,
+          "reviewed_frame_count": 33,
+          "manifest_sha256": "268f1f8928f9a0e8726a031440c150a46ca0194b20f26efd40122f66402b3b71"
         },
         "continuous_video": {
           "state": "pending",
           "reason": "No verified continuous-video input"
         },
         "audio_dialogue_asr": {
-          "state": "pending"
+          "state": "transcribed_full_input",
+          "model": "mlx-community/whisper-small-mlx",
+          "segments": 299,
+          "asr_sha256": "db54a30b51f4e84c8921a957f6f39059e6ef7d5b14311a6cd3625884785c61d8",
+          "comparison_windows": 22,
+          "low_similarity_windows": 0,
+          "automatic_comparison": "completed; not human review",
+          "actual_listening": false,
+          "low_similarity_review": "all 0 flagged windows read; not actual listening",
+          "comparison": "completed_full_window_comparison; not listening"
         },
         "audio_listening": {
           "state": "unavailable",
@@ -740,6 +1069,13 @@
       ],
       "subtitle_cues": 238,
       "subtitle_last_end": 524.32,
+      "subtitle_gap_candidates": [
+        {
+          "start": 49.22,
+          "end": 66.06,
+          "kind": "subtitle_gap; not proof of silence"
+        }
+      ],
       "review": {
         "subtitles": {
           "state": "read_all_cues",
@@ -747,16 +1083,30 @@
           "evidence": "notes/course-reading-08-18.md"
         },
         "visual_samples": {
-          "state": "pending",
-          "reviewed_sheets": [],
-          "interval_seconds": null
+          "state": "reviewed_sample_sheets",
+          "reviewed_sheets": [
+            "sheet-001.jpg",
+            "sheet-002.jpg"
+          ],
+          "interval_seconds": 20,
+          "reviewed_frame_count": 27,
+          "manifest_sha256": "2e3b0d4da9241024e1ac58dc7afe31fff87d77a6efc6234d4d5ebf4629476cd1"
         },
         "continuous_video": {
           "state": "pending",
           "reason": "No verified continuous-video input"
         },
         "audio_dialogue_asr": {
-          "state": "pending"
+          "state": "transcribed_full_input",
+          "model": "mlx-community/whisper-small-mlx",
+          "segments": 254,
+          "asr_sha256": "027e11f7797f28cd5cb89640021b1b7d51b8c624fe700450d2de9b8dd0e66147",
+          "comparison_windows": 18,
+          "low_similarity_windows": 0,
+          "automatic_comparison": "completed; not human review",
+          "actual_listening": false,
+          "low_similarity_review": "all 0 flagged windows read; not actual listening",
+          "comparison": "completed_full_window_comparison; not listening"
         },
         "audio_listening": {
           "state": "unavailable",
@@ -793,6 +1143,13 @@
       ],
       "subtitle_cues": 594,
       "subtitle_last_end": 1234.12,
+      "subtitle_gap_candidates": [
+        {
+          "start": 57.49,
+          "end": 73.53999999999999,
+          "kind": "subtitle_gap; not proof of silence"
+        }
+      ],
       "review": {
         "subtitles": {
           "state": "read_all_cues",
@@ -800,16 +1157,40 @@
           "evidence": "notes/course-reading-08-18.md"
         },
         "visual_samples": {
-          "state": "pending",
-          "reviewed_sheets": [],
-          "interval_seconds": null
+          "state": "reviewed_sample_sheets",
+          "reviewed_sheets": [
+            "sheet-001.jpg",
+            "sheet-002.jpg",
+            "sheet-003.jpg"
+          ],
+          "interval_seconds": 20,
+          "reviewed_frame_count": 62,
+          "manifest_sha256": "4b26b1408b008586352e8ae6e262e44e1ef5fb7504178bcc08718285585c0c68"
         },
         "continuous_video": {
           "state": "pending",
           "reason": "No verified continuous-video input"
         },
         "audio_dialogue_asr": {
-          "state": "pending"
+          "state": "transcribed_full_input",
+          "model": "mlx-community/whisper-small-mlx",
+          "segments": 612,
+          "asr_sha256": "f8ef7130bfd509871f505b498a96894c2faaeaed77c3060d845c02d792a62a59",
+          "comparison_windows": 42,
+          "low_similarity_windows": 1,
+          "automatic_comparison": "completed; not human review",
+          "actual_listening": false,
+          "low_similarity_review": "all 1 flagged windows read; not actual listening",
+          "comparison": "completed_full_window_comparison; not listening",
+          "targeted_retry": {
+            "source_range_seconds": [
+              74,
+              96
+            ],
+            "file": "cheese/.analysis/asr-checks/15-74-96.json",
+            "sha256": "58cac83a3be4c37606a6f5ac3a3adad7c3cf7db0022ca688fb0abd9cb8640fa2",
+            "scope": "supplemental local speech recognition; no actual listening; original full-input ASR preserved"
+          }
         },
         "audio_listening": {
           "state": "unavailable",
@@ -846,6 +1227,13 @@
       ],
       "subtitle_cues": 426,
       "subtitle_last_end": 888.92,
+      "subtitle_gap_candidates": [
+        {
+          "start": 24.51,
+          "end": 41.84,
+          "kind": "subtitle_gap; not proof of silence"
+        }
+      ],
       "review": {
         "subtitles": {
           "state": "read_all_cues",
@@ -853,16 +1241,30 @@
           "evidence": "notes/course-reading-08-18.md"
         },
         "visual_samples": {
-          "state": "pending",
-          "reviewed_sheets": [],
-          "interval_seconds": null
+          "state": "reviewed_sample_sheets",
+          "reviewed_sheets": [
+            "sheet-001.jpg",
+            "sheet-002.jpg"
+          ],
+          "interval_seconds": 20,
+          "reviewed_frame_count": 45,
+          "manifest_sha256": "5dc15a21cb16d5ce5ebfdb367ce763d3c54be3d5e9397b452a910b50f5e03458"
         },
         "continuous_video": {
           "state": "pending",
           "reason": "No verified continuous-video input"
         },
         "audio_dialogue_asr": {
-          "state": "pending"
+          "state": "transcribed_full_input",
+          "model": "mlx-community/whisper-small-mlx",
+          "segments": 405,
+          "asr_sha256": "dd035992efca8bdaf2e9a79b1a1838ac6f32b6052b941a831aed956dfd0b6154",
+          "comparison_windows": 30,
+          "low_similarity_windows": 2,
+          "automatic_comparison": "completed; not human review",
+          "actual_listening": false,
+          "low_similarity_review": "all 2 flagged windows read; not actual listening",
+          "comparison": "completed_full_window_comparison; not listening"
         },
         "audio_listening": {
           "state": "unavailable",
@@ -899,6 +1301,13 @@
       ],
       "subtitle_cues": 405,
       "subtitle_last_end": 868.0,
+      "subtitle_gap_candidates": [
+        {
+          "start": 70.72,
+          "end": 82.52,
+          "kind": "subtitle_gap; not proof of silence"
+        }
+      ],
       "review": {
         "subtitles": {
           "state": "read_all_cues",
@@ -906,16 +1315,33 @@
           "evidence": "notes/course-reading-08-18.md"
         },
         "visual_samples": {
-          "state": "pending",
-          "reviewed_sheets": [],
-          "interval_seconds": null
+          "state": "reviewed_sample_sheets",
+          "reviewed_sheets": [
+            "sheet-001.jpg",
+            "sheet-002.jpg"
+          ],
+          "interval_seconds": 20,
+          "detail_timestamps": [
+            605
+          ],
+          "reviewed_frame_count": 44,
+          "manifest_sha256": "e66b89a0023a1bc0aca3e99415a06db1eb44dafeb96608e4635dd9d4fccfdbb0"
         },
         "continuous_video": {
           "state": "pending",
           "reason": "No verified continuous-video input"
         },
         "audio_dialogue_asr": {
-          "state": "pending"
+          "state": "transcribed_full_input",
+          "model": "mlx-community/whisper-small-mlx",
+          "segments": 428,
+          "asr_sha256": "50ac46a373fb193da72f6c68b917c120b827e5ccaa888d0b44190169bcbd86d5",
+          "comparison_windows": 30,
+          "low_similarity_windows": 0,
+          "automatic_comparison": "completed; not human review",
+          "actual_listening": false,
+          "low_similarity_review": "all 0 flagged windows read; not actual listening",
+          "comparison": "completed_full_window_comparison; not listening"
         },
         "audio_listening": {
           "state": "unavailable",
@@ -952,6 +1378,13 @@
       ],
       "subtitle_cues": 436,
       "subtitle_last_end": 863.1,
+      "subtitle_gap_candidates": [
+        {
+          "start": 44.57,
+          "end": 62.28,
+          "kind": "subtitle_gap; not proof of silence"
+        }
+      ],
       "review": {
         "subtitles": {
           "state": "read_all_cues",
@@ -959,16 +1392,33 @@
           "evidence": "notes/course-reading-08-18.md"
         },
         "visual_samples": {
-          "state": "pending",
-          "reviewed_sheets": [],
-          "interval_seconds": null
+          "state": "reviewed_sample_sheets",
+          "reviewed_sheets": [
+            "sheet-001.jpg",
+            "sheet-002.jpg"
+          ],
+          "interval_seconds": 20,
+          "detail_timestamps": [
+            606
+          ],
+          "reviewed_frame_count": 44,
+          "manifest_sha256": "4de600598a0e7e64cb48861f7ad0d9e4649b305be15140c21519a74920c14320"
         },
         "continuous_video": {
           "state": "pending",
           "reason": "No verified continuous-video input"
         },
         "audio_dialogue_asr": {
-          "state": "pending"
+          "state": "transcribed_full_input",
+          "model": "mlx-community/whisper-small-mlx",
+          "segments": 445,
+          "asr_sha256": "68846b3627330f421f8d41e31fcf54f7cb73532ed705277c180f8871d7a68d23",
+          "comparison_windows": 29,
+          "low_similarity_windows": 0,
+          "automatic_comparison": "completed; not human review",
+          "actual_listening": false,
+          "low_similarity_review": "all 0 flagged windows read; not actual listening",
+          "comparison": "completed_full_window_comparison; not listening"
         },
         "audio_listening": {
           "state": "unavailable",
