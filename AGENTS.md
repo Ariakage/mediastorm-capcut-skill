@@ -176,5 +176,5 @@ chore: 添加 .gitignore
 - 2026-10-26 Skill 回写：入口新增 `references/visual-evidence-2026-10.md`，10 个子 Skill 补入 2 秒复核的精确时间码/参数，并修正 08/12/13/15 的内容归属；安装副本已同步并通过 quick_validate。Skill 仍为 provisional。
 - 2026-10-26 Remotion/英文：新增 `remotion/` 可运行示例与 24 秒合成成片；11 个 SKILL.md 细化到约 1,080 行，references 英文化，证据标签统一；11 个安装副本零差异。
 - 2026-10-26 合成媒体白名单：`assets/demo/synthetic-media.json` 用路径 + SHA256 放行合成演示媒体；课程媒体仍被 `check_progress.py` 拦截。
-- 2026-10-26 推送：用户明确授权本次 `git push origin main`；此前 22 个本地提交将同步到远程。
+- 2026-10-26 推送：用户明确授权本次 `git push origin main`；已推送 `5749052..910e0b5`，`main` 与 `origin/main` 同步。
 - 更新进度后运行 `python3 scripts/check_progress.py --write-summary`，使逐课表与账本同步。该检查只能约束记账一致性，不能判断学习质量。

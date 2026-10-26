@@ -461,7 +461,7 @@ git push origin main
 
 ## 12. Git 与收尾状态
 
-本次推送前工作区干净，`main` 相对 `origin/main` 领先 22 个提交。最近提交（节选）：
+本次推送前工作区干净，`main` 相对 `origin/main` 领先 22 个提交；推送后 `main` 与 `origin/main` 同步。最近提交（节选）：
 
 | 提交 | 内容 |
 | --- | --- |
@@ -478,8 +478,8 @@ git push origin main
 
 - `origin`：`https://github.com/Ariakage/mediastorm-capcut-skill`。
 - 2026-10-26 用户明确授权本次推送到 `origin/main`；这是一次单独授权，不改变默认“不自动推送”。
-- 推送后以 `git status -sb` 为准；正常状态应为 `## main...origin/main`，无 ahead/behind。
-- 本文更新本身也会进入提交；实际哈希以 `git log` 为准，本文不自引用未来哈希。
+- 实际推送结果：`5749052..910e0b5 main -> main`；`git status -sb` 为 `## main...origin/main`，无 ahead/behind。
+- 推送后本文档又补了一次“推送结果”记录；最终远程哈希以 `git log origin/main` 为准。
 
 状态：
 
