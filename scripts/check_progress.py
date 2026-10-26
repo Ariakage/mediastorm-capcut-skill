@@ -81,10 +81,26 @@ def check(data):
         if review["complete_multimodal_review"]:
             if sub["state"] != "read_all_cues" or review["continuous_video"]["state"] != "reviewed_full" or review["audio_listening"]["state"] != "reviewed_full":
                 errors.append(f"{row['id']}: full multimodal completion lacks actual viewing/listening")
+    # 合成演示素材允许入库，但必须逐文件匹配清单中的 SHA256；
+    # 课程媒体与任何未登记的媒体仍会被拦截。
+    synthetic = {}
+    synthetic_manifest = ROOT/"assets/demo/synthetic-media.json"
+    if synthetic_manifest.is_file():
+        try:
+            manifest = json.loads(synthetic_manifest.read_text())
+            for item in manifest.get("files", []):
+                synthetic[item["path"]] = item["sha256"]
+        except (json.JSONDecodeError, KeyError) as exc:
+            errors.append(f"Invalid synthetic media manifest: {exc}")
     tracked=subprocess.check_output(["git","ls-files","-z"],cwd=ROOT).decode().split("\0")
     for name in tracked:
         if name.startswith("cheese/") or Path(name).suffix.lower() in {".mp4",".mov",".wav",".mp3",".srt"}:
-            errors.append(f"Course/media-like file in Git index: {name}")
+            if name in synthetic:
+                target = ROOT/name
+                if not target.is_file() or digest(target) != synthetic[name]:
+                    errors.append(f"Synthetic media hash mismatch: {name}")
+            else:
+                errors.append(f"Course/media-like file in Git index: {name}")
     return errors
 
 
