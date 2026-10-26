@@ -1,6 +1,9 @@
 # 影视飓风课程素材（仅本地学习使用，禁止提交进仓库，见 AGENTS.md 内容红线）
-/cheese/视频/
-/cheese/字幕/
+/cheese/
 
 # macOS
 .DS_Store
+
+# Python 分析工具缓存
+__pycache__/
+*.pyc

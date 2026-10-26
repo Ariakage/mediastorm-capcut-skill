@@ -1,0 +1,985 @@
+{
+  "source": "影视飓风（MediaStorm）付费剪映教学课程；个人学习，非官方",
+  "schema_version": 1,
+  "total_duration_seconds": 13315.178668,
+  "completion_rule": "All subtitle cues + continuous video review + actual audio listening; ASR and sampled frames do not suffice",
+  "lessons": [
+    {
+      "id": "01",
+      "title": "剪出和影视飓风一样的视频",
+      "video": "cheese/视频/01 - 剪出和影视飓风一样的视频.mp4",
+      "subtitle": "cheese/字幕/01 - 1 - 剪出和影视飓风一样的视频.ai-zh.srt",
+      "video_sha256": "79276a502a24ff2f244261102c1bbd7c823826c4c52cf3c0a016112bf0eed3ee",
+      "subtitle_sha256": "7a2e53d471d8afefb1070f5ffa6756eb99dd3f19d2ccc8e9d41a8e7ac010234d",
+      "duration_seconds": 112.170667,
+      "streams": [
+        {
+          "codec_name": "av1",
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30000/1001"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "subtitle_cues": 59,
+      "subtitle_last_end": 112.14,
+      "review": {
+        "subtitles": {
+          "state": "read_all_cues",
+          "reviewed_cues": 59,
+          "evidence": "notes/course-reading-01-07.md"
+        },
+        "visual_samples": {
+          "state": "reviewed_sample_sheets",
+          "reviewed_sheets": [
+            "sheet-001.jpg"
+          ],
+          "interval_seconds": 20,
+          "detail_timestamps": [
+            20
+          ]
+        },
+        "continuous_video": {
+          "state": "pending",
+          "reason": "No verified continuous-video input"
+        },
+        "audio_dialogue_asr": {
+          "state": "pending"
+        },
+        "audio_listening": {
+          "state": "unavailable",
+          "reason": "Current model interface rejects audio input"
+        },
+        "notes": {
+          "state": "initial_notes",
+          "file": "notes/course-reading-01-07.md"
+        },
+        "complete_multimodal_review": false
+      }
+    },
+    {
+      "id": "02",
+      "title": "导学课：如何更好地学习这门课？",
+      "video": "cheese/视频/02 - 导学课：如何更好地学习这门课？.mp4",
+      "subtitle": "cheese/字幕/02 - 2 - 导学课：如何更好地学习这门课？.ai-zh.srt",
+      "video_sha256": "8a8f14c3821f7a604235d4bfe586a006ac4772ada63b0a6b41e4d754ef1d0125",
+      "subtitle_sha256": "e6e9e573015c35dfa39a9295191686c926455eeffb11ff1bb8161f298ed4a368",
+      "duration_seconds": 305.130667,
+      "streams": [
+        {
+          "codec_name": "av1",
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30000/1001"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "subtitle_cues": 144,
+      "subtitle_last_end": 303.1,
+      "review": {
+        "subtitles": {
+          "state": "read_all_cues",
+          "reviewed_cues": 144,
+          "evidence": "notes/course-reading-01-07.md"
+        },
+        "visual_samples": {
+          "state": "reviewed_sample_sheets",
+          "reviewed_sheets": [
+            "sheet-001.jpg"
+          ],
+          "interval_seconds": 20
+        },
+        "continuous_video": {
+          "state": "pending",
+          "reason": "No verified continuous-video input"
+        },
+        "audio_dialogue_asr": {
+          "state": "pending"
+        },
+        "audio_listening": {
+          "state": "unavailable",
+          "reason": "Current model interface rejects audio input"
+        },
+        "notes": {
+          "state": "initial_notes",
+          "file": "notes/course-reading-01-07.md"
+        },
+        "complete_multimodal_review": false
+      }
+    },
+    {
+      "id": "03",
+      "title": "初试成片：10分钟走通专业剪辑全流程",
+      "video": "cheese/视频/03 - 初试成片：10分钟走通专业剪辑全流程.mp4",
+      "subtitle": "cheese/字幕/03 - 3 - 初试成片：10分钟走通专业剪辑全流程.ai-zh.srt",
+      "video_sha256": "c38fd21b5da921daa81c4760a48c7655c0e7016717a9b228a768153588213ca4",
+      "subtitle_sha256": "5e2d6ee2b7ba8530cddf53eda67b3153217bc292220cb147e8c6584f75b5e374",
+      "duration_seconds": 696.554667,
+      "streams": [
+        {
+          "codec_name": "av1",
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30000/1001"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "subtitle_cues": 302,
+      "subtitle_last_end": 695.96,
+      "review": {
+        "subtitles": {
+          "state": "read_all_cues",
+          "reviewed_cues": 302,
+          "evidence": "notes/course-reading-01-07.md"
+        },
+        "visual_samples": {
+          "state": "reviewed_sample_sheets",
+          "reviewed_sheets": [
+            "sheet-001.jpg",
+            "sheet-002.jpg"
+          ],
+          "interval_seconds": 20,
+          "detail_timestamps": [
+            650
+          ]
+        },
+        "continuous_video": {
+          "state": "pending",
+          "reason": "No verified continuous-video input"
+        },
+        "audio_dialogue_asr": {
+          "state": "pending"
+        },
+        "audio_listening": {
+          "state": "unavailable",
+          "reason": "Current model interface rejects audio input"
+        },
+        "notes": {
+          "state": "initial_notes",
+          "file": "notes/course-reading-01-07.md"
+        },
+        "complete_multimodal_review": false
+      }
+    },
+    {
+      "id": "04",
+      "title": "高效起步：口播精剪与 A╱B-roll 协同",
+      "video": "cheese/视频/04 - 高效起步：口播精剪与 A╱B-roll 协同.mp4",
+      "subtitle": "cheese/字幕/04 - 4 - 高效起步：口播精剪与 A⧸B-roll 协同.ai-zh.srt",
+      "video_sha256": "a3753215cbad7fc4a025dd731265ad139fcd804cc32016f13281a687558e050d",
+      "subtitle_sha256": "56b6dd3b4dd1c510bfa85ccc9ed46d352fe28feb0de5ab469bd7b6602ca068d9",
+      "duration_seconds": 958.656,
+      "streams": [
+        {
+          "codec_name": "av1",
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30000/1001"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "subtitle_cues": 459,
+      "subtitle_last_end": 956.0,
+      "review": {
+        "subtitles": {
+          "state": "read_all_cues",
+          "reviewed_cues": 459,
+          "evidence": "notes/course-reading-01-07.md"
+        },
+        "visual_samples": {
+          "state": "pending",
+          "reviewed_sheets": [],
+          "interval_seconds": null,
+          "detail_timestamps": [
+            160,
+            833
+          ]
+        },
+        "continuous_video": {
+          "state": "pending",
+          "reason": "No verified continuous-video input"
+        },
+        "audio_dialogue_asr": {
+          "state": "pending"
+        },
+        "audio_listening": {
+          "state": "unavailable",
+          "reason": "Current model interface rejects audio input"
+        },
+        "notes": {
+          "state": "initial_notes",
+          "file": "notes/course-reading-01-07.md"
+        },
+        "complete_multimodal_review": false
+      }
+    },
+    {
+      "id": "05",
+      "title": "节奏掌控：混剪视频与蒙太奇逻辑",
+      "video": "cheese/视频/05 - 节奏掌控：混剪视频与蒙太奇逻辑.mp4",
+      "subtitle": "cheese/字幕/05 - 5 - 节奏掌控：混剪视频与蒙太奇逻辑.ai-zh.srt",
+      "video_sha256": "b51ce4517653256ba1159ea6462b2931367404fc2528bd317e4a4866290b1d8b",
+      "subtitle_sha256": "d1eccc0be4cf711ecfeced1933c92e756c36201264f2c1de8befa484ad84c9a8",
+      "duration_seconds": 693.866667,
+      "streams": [
+        {
+          "codec_name": "av1",
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30000/1001"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "subtitle_cues": 283,
+      "subtitle_last_end": 693.62,
+      "review": {
+        "subtitles": {
+          "state": "read_all_cues",
+          "reviewed_cues": 283,
+          "evidence": "notes/course-reading-01-07.md"
+        },
+        "visual_samples": {
+          "state": "pending",
+          "reviewed_sheets": [],
+          "interval_seconds": null
+        },
+        "continuous_video": {
+          "state": "pending",
+          "reason": "No verified continuous-video input"
+        },
+        "audio_dialogue_asr": {
+          "state": "pending"
+        },
+        "audio_listening": {
+          "state": "unavailable",
+          "reason": "Current model interface rejects audio input"
+        },
+        "notes": {
+          "state": "initial_notes",
+          "file": "notes/course-reading-01-07.md"
+        },
+        "complete_multimodal_review": false
+      }
+    },
+    {
+      "id": "06",
+      "title": "听觉塑造：音乐处理与音效设计思维",
+      "video": "cheese/视频/06 - 听觉塑造：音乐处理与音效设计思维.mp4",
+      "subtitle": "cheese/字幕/06 - 6 - 听觉塑造：音乐处理与音效设计思维.ai-zh.srt",
+      "video_sha256": "ed2360d971014196731c9986b820ea4d4ef2598281b65c0d3f259688c8a1d40a",
+      "subtitle_sha256": "2a8c7e172fc3f8d77d82613c221fc5c09f7e5756d9bc34e6e3194ccd70807dfd",
+      "duration_seconds": 690.581333,
+      "streams": [
+        {
+          "codec_name": "av1",
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30000/1001"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "subtitle_cues": 296,
+      "subtitle_last_end": 688.62,
+      "review": {
+        "subtitles": {
+          "state": "read_all_cues",
+          "reviewed_cues": 296,
+          "evidence": "notes/course-reading-01-07.md"
+        },
+        "visual_samples": {
+          "state": "pending",
+          "reviewed_sheets": [],
+          "interval_seconds": null,
+          "detail_timestamps": [
+            510
+          ]
+        },
+        "continuous_video": {
+          "state": "pending",
+          "reason": "No verified continuous-video input"
+        },
+        "audio_dialogue_asr": {
+          "state": "pending"
+        },
+        "audio_listening": {
+          "state": "unavailable",
+          "reason": "Current model interface rejects audio input"
+        },
+        "notes": {
+          "state": "initial_notes",
+          "file": "notes/course-reading-01-07.md"
+        },
+        "complete_multimodal_review": false
+      }
+    },
+    {
+      "id": "07",
+      "title": "最终交付：导出管理与发布规范",
+      "video": "cheese/视频/07 - 最终交付：导出管理与发布规范.mp4",
+      "subtitle": "cheese/字幕/07 - 7 - 最终交付：导出管理与发布规范.ai-zh.srt",
+      "video_sha256": "57447f76d4391d5707353efdbbbe834809c6b729291255b9956c2f4b7b8ccc72",
+      "subtitle_sha256": "d377bfa8886090e723b8d47a9620fd0e06239cade00d029cfb1ce881e2d7f6ce",
+      "duration_seconds": 892.522667,
+      "streams": [
+        {
+          "codec_name": "av1",
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30000/1001"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "subtitle_cues": 446,
+      "subtitle_last_end": 892.28,
+      "review": {
+        "subtitles": {
+          "state": "read_all_cues",
+          "reviewed_cues": 446,
+          "evidence": "notes/course-reading-01-07.md"
+        },
+        "visual_samples": {
+          "state": "pending",
+          "reviewed_sheets": [],
+          "interval_seconds": null,
+          "detail_timestamps": [
+            638
+          ]
+        },
+        "continuous_video": {
+          "state": "pending",
+          "reason": "No verified continuous-video input"
+        },
+        "audio_dialogue_asr": {
+          "state": "pending"
+        },
+        "audio_listening": {
+          "state": "unavailable",
+          "reason": "Current model interface rejects audio input"
+        },
+        "notes": {
+          "state": "initial_notes",
+          "file": "notes/course-reading-01-07.md"
+        },
+        "complete_multimodal_review": false
+      }
+    },
+    {
+      "id": "08",
+      "title": "运动控制：关键帧与曲线运动",
+      "video": "cheese/视频/08 - 运动控制：关键帧与曲线运动.mp4",
+      "subtitle": "cheese/字幕/08 - 8 - 运动控制：关键帧与曲线运动.ai-zh.srt",
+      "video_sha256": "e213d83bb08c1da9e2847337e7db58fb3c8889ae216edbb2afcc5ea339e7e0e0",
+      "subtitle_sha256": "40345f08e715c74c6cf6f5e7ed38521b2a9a9d7ed79cb26aa6201410b166aa90",
+      "duration_seconds": 653.909333,
+      "streams": [
+        {
+          "codec_name": "av1",
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30000/1001"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "subtitle_cues": 301,
+      "subtitle_last_end": 653.86,
+      "review": {
+        "subtitles": {
+          "state": "read_all_cues",
+          "reviewed_cues": 301,
+          "evidence": "notes/course-reading-08-18.md"
+        },
+        "visual_samples": {
+          "state": "pending",
+          "reviewed_sheets": [],
+          "interval_seconds": null
+        },
+        "continuous_video": {
+          "state": "pending",
+          "reason": "No verified continuous-video input"
+        },
+        "audio_dialogue_asr": {
+          "state": "pending"
+        },
+        "audio_listening": {
+          "state": "unavailable",
+          "reason": "Current model interface rejects audio input"
+        },
+        "notes": {
+          "state": "initial_notes",
+          "file": "notes/course-reading-08-18.md"
+        },
+        "complete_multimodal_review": false
+      }
+    },
+    {
+      "id": "09",
+      "title": "动态节奏：曲线变速与素材帧率",
+      "video": "cheese/视频/09 - 动态节奏：曲线变速与素材帧率.mp4",
+      "subtitle": "cheese/字幕/09 - 9 - 动态节奏：曲线变速与素材帧率.ai-zh.srt",
+      "video_sha256": "18cfdc8678ebafa560c21ec22cb370cefc70cd56774cc38816f2268ed54e7dc6",
+      "subtitle_sha256": "0bb893cb528b0e894bf0edf14fe2fd5c433ee86d55c567d424b6be009a27bb01",
+      "duration_seconds": 650.645333,
+      "streams": [
+        {
+          "codec_name": "av1",
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30000/1001"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "subtitle_cues": 307,
+      "subtitle_last_end": 650.46,
+      "review": {
+        "subtitles": {
+          "state": "read_all_cues",
+          "reviewed_cues": 307,
+          "evidence": "notes/course-reading-08-18.md"
+        },
+        "visual_samples": {
+          "state": "pending",
+          "reviewed_sheets": [],
+          "interval_seconds": null
+        },
+        "continuous_video": {
+          "state": "pending",
+          "reason": "No verified continuous-video input"
+        },
+        "audio_dialogue_asr": {
+          "state": "pending"
+        },
+        "audio_listening": {
+          "state": "unavailable",
+          "reason": "Current model interface rejects audio input"
+        },
+        "notes": {
+          "state": "initial_notes",
+          "file": "notes/course-reading-08-18.md"
+        },
+        "complete_multimodal_review": false
+      }
+    },
+    {
+      "id": "10",
+      "title": "空间重组：全能抠像与蒙版合成",
+      "video": "cheese/视频/10 - 空间重组：全能抠像与蒙版合成.mp4",
+      "subtitle": "cheese/字幕/10 - 10 - 空间重组：全能抠像与蒙版合成.ai-zh.srt",
+      "video_sha256": "ae0578e00ab820b0e7ed5aee2a514841bf031b54fa54211a0bfc128d9daf4c5f",
+      "subtitle_sha256": "6033177394b573a235f5829265004237b602a81bcade3035d0ff5afaad6d2eea",
+      "duration_seconds": 730.133333,
+      "streams": [
+        {
+          "codec_name": "av1",
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30000/1001"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "subtitle_cues": 349,
+      "subtitle_last_end": 729.26,
+      "review": {
+        "subtitles": {
+          "state": "read_all_cues",
+          "reviewed_cues": 349,
+          "evidence": "notes/course-reading-08-18.md"
+        },
+        "visual_samples": {
+          "state": "pending",
+          "reviewed_sheets": [],
+          "interval_seconds": null
+        },
+        "continuous_video": {
+          "state": "pending",
+          "reason": "No verified continuous-video input"
+        },
+        "audio_dialogue_asr": {
+          "state": "pending"
+        },
+        "audio_listening": {
+          "state": "unavailable",
+          "reason": "Current model interface rejects audio input"
+        },
+        "notes": {
+          "state": "initial_notes",
+          "file": "notes/course-reading-08-18.md"
+        },
+        "complete_multimodal_review": false
+      }
+    },
+    {
+      "id": "11",
+      "title": "色彩科学：掌握一级调色工具",
+      "video": "cheese/视频/11 - 色彩科学：掌握一级调色工具.mp4",
+      "subtitle": "cheese/字幕/11 - 11 - 色彩科学：掌握一级调色工具.ai-zh.srt",
+      "video_sha256": "4621884bb6651b3ecdb55fc48ac1cfc41f514c9c5666e8b5b724b951f8c31017",
+      "subtitle_sha256": "4bec4cd0b4b19ed459a3155b705a1bd8324584639c6cb7bf7d68ffdbed8ed766",
+      "duration_seconds": 772.138667,
+      "streams": [
+        {
+          "codec_name": "av1",
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30000/1001"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "subtitle_cues": 358,
+      "subtitle_last_end": 771.7,
+      "review": {
+        "subtitles": {
+          "state": "read_all_cues",
+          "reviewed_cues": 358,
+          "evidence": "notes/course-reading-08-18.md"
+        },
+        "visual_samples": {
+          "state": "pending",
+          "reviewed_sheets": [],
+          "interval_seconds": null
+        },
+        "continuous_video": {
+          "state": "pending",
+          "reason": "No verified continuous-video input"
+        },
+        "audio_dialogue_asr": {
+          "state": "pending"
+        },
+        "audio_listening": {
+          "state": "unavailable",
+          "reason": "Current model interface rejects audio input"
+        },
+        "notes": {
+          "state": "initial_notes",
+          "file": "notes/course-reading-08-18.md"
+        },
+        "complete_multimodal_review": false
+      }
+    },
+    {
+      "id": "12",
+      "title": "飓多多实操：快速复刻综艺包装",
+      "video": "cheese/视频/12 - 飓多多实操：快速复刻综艺包装.mp4",
+      "subtitle": "cheese/字幕/12 - 12 - 飓多多实操：快速复刻综艺包装.ai-zh.srt",
+      "video_sha256": "4921cc80857bca47c6c80e22d01a50753079c970f415659174e4ddf16adb927e",
+      "subtitle_sha256": "1f0712022589b656dfbded545db55608877f5814480f7021972bd068329d4342",
+      "duration_seconds": 1122.730667,
+      "streams": [
+        {
+          "codec_name": "av1",
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30000/1001"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "subtitle_cues": 509,
+      "subtitle_last_end": 1122.46,
+      "review": {
+        "subtitles": {
+          "state": "read_all_cues",
+          "reviewed_cues": 509,
+          "evidence": "notes/course-reading-08-18.md"
+        },
+        "visual_samples": {
+          "state": "pending",
+          "reviewed_sheets": [],
+          "interval_seconds": null
+        },
+        "continuous_video": {
+          "state": "pending",
+          "reason": "No verified continuous-video input"
+        },
+        "audio_dialogue_asr": {
+          "state": "pending"
+        },
+        "audio_listening": {
+          "state": "unavailable",
+          "reason": "Current model interface rejects audio input"
+        },
+        "notes": {
+          "state": "initial_notes",
+          "file": "notes/course-reading-08-18.md"
+        },
+        "complete_multimodal_review": false
+      }
+    },
+    {
+      "id": "13",
+      "title": "影视飓风运镜实操：进阶平面跟踪",
+      "video": "cheese/视频/13 - 影视飓风运镜实操：进阶平面跟踪.mp4",
+      "subtitle": "cheese/字幕/13 - 13 - 影视飓风运镜实操：进阶平面跟踪.ai-zh.srt",
+      "video_sha256": "aa0482d80c09696086b3941a7e7658d7b507d6cccef1965babeea6a724f01a63",
+      "subtitle_sha256": "0275567b90fbce870b7a209f66e76e954c7aedea13460734ea65553daab87a69",
+      "duration_seconds": 654.016,
+      "streams": [
+        {
+          "codec_name": "av1",
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30000/1001"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "subtitle_cues": 286,
+      "subtitle_last_end": 654.0,
+      "review": {
+        "subtitles": {
+          "state": "read_all_cues",
+          "reviewed_cues": 286,
+          "evidence": "notes/course-reading-08-18.md"
+        },
+        "visual_samples": {
+          "state": "pending",
+          "reviewed_sheets": [],
+          "interval_seconds": null
+        },
+        "continuous_video": {
+          "state": "pending",
+          "reason": "No verified continuous-video input"
+        },
+        "audio_dialogue_asr": {
+          "state": "pending"
+        },
+        "audio_listening": {
+          "state": "unavailable",
+          "reason": "Current model interface rejects audio input"
+        },
+        "notes": {
+          "state": "initial_notes",
+          "file": "notes/course-reading-08-18.md"
+        },
+        "complete_multimodal_review": false
+      }
+    },
+    {
+      "id": "14",
+      "title": "采访实操：快速上手多机位剪辑",
+      "video": "cheese/视频/14 - 采访实操：快速上手多机位剪辑.mp4",
+      "subtitle": "cheese/字幕/14 - 14 - 采访实操：快速上手多机位剪辑.ai-zh.srt",
+      "video_sha256": "a69cbdf0bf904b14a76018b14f7a38113b70fe70272b414bdcda05eb2ed28f25",
+      "subtitle_sha256": "0e89845e688b33b867fd13357389f816e7b8921dcdea337c8043fa2eaf6fff6e",
+      "duration_seconds": 524.565333,
+      "streams": [
+        {
+          "codec_name": "av1",
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30000/1001"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "subtitle_cues": 238,
+      "subtitle_last_end": 524.32,
+      "review": {
+        "subtitles": {
+          "state": "read_all_cues",
+          "reviewed_cues": 238,
+          "evidence": "notes/course-reading-08-18.md"
+        },
+        "visual_samples": {
+          "state": "pending",
+          "reviewed_sheets": [],
+          "interval_seconds": null
+        },
+        "continuous_video": {
+          "state": "pending",
+          "reason": "No verified continuous-video input"
+        },
+        "audio_dialogue_asr": {
+          "state": "pending"
+        },
+        "audio_listening": {
+          "state": "unavailable",
+          "reason": "Current model interface rejects audio input"
+        },
+        "notes": {
+          "state": "initial_notes",
+          "file": "notes/course-reading-08-18.md"
+        },
+        "complete_multimodal_review": false
+      }
+    },
+    {
+      "id": "15",
+      "title": "亿点点不一样实操：时钟理论应用",
+      "video": "cheese/视频/15 - 亿点点不一样实操：时钟理论应用.mp4",
+      "subtitle": "cheese/字幕/15 - 15 - 亿点点不一样实操：时钟理论应用.ai-zh.srt",
+      "video_sha256": "7880f3bbf9d92f4a80b5b75a554b9d0a1e0b2c0f3414c908f83c68711f6cde6c",
+      "subtitle_sha256": "01e81960c20b68cb045478defc08f99130290165d9e0892b5a90122873c72dd7",
+      "duration_seconds": 1234.24,
+      "streams": [
+        {
+          "codec_name": "av1",
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30000/1001"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "subtitle_cues": 594,
+      "subtitle_last_end": 1234.12,
+      "review": {
+        "subtitles": {
+          "state": "read_all_cues",
+          "reviewed_cues": 594,
+          "evidence": "notes/course-reading-08-18.md"
+        },
+        "visual_samples": {
+          "state": "pending",
+          "reviewed_sheets": [],
+          "interval_seconds": null
+        },
+        "continuous_video": {
+          "state": "pending",
+          "reason": "No verified continuous-video input"
+        },
+        "audio_dialogue_asr": {
+          "state": "pending"
+        },
+        "audio_listening": {
+          "state": "unavailable",
+          "reason": "Current model interface rejects audio input"
+        },
+        "notes": {
+          "state": "initial_notes",
+          "file": "notes/course-reading-08-18.md"
+        },
+        "complete_multimodal_review": false
+      }
+    },
+    {
+      "id": "16",
+      "title": "样片日记实操：Vlog的剪辑结构与色彩",
+      "video": "cheese/视频/16 - 样片日记实操：Vlog的剪辑结构与色彩.mp4",
+      "subtitle": "cheese/字幕/16 - 16 - 样片日记实操：Vlog的剪辑结构与色彩.ai-zh.srt",
+      "video_sha256": "cbb197df901861867fbb2524222ac57e6d65bbdc96f41f3502d108bd2f78fc86",
+      "subtitle_sha256": "8dd3de8285e846c637f844fff13fda1d7573df5269e4f119775e0996a4701fd1",
+      "duration_seconds": 889.130667,
+      "streams": [
+        {
+          "codec_name": "av1",
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30000/1001"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "subtitle_cues": 426,
+      "subtitle_last_end": 888.92,
+      "review": {
+        "subtitles": {
+          "state": "read_all_cues",
+          "reviewed_cues": 426,
+          "evidence": "notes/course-reading-08-18.md"
+        },
+        "visual_samples": {
+          "state": "pending",
+          "reviewed_sheets": [],
+          "interval_seconds": null
+        },
+        "continuous_video": {
+          "state": "pending",
+          "reason": "No verified continuous-video input"
+        },
+        "audio_dialogue_asr": {
+          "state": "pending"
+        },
+        "audio_listening": {
+          "state": "unavailable",
+          "reason": "Current model interface rejects audio input"
+        },
+        "notes": {
+          "state": "initial_notes",
+          "file": "notes/course-reading-08-18.md"
+        },
+        "complete_multimodal_review": false
+      }
+    },
+    {
+      "id": "17",
+      "title": "DLC：剪映中常用的AI工具",
+      "video": "cheese/视频/17 - DLC：剪映中常用的AI工具.mp4",
+      "subtitle": "cheese/字幕/17 - 17 - DLC：剪映中常用的AI工具.ai-zh.srt",
+      "video_sha256": "34a7315a72afe16043f26d50d739329a691443ae3b259ce8b17a0be08e1efb72",
+      "subtitle_sha256": "104513fc22d900da8cb17c17c39ad5a857e32165232646b3ecff6391474e920c",
+      "duration_seconds": 870.464,
+      "streams": [
+        {
+          "codec_name": "av1",
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30000/1001"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "subtitle_cues": 405,
+      "subtitle_last_end": 868.0,
+      "review": {
+        "subtitles": {
+          "state": "read_all_cues",
+          "reviewed_cues": 405,
+          "evidence": "notes/course-reading-08-18.md"
+        },
+        "visual_samples": {
+          "state": "pending",
+          "reviewed_sheets": [],
+          "interval_seconds": null
+        },
+        "continuous_video": {
+          "state": "pending",
+          "reason": "No verified continuous-video input"
+        },
+        "audio_dialogue_asr": {
+          "state": "pending"
+        },
+        "audio_listening": {
+          "state": "unavailable",
+          "reason": "Current model interface rejects audio input"
+        },
+        "notes": {
+          "state": "initial_notes",
+          "file": "notes/course-reading-08-18.md"
+        },
+        "complete_multimodal_review": false
+      }
+    },
+    {
+      "id": "18",
+      "title": "DLC2：使用手机剪辑玩转社媒",
+      "video": "cheese/视频/18 - DLC2：使用手机剪辑玩转社媒.mp4",
+      "subtitle": "cheese/字幕/18 - 18 - DLC2：使用手机剪辑玩转社媒.ai-zh.srt",
+      "video_sha256": "048bc649ff42c1c4c794437640ee3b31ae6e24b693f81ef4e060ad72fc5ee3a9",
+      "subtitle_sha256": "eaf8a7a4eb437d155bd75d073ea0bf952984e227ca06b6ef737d3bcca965f037",
+      "duration_seconds": 863.722667,
+      "streams": [
+        {
+          "codec_name": "av1",
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30000/1001"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "subtitle_cues": 436,
+      "subtitle_last_end": 863.1,
+      "review": {
+        "subtitles": {
+          "state": "read_all_cues",
+          "reviewed_cues": 436,
+          "evidence": "notes/course-reading-08-18.md"
+        },
+        "visual_samples": {
+          "state": "pending",
+          "reviewed_sheets": [],
+          "interval_seconds": null
+        },
+        "continuous_video": {
+          "state": "pending",
+          "reason": "No verified continuous-video input"
+        },
+        "audio_dialogue_asr": {
+          "state": "pending"
+        },
+        "audio_listening": {
+          "state": "unavailable",
+          "reason": "Current model interface rejects audio input"
+        },
+        "notes": {
+          "state": "initial_notes",
+          "file": "notes/course-reading-08-18.md"
+        },
+        "complete_multimodal_review": false
+      }
+    }
+  ]
+}
