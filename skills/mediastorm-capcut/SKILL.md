@@ -1,6 +1,6 @@
 ---
 name: mediastorm-capcut
-description: Route MediaStorm-inspired CapCut editing requests across project prep, story, dialogue, sound, speed, motion, compositing, color, generative media, and delivery. Use for requests that need editing judgment plus CapCut execution, not for generic CapCut file operations already covered by capcut-edit.
+description: Route MediaStorm-inspired CapCut or Remotion editing requests across project prep, story, dialogue, sound, speed, motion, compositing, color, generative media, and delivery. Use for requests that need editing judgment plus CapCut execution or a Remotion/TypeScript implementation path, not for generic CapCut file operations already covered by capcut-edit.
 metadata:
   short-description: Route MediaStorm CapCut editing workflows
   status: provisional-unverified-audiovisual
@@ -22,6 +22,7 @@ Treat this bundle as a **provisional draft** until continuous video and original
 - Keep course videos, full subtitles, extracted audio, frame dumps, and transcript caches out of any skill package or repository commit.
 - Course references in this bundle use **actual file numbers 01–18**. The promo board uses 01–14; 03–16 map to board 01–14, 17–18 are DLC. Say which numbering you mean.
 - Read [references/visual-evidence-2026-10.md](references/visual-evidence-2026-10.md) for the verified picture corrections, course-internal conflicts, and exact case values from the 2-second pass.
+- Read [references/remotion-adapter.md](references/remotion-adapter.md) when implementing the same edit in Remotion/TypeScript. That path is an official-API mapping, not a rendered or accepted result in this repository.
 
 ## Route by task
 
@@ -39,6 +40,7 @@ Read [references/routing.md](references/routing.md) for the decision matrix. Rou
 | Restore Log footage, use scopes, match shots, apply curves, or unify color | `mediastorm-color-grading` |
 | Generate B-roll, concept shots, or local AI effects with cost and authenticity controls | `mediastorm-generative-broll` |
 | Export, archive, version, transfer desktop/mobile drafts, or prepare publication | `mediastorm-delivery-handoff` |
+| Implement the same edit in Remotion/TypeScript, or choose between CapCut and Remotion | Matching child skill + [references/remotion-adapter.md](references/remotion-adapter.md) |
 
 For a request spanning multiple stages, state the planned sequence before editing. Example: dialogue cleanup → B-roll structure → sound bridge → motion label → color match → delivery QC.
 

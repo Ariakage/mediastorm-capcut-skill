@@ -22,6 +22,13 @@ Build layered images that survive the entire shot, not just one inspected frame.
 8. Split work when the tracked plane disappears and later returns. Validate tracking stability, texture shape, perspective, and motion drift as separate checks.
 9. Preserve an editable original before baking or re-importing heavy tracked sections, and inspect intermediate codec quality if baking is necessary.
 
+## Remotion / TypeScript 适配
+
+- Chroma key with `@remotion/effects` `colorKey()`; masks with CSS `mask`/`clip-path`; blend modes with CSS `mix-blend-mode`.
+- Planar tracking has no built-in solver. Export four-corner keyframes from Mocha/AE and drive `cornerPin()` or a custom transform.
+- `@remotion/three` is available for 3D layers; it does not provide tracking by itself.
+- Inspect the whole motion range; a clean still does not prove edge stability.
+
 ## Boundaries
 
 - `capcut matting` writes a smart-matting configuration flag; it does not prove the matte was computed or looks good.

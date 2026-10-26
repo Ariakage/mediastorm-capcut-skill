@@ -20,6 +20,13 @@ Reconstruct time only when the source material and the editorial purpose can sup
 6. Recheck edge cases after the change: source overrun, black tails, silent audio tails, shifted downstream segments, captions, keyframes, and musical sync.
 7. Validate at normal playback speed and at the target output frame rate. Do not approve slow motion from sparse thumbnails or a muted, slowed review alone.
 
+## Remotion / TypeScript 适配
+
+- Use `<Video playbackRate>` with `trimBefore`/`durationInFrames`; recompute `durationInFrames` in `calculateMetadata`.
+- A speed ramp is multiple sequences or a custom frame→source-time mapping; Remotion has no curve-speed editor.
+- `@remotion/motion-blur` adds frame-driven blur; optical-flow interpolation is external (FFmpeg or a dedicated tool).
+- Verify source frame supply (`Fs × speed ≥ Fo`) before promising smooth slow motion.
+
 ## Boundaries
 
 - `capcut speed` is a constant multiplier. Do not present it as full curve-speed control.

@@ -21,6 +21,13 @@ Protect meaning, breath, and human performance while removing repetition and pro
 7. Cut to the speaker as the default information carrier, then to listeners for genuine reactions. Never manufacture a reaction that changes the context.
 8. Create captions before final music balancing when practical, correct names and terms, and check safe areas against the intended platform and device.
 
+## Remotion / TypeScript 适配
+
+- Use `@remotion/captions` `Caption` (`startMs`/`endMs`/`timestampMs`) and import SRT into that shape.
+- Use `<Video>`/`<Audio>` from `@remotion/media`; keep each camera angle in its own `Sequence` and sync with `trimBefore`.
+- Local transcription can use `@remotion/whisper-webgpu` + `@huggingface/transformers`; it is dialogue evidence, not listening evidence.
+- Multicam switching is component/prop driven; Remotion has no 4/9-grid multicam UI.
+
 ## Boundaries
 
 - `detect-silence` and `detect-retakes` produce candidates only. They do not judge meaning, emotion, or performance quality.

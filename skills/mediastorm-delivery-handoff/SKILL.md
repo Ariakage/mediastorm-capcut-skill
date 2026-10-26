@@ -23,6 +23,13 @@ Deliver a project that can be identified, reopened, reviewed, and published with
 9. For desktop/mobile handoff, transfer an editable draft rather than only a flattened video, then verify media, effects, timeline structure, magnetic behavior, captions, and versions after sync.
 10. Publish only after explicit user authorization and after checking current platform requirements rather than relying on historical course screens.
 
+## Remotion / TypeScript 适配
+
+- Render with `npx remotion render`, `@remotion/renderer`, or `@remotion/lambda`; use `calculateMetadata` to keep canvas/duration correct.
+- `@remotion/player` is for in-app review, not final platform acceptance.
+- `mediabunny`/FFmpeg can check duration, dimensions, and stream metadata after render.
+- Render success does not prove platform acceptance; cover, naming, rights, and target-platform checks remain external.
+
 ## Boundaries
 
 - The course's 4K/60 fps desktop example and 1080p/30 fps mobile example address different conditions; neither is a universal preset.

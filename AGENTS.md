@@ -16,6 +16,7 @@
 - `progress/`：可提交的课程清单、证据覆盖记录、阶段进度；不含课程全文或截图。
 - `notes/`：原创归纳及课程编号、时间码来源，不复制完整讲稿。
 - `scripts/`：课程盘点、证据检查等可复用工具。
+- `assets/`：README 头图等静态资源。
 - `skills/`：组合 Skill 源码（一个入口 `mediastorm-capcut` 与按任务边界划分的 10 个子 Skill）；当前为未完成音画验收的草稿版，已安装到 Codex 用户技能目录。
 - `HANDOFF.md`：会话交接快照、已确认约定、现有产物与后续执行入口；实时进度以 `progress/` 和实际核查为准。
 - Skill 采用一个入口 Skill 路由至具体 Skill；源码在 `skills/` 维护，验证后复制安装到 Codex。
@@ -84,6 +85,13 @@ chore: 添加 .gitignore
 - 按有实质价值的阶段成果进行本地 Conventional Commits 提交，不强制逐课提交，不自动推送。
 - 原始课程始终只读。所有字幕全文、截图、音频、视频副本及分析缓存位于被忽略的 `cheese/` 下。
 - 2026-10-26 后续会话中，用户明确指示“先不要读取视频了，做 skill，并记录视频没有多模态读取”。因此当前 `skills/` 是未验收草稿版；它只基于字幕、抽样画面、ASR 和工具契约，不代表课程音画学习完成。
+
+## Remotion 适配约定（2026-10-26）
+
+- 项目主路径仍是 CapCut；Remotion 是第二条实现路径，用 React / TypeScript 组合表达同一剪辑判断。
+- README 与子 Skill 增加 Remotion / TypeScript 工具映射；这些是基于官方文档的 API 建议，不代表本仓库已创建工程、运行 Studio 或渲染验收。
+- 课程参数、CapCut 专属界面（智能剪口播、平面跟踪求解、多机位宫格、回音预设、示波器）不能假装 Remotion 有等价内置能力；需要外部数据或外部处理时明确写出。
+- 修改 Remotion 适配内容时同步检查 README 的“支持的两条路径”表与各子 Skill 的“Remotion / TypeScript 适配”段。
 
 ## 详细执行计划与验收标准
 

@@ -20,6 +20,13 @@ Build the edit around information, viewer attention, and relationships between s
 6. Use matching shape, position, movement, sound, or idea to justify montage transitions. Check whether juxtaposition accidentally creates a false causal claim.
 7. Review the full structure for promise fulfillment, alternation between intensity and relief, and whether B-roll clarifies rather than merely decorates.
 
+## Remotion / TypeScript 适配
+
+- Use `<Sequence>`/`<Series>` for sections and `@remotion/transitions` `TransitionSeries` for adjacent shots that need transitions.
+- Keep `trimBefore`/`durationInFrames` on the JSX node and derive seconds with `useVideoConfig().fps`.
+- Shot length remains an editorial decision; do not replace it with a fixed `secondsPerShot` constant.
+- Use `@remotion/layout-utils` for text fitting and safe-area checks.
+
 ## Boundaries
 
 - Treat course timing examples, opening lengths, channel duration preferences, and “clock” positions as diagnostic examples, not universal rules.

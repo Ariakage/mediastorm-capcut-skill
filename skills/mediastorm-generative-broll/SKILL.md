@@ -21,6 +21,13 @@ Use generated media as a constrained supplement, not as invisible evidence or an
 7. Preserve prompts, source instructions, selected candidates, cost authorization, and review outcome so the result can be regenerated or challenged later.
 8. Recheck current model names, prices, rights, and platform policies at use time. A course-screen model name is historical evidence, not current availability.
 
+## Remotion / TypeScript 适配
+
+- Generation happens in an external service; store results in `public/` and reference them with `staticFile()`.
+- Define prompt, aspect ratio, duration, and model as `zod`/`@remotion/zod-types` props; review candidates in `@remotion/player`.
+- Remotion does not call or pay for models; cost, rights, and current availability remain external checks.
+- Label generated shots in props/metadata and keep them out of documentary evidence.
+
 ## Boundaries
 
 - Do not invoke paid generation, upload private source media, or publish generated media without explicit authorization.

@@ -19,6 +19,13 @@ Prepare the project so later editing decisions rest on reliable media, paths, an
 5. Reduce playback load deliberately: identify cache/background load first, then use proxies or lower preview burden while keeping the original media linked for final output.
 6. Record the intake gate before handing off: originals intact, media online, source parameters known, proxy/original relationship clear, and privacy/upload boundaries respected.
 
+## Remotion / TypeScript 适配
+
+- Use `mediabunny` for duration/dimensions and `calculateMetadata` to set `durationInFrames`, `width`, `height`, and `fps` from the actual asset.
+- Put media in `public/` and reference it with `staticFile()`; define editable props with `zod` or `@remotion/zod-types`.
+- Remotion has no built-in relink/cache/proxy UI. Keep a manifest, relative paths, and checksums; fail loudly when a source is missing.
+- A proxy can improve Studio preview but must not replace the original at render time.
+
 ## Boundaries
 
 - Do not upload private media or enable cloud sync without explicit authorization.

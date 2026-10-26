@@ -21,6 +21,13 @@ Correct the technical input before creating a look, then verify the grade across
 7. Use reference images or smart matching as a starting point, then inspect skin, scene lighting, blacks, highlights, and whether a second technical restoration was accidentally applied.
 8. Compare before/after, neighboring shots, scopes, and normal-speed playback. Reject a single-frame match that fails in motion.
 
+## Remotion / TypeScript 适配
+
+- `colorCorrection()` performs exposure, white balance, shadows/highlights, contrast, saturation, and vibrance in one WebGL pass.
+- `lut()` applies a `.cube` LUT from its text content; keep LUTs in `public/` or import them as text.
+- `@remotion/effects` adds `glow`, `lightLeak`, `vignette`, and related looks; these are style, not technical restoration.
+- Remotion has no waveform/vectorscope UI. Use external scopes or a custom Canvas/WebGL analysis.
+
 ## Boundaries
 
 - A course frame showing Apple Log2 beside a C-Log3 LUT documented an incorrect-match demonstration, not a valid pairing.

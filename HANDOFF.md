@@ -416,3 +416,12 @@ cheese/.analysis/.venv/bin/python scripts/course_audit.py transcribe 01
 - 重要归属修正：第 08 课只讲关键帧/缓动，不含点跟踪标签、数字闪变、计时器；这些在第 12、15 课，平面跟踪在第 13 课。
 - 已同步到 `~/.codex/skills/mediastorm-*`：11 个安装副本与源码 `diff -qr` 零差异，全部通过 `quick_validate.py`。
 - 所有 Skill 仍保留 `status: provisional-unverified-audiovisual`；本轮只回写静态画面可确认的内容，没有把听辨或连续视频结论写进去。
+
+## 15. 2026-10-26 Remotion 适配与 README 重做
+
+- README 重写为 CapCut + Remotion 双路径：新增 SVG 头图、安装方式、10 个子 Skill 的 TypeScript 工具表、剪辑/调色技巧地图、Star History。
+- 新增 `assets/readme-header.svg`（1280×320，时间线/波形/关键帧/色卡主题）。
+- 入口新增 `skills/mediastorm-capcut/references/remotion-adapter.md`：官方包映射、代码骨架、不能直接映射的边界。
+- 10 个子 Skill 各增加“Remotion / TypeScript 适配”段；安装副本已同步并通过 quick_validate。
+- **未创建 Remotion 工程、未运行 Studio、未渲染成片**；该路径是基于官方文档的 API 建议，不是本仓库的已验收产物。
+- 项目主路径仍是 CapCut；Remotion 适配不改变现有课程证据边界，也不把 Skill 标为最终版。

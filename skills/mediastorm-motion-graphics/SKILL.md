@@ -21,6 +21,13 @@ Use motion to clarify information, guide attention, and land changes on a stable
 7. Pair entrance and exit animations with consistent style, position, and slight overlap only when the package benefits from that continuity.
 8. Check occlusions, safe areas, readability, neighboring animations, and whether transitions or overlays make the test target impure.
 
+## Remotion / TypeScript 适配
+
+- Drive values with `interpolate` + `Easing.bezier`/`Easing.spring`; read `useCurrentFrame()` and `useVideoConfig().fps`.
+- Use `@remotion/shapes` for rects/circles/stars, `@remotion/layout-utils` to measure/fit text, and `@remotion/motion-blur` for blur.
+- Number flashes: derive the current value from `Math.floor(frame / framesPerValue)`, then hold the final value on the frame grid.
+- Remotion has no point-tracking panel; feed tracked coordinates from external data into transforms.
+
 ## Boundaries
 
 - Course 08 covers keyframes and easing only; point-tracked labels and number flashes are in course 12, timers in course 15, and planar tracking in course 13. Do not merge them.

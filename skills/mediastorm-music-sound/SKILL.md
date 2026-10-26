@@ -21,6 +21,13 @@ Make sound an editorial layer with a reason to enter, change, and leave.
 7. Balance dialogue first, then music and effects around it. Distinguish measured loudness from perceived clarity, and avoid applying the same gain to every clip as a substitute for mix judgment.
 8. Validate by listening through real transitions and the ending, including left/right integrity, room tone, tail decay, and whether effects mask speech.
 
+## Remotion / TypeScript 适配
+
+- Use `<Audio>` from `@remotion/media` with `trimBefore`, `from`, `durationInFrames`, `volume`, `playbackRate`, and `loop`.
+- J/L-cuts are audio nodes with positive/negative `from` offsets relative to the picture cut.
+- `@remotion/media-utils` exposes audio data for waveforms; `mediabunny` reads durations.
+- Remotion has no “回音/大厅混响” preset. Render or prepare a tail externally and place it as an audio node.
+
 ## Boundaries
 
 - This session did not complete original-audio listening. Present sound recommendations as course-informed planning until the actual mix is heard.
