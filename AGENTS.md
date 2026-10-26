@@ -95,6 +95,7 @@ chore: 添加 .gitignore
 - 修改 Remotion 适配内容时同步检查 README 的“支持的两条路径”表与各子 Skill 的“Remotion / TypeScript Adapter”段。
 - `skills/` 的 prompt 与 references 以英文为主；中文界面标签只作为界面证据保留在反引号或引号中，并附英文释义，不作为第二语言正文。
 - `remotion/` 是可运行的合成演示工程；`assets/demo/skill-atlas.mp4` 是其渲染副本，不含课程原片或课程音频。渲染成功不等于课程音画验收或平台验收。
+- 合成演示媒体只能通过 `assets/demo/synthetic-media.json` 的路径 + SHA256 白名单入库；清单外或哈希不匹配的媒体仍按课程媒体拦截，`check_progress.py` 会报错。
 
 ## 详细执行计划与验收标准
 
