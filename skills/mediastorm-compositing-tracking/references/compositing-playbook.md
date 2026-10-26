@@ -1,58 +1,58 @@
-# 抠像、蒙版与空间合成
+# Keying, Masking, and Spatial Compositing
 
-## 抠像验收
+## Keying Acceptance
 
-- `[课程][10 01:46–03:55]` 智能抠像后沿整段运动检查发丝、边缘、漏背景和误删主体；自定义笔刷修正一帧后仍要检查算法传播。
-- `[课程][10 03:55–05:12]` 人物背后文字由背景、文字、抠出人物三层组成；复制人物层要与背景时点同步，可临时隐藏背景暴露缺陷。
-- `[课程][10 05:12–07:49]` 色度抠像随光照、褶皱、溢色调整；扩大阈值可能伤主体，羽化不能替代去溢色和边缘恢复。
-- `[课程][10 07:49–09:23]` 垃圾蒙版要覆盖人物完整活动范围，不能只看一个时点。
+- `[course evidence][10 01:46–03:55]` After AI keying, check hair, edges, background leaks, and mistakenly removed subject areas along the entire motion; even after correcting a single frame with a custom brush, still check how the algorithm propagates.
+- `[course evidence][10 03:55–05:12]` Text behind a person consists of three layers: background, text, and keyed-out person; the duplicated person layer must stay time-synced with the background, and temporarily hiding the background can expose defects.
+- `[course evidence][10 05:12–07:49]` Chroma keying is adjusted for lighting, wrinkles, and spill; expanding the threshold may damage the subject, and feathering cannot replace spill removal and edge recovery.
+- `[course evidence][10 07:49–09:23]` A garbage mask must cover the subject's complete range of motion and cannot be judged from a single point in time.
 
-## 混合模式
+## Blend Modes
 
-- `[课程][10 09:23–10:51]` 混合模式改变颜色融合，不等于生成精确透明通道。
-- `[课程][10 00:10:25]` 画面确实把“强光”列入变亮相关分组；不能把字幕当作误识别，但也不能把课程表写成通用参数。
-- `[工具][FFmpeg 本机实验]` 灰底 RGB128 上叠纯黑时，`screen` 与 `lighten` 保持灰底，`hardlight` 输出黑。这证明不能把“强光去黑底”写成通用规则；它不是剪映实测。
+- `[course evidence][10 09:23–10:51]` Blend modes change color mixing; they do not equal producing a precise alpha channel.
+- `[course evidence][10 00:10:25]` The on-screen UI does list `强光` (Hard Light) in the brighten-related group; the subtitle must not be treated as a misrecognition, but the course's table also must not be written up as a universal parameter.
+- `[tool boundary][FFmpeg local experiment]` When pure black is composited over an RGB128 gray background, `screen` and `lighten` keep the gray background, while `hardlight` outputs black. This proves that "Hard Light removes black backgrounds" cannot be written as a universal rule; it is not a CapCut test.
 
-## 平面跟踪
+## Planar Tracking
 
-- `[课程][13 01:58–03:37]` 先看完整镜头并确定目标平面；文本可封装为复合片段以获得平面跟踪入口，并保留编辑余量。
-- `[课程][13 04:02–05:23]` 选择目标平面露出面积大、特征充分的参考帧，四角贴合实际平面。
-- `[课程][13 05:23–06:16]` 课程版本中目标离开后不自动重新捕获；目标消失前修剪并安排出场，重新出现另作一段跟踪。实际版本需重查。
-- `[课程][13 08:30–09:46]` 贴图拉伸时区分复合片段内文字比例和外层平面透视，不要破坏跟踪关系。
-- `[课程][13 09:46–10:54]` 内层包装返回后分别验证跟踪稳定、形状正确、运动不漂。
+- `[course evidence][13 01:58–03:37]` Watch the complete shot first and identify the target plane; text can be packaged as a compound clip to gain the planar-tracking entry point while retaining editing headroom.
+- `[course evidence][13 04:02–05:23]` Choose a reference frame where the target plane has a large exposed area and sufficient features, and fit the four corners to the actual plane.
+- `[course evidence][13 05:23–06:16]` In the course version, the target is not automatically re-acquired after it leaves; trim and stage its exit before it disappears, and track the reappearance as a separate segment. The actual version needs re-checking.
+- `[course evidence][13 08:30–09:46]` When stretching a texture, distinguish the text proportions inside the compound clip from the outer plane's perspective, and do not break the tracking relationship.
+- `[course evidence][13 09:46–10:54]` After returning from the inner packaging, separately verify that tracking is stable, the shape is correct, and the motion does not drift.
 
-## 2026-10 画面复核补充
+## 2026-10 Sampled Stills Review Supplement
 
-- `[画面][10 01:52]` 智能抠像面板为 `羽化 0`、`边缘缩放 0`，`抠像描边` 折叠未勾选；课程全程未演示非零值。
-- `[画面][10 02:36–03:34]` 自定义抠像工具为 `智能画笔 / 智能橡皮 / 画笔 / 橡皮擦`，`大小 20`、`羽化 0`、`边缘缩放 0`；蓝色高光是保留选区，不是效果。
-- `[画面][10 05:44–07:38.5]` 色度抠图完整数值链：默认 `强度20/阴影0/羽化0/清除0` → `37/32/0/0` → 最终 `强度43/阴影31/边缘羽化7/边缘清除26`。06:42 的 `边缘羽化 38` 是瞬时值，06:50 回到 0，不能当最终值。
-- `[画面][10 08:34–08:58]` 蒙版形状共 9 种：线性/镜面/圆形/矩形/抠像/钢笔/文字/星形/心形；矩形读数为 `宽1075 高1080`、`X0/Y0`，圆形读数为 `X-86/Y-387`、`宽2876 高2662`、`羽化0`、`双向跟踪`。
-- `[画面][10 09:38 / 10:14]` 混合模式 11 项：`正常 / 颜色减淡 / 线性加深 / 强光 / 正片叠底 / 颜色加深 / 叠加 / 变亮 / 变暗 / 柔光 / 滤色`。课程分组：变暗组=线性加深/正片叠底/颜色加深/变暗；变亮组=颜色减淡/**强光**/变亮/滤色；混合叠加组=叠加/柔光。SRT 的“变量组”是“变亮组”误识别。
-- `[画面][10 04:34–04:38]` 抠像三明治：抠像层在上、文字层在中、背景层在下；复制片段放辅轨，主轨按 `V` 或右键 `禁用` 后检查。SRT 的“浮轨”是“辅轨”误识别。
-- `[画面][10 02:08]` 预览轴提示为“关闭预览轴(S)”，说明演示时已开启；`S` 是开关，不是单向开启。
-- `[画面][13 03:04–03:30]` 普通文本不能直接平面跟踪，必须先右键“新建复合片段（子草稿）”；文字样例为字体 `系统`、字号 15、阴影不透明度 44%、模糊度 15%，随后“保存预设”。
-- `[画面][13 03:46–03:58]` 平面跟踪入口：选中复合片段 → 右上参数面板“跟踪” → “平面跟踪”。面板可见“无/运动跟踪/平面跟踪”“编辑跟踪平面”“调整素材角度”“当前跟踪平面 平面2-运镜源素材.mov”“跟踪方向 双向跟踪”“开始跟踪”。
-- `[画面][13 04:40–05:18]` 首次参考帧过于倾斜、手机屏幕占比小，跟踪漂移；改到屏幕占比最大的帧重新拉四角、重新跟踪后贴合。
-- `[画面][13 05:26–05:30]` 跟踪平面与贴图位置可分离：文字被移到手机屏幕外，仍贴着手机边框随平面运动。
-- `[画面][13 05:40–06:08]` 现版本中目标平面出画后跟踪丢失，即使再次出现也不自动重新捕获；处理方式是在消失帧切分、删除后段，并给前段加“渐隐”。
-- `[画面][13 07:26–08:00]` 同一素材的跟踪平面下拉可见“平面1-运镜源素材”到“平面9-运镜源素材”；案例把平面重命名为“电脑屏幕”“手机”“电脑”。
-- `[画面][13 08:52–09:16]` 文字被横向拉伸时，进入复合片段关闭“等比缩放”，案例改为缩放宽度 212%、缩放高度 146%。
-- `[画面][13 09:26–09:36]` 素材透视错误时用“调整素材角度”拖素材四角，不是重做外层跟踪平面。
-- `[画面][12 17:24–17:52]` 贴纸 `背景相机跑-贴纸.png` 时长约 `00:00:01:5`；矩形蒙版宽 `2612`、高 `364`、羽化 `0`，圆角值未读出。
-- `[画面]` 第 12 课是点跟踪/文字跟踪，第 13 课是平面跟踪；两者入口与自由度不同，不要合并成“跟踪”。
+- `[sampled stills][10 01:52]` The AI keying panel shows `羽化 0` (Feather 0) and `边缘缩放 0` (Edge Scaling 0), while `抠像描边` (Keying Outline) is collapsed and unchecked; the course never demonstrates a non-zero value throughout.
+- `[sampled stills][10 02:36–03:34]` The custom keying tools are `智能画笔 / 智能橡皮 / 画笔 / 橡皮擦` (Smart Brush / Smart Eraser / Brush / Eraser), with `大小 20` (Size 20), `羽化 0` (Feather 0), and `边缘缩放 0` (Edge Scaling 0); the blue highlight is the kept selection, not an effect.
+- `[sampled stills][10 05:44–07:38.5]` Complete chroma-key value chain: default `强度20/阴影0/羽化0/清除0` (Strength 20 / Shadow 0 / Feather 0 / Remove 0) → `37/32/0/0` → final `强度43/阴影31/边缘羽化7/边缘清除26` (Strength 43 / Shadow 31 / Edge Feather 7 / Edge Remove 26). The `边缘羽化 38` at 06:42 is a transient value that returns to 0 at 06:50 and must not be treated as the final value.
+- `[sampled stills][10 08:34–08:58]` There are 9 mask shapes: Linear / Mirror / Circle / Rectangle / Keying / Pen / Text / Star / Heart; the rectangle reads `宽1075 高1080` (width 1075, height 1080) and `X0/Y0`, and the circle reads `X-86/Y-387`, `宽2876 高2662` (width 2876, height 2662), `羽化0` (Feather 0), and `双向跟踪` (Bidirectional Tracking).
+- `[sampled stills][10 09:38 / 10:14]` 11 blend modes: `正常 / 颜色减淡 / 线性加深 / 强光 / 正片叠底 / 颜色加深 / 叠加 / 变亮 / 变暗 / 柔光 / 滤色` (Normal / Color Dodge / Linear Burn / Hard Light / Multiply / Color Burn / Overlay / Lighten / Darken / Soft Light / Screen). Course grouping: darken group = Linear Burn / Multiply / Color Burn / Darken; brighten group = Color Dodge / **Hard Light** / Lighten / Screen; composite-overlay group = Overlay / Soft Light. The SRT's “变量组” (variable group) is a misrecognition of “变亮组” (brighten group).
+- `[sampled stills][10 04:34–04:38]` Keying sandwich: keyed layer on top, text layer in the middle, background layer at the bottom; place the duplicated clip on a secondary track and check after disabling the main track with `V` or the right-click `禁用` (Disable). The SRT's “浮轨” (floating track) is a misrecognition of “辅轨” (secondary track).
+- `[sampled stills][10 02:08]` The preview-axis tooltip reads “关闭预览轴(S)” (Close Preview Axis (S)), showing that it was already enabled during the demonstration; `S` is a toggle, not a one-way enable.
+- `[sampled stills][13 03:04–03:30]` Plain text cannot be planar-tracked directly and must first be turned into a “新建复合片段（子草稿）” (Create Compound Clip (Sub-draft)) via right-click; the text example uses font `系统` (System), size 15, shadow opacity 44%, and blur 15%, then “保存预设” (Save Preset).
+- `[sampled stills][13 03:46–03:58]` Planar-tracking entry: select the compound clip → “跟踪” (Tracking) in the upper-right parameter panel → “平面跟踪” (Planar Tracking). The panel shows “无/运动跟踪/平面跟踪” (None / Motion Tracking / Planar Tracking), “编辑跟踪平面” (Edit Tracking Plane), “调整素材角度” (Adjust Material Angle), “当前跟踪平面 平面2-运镜源素材.mov” (Current Tracking Plane: Plane 2 – Camera-Move Source Footage.mov), “跟踪方向 双向跟踪” (Tracking Direction: Bidirectional Tracking), and “开始跟踪” (Start Tracking).
+- `[sampled stills][13 04:40–05:18]` The first reference frame was too oblique and the phone screen occupied too small an area, so tracking drifted; switching to the frame with the largest screen area, re-drawing the four corners, and re-tracking made it fit.
+- `[sampled stills][13 05:26–05:30]` The tracking plane and the texture position can be separated: the text was moved outside the phone screen yet still followed the phone's bezel and moved with the plane.
+- `[sampled stills][13 05:40–06:08]` In the current version, tracking is lost after the target plane leaves the frame, and it is not automatically re-acquired even when it reappears; the handling is to split at the disappearing frame, delete the later segment, and add “渐隐” (Fade Out) to the earlier segment.
+- `[sampled stills][13 07:26–08:00]` For the same material, the tracking-plane dropdown shows “平面1-运镜源素材” through “平面9-运镜源素材” (Plane 1 – Camera-Move Source Footage through Plane 9 – Camera-Move Source Footage); the case renames the planes to “电脑屏幕” (Computer Screen), “手机” (Phone), and “电脑” (Computer).
+- `[sampled stills][13 08:52–09:16]` When the text is stretched horizontally, enter the compound clip and disable “等比缩放” (Uniform Scaling); the case changes it to scale width 212% and scale height 146%.
+- `[sampled stills][13 09:26–09:36]` When the material's perspective is wrong, use “调整素材角度” (Adjust Material Angle) to drag the material's four corners, not to redo the outer tracking plane.
+- `[sampled stills][12 17:24–17:52]` The sticker `背景相机跑-贴纸.png` lasts about `00:00:01:5`; the rectangle mask is width `2612`, height `364`, feather `0`, and the corner-radius value was not read.
+- `[sampled stills]` Lesson 12 is point tracking / text tracking, while Lesson 13 is planar tracking; their entry points and degrees of freedom differ, so do not merge them into one “tracking” topic.
 
-## 工具边界
+## Tool Boundaries
 
-- `[工具][capcut-cli 0.31.1]` `matting` 写材料配置 flag；不是像素抠像完成证明。
-- `[工具][capcut-cli 0.31.1]` `chroma` 可设置颜色和强度；仍需视觉验收。
-- `[工具][capcut-cli 0.31.1]` `mix-mode` 的 mode 是字符串契约；未在剪映界面完成视觉验收。
-- 当前没有 CLI 平面求解证据；必要时转剪映界面或专用跟踪工具。
+- `[tool boundary][capcut-cli 0.31.1]` `matting` writes a material configuration flag; it is not proof that pixel keying was completed.
+- `[tool boundary][capcut-cli 0.31.1]` `chroma` can set color and intensity; visual acceptance is still required.
+- `[tool boundary][capcut-cli 0.31.1]` The `mix-mode` mode is a string contract; no visual acceptance has been completed in the CapCut UI.
+- There is currently no CLI evidence for plane solving; switch to the CapCut UI or a dedicated tracking tool when necessary.
 
-## 失败条件
+## Failure Conditions
 
-- 只看静帧或只验第一帧。
-- 蒙版没有覆盖完整活动范围。
-- 阈值扩大损伤主体。
-- 用混合模式冒充精确 alpha。
-- 目标消失后仍假定自动重捕。
-- 烘焙后丢失可编辑工程或中间编码质量未查。
+- Looking only at a still frame or verifying only the first frame.
+- The mask does not cover the complete range of motion.
+- Expanding the threshold damages the subject.
+- Using a blend mode as a stand-in for precise alpha.
+- Assuming automatic re-acquisition after the target disappears.
+- Losing the editable project after baking, or not checking intermediate encode quality.

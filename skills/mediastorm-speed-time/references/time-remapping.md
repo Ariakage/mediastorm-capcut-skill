@@ -1,46 +1,46 @@
-# 变速与时间重构
+# Speed Changes and Time Remapping
 
-## 先分清目的
+## First distinguish the purpose
 
-- `[课程][09 01:26–02:38]` 裁切和变速不同；常速变速要同时考虑源区间、目标时长和下游位置。
-- `[课程][09 05:01–06:21]` 小幅补时长和艺术化重构时间不是同一目标，不能为了填空把素材慢放到不自然。
+- `[course evidence][09 01:26–02:38]` Trimming and speed changes are different; a constant-speed change must consider the source range, target duration, and downstream position together.
+- `[course evidence][09 05:01–06:21]` Slightly extending the duration and artistically reconstructing time are not the same goal; do not slow material down to an unnatural degree just to fill a gap.
 
-## 源帧率筛查
+## Source frame-rate screening
 
-- `[课程][09 02:38–05:01]` 低帧率极慢放缺少真实运动采样；帧融合可能重影，光流可能变形。
-- `[推论]` 不补帧时，若播放倍率为 `v`、源帧率为 `Fs`、输出帧率为 `Fo`，可用 `Fs × v ≥ Fo` 做独特帧供应的第一道筛查。
-- 该公式不保证快门模糊、曝光、编码质量、动作复杂度或光流结果。
+- `[course evidence][09 02:38–05:01]` Extremely slow motion from low frame rates lacks real motion samples; `帧融合` (frame blending) may ghost, and optical flow may warp.
+- `[inference]` Without frame interpolation, if the playback multiplier is `v`, the source frame rate is `Fs`, and the output frame rate is `Fo`, then `Fs × v ≥ Fo` can serve as the first screening test for unique-frame supply.
+- This formula does not guarantee shutter blur, exposure, encoding quality, motion complexity, or optical-flow results.
 
-## 曲线变速
+## Speed curves
 
-- `[课程][09 06:21–09:25]` 围绕动作顶点或转场设计：先定位关键点，再安排加速、峰值慢放和恢复。
-- `[课程][09 09:25–10:50]` 自动变速卡点只是候选；先判断内容是否需要，避免过用。
-- 案例中的 0.3×、0.1×不是默认值，必须结合源帧率和实际画面检查。
+- `[course evidence][09 06:21–09:25]` Design around the action peak or the transition: first locate the key points, then arrange acceleration, peak slow motion, and recovery.
+- `[course evidence][09 09:25–10:50]` Automatic beat-synced speed changes are only candidates; first judge whether the content needs them and avoid overuse.
+- The 0.3× and 0.1× in the example are not default values; they must be checked against the source frame rate and the actual picture.
 
-## 工具边界
+## Tool boundary
 
-- `[工具][capcut-cli 0.31.1]` `speed <project> <id> <multiplier>` 是恒定倍速。
-- `[工具][capcut-cli 0.31.1]` `keyframe` 支持位置/缩放/旋转/alpha/volume 及基础 easing；普通 keyframe 不等于课程的曲线变速。
-- 修改速度后检查 `source_timerange` 与 `target_timerange` 关系；源不足会产生黑尾或静音尾。
-- 下游片段、字幕、音频、关键帧和音乐同步都要重查。
+- `[tool boundary][capcut-cli 0.31.1]` `speed <project> <id> <multiplier>` applies a constant speed multiplier.
+- `[tool boundary][capcut-cli 0.31.1]` `keyframe` supports position/scale/rotation/alpha/volume and basic easing; ordinary keyframes are not the same as the course's curve speed.
+- After changing the speed, check the relationship between `source_timerange` and `target_timerange`; insufficient source produces a black tail or a silent tail.
+- Downstream clips, subtitles, audio, keyframes, and music sync must all be rechecked.
 
-## 2026-10 画面复核补充
+## 2026-10 visual review supplement
 
-- `[画面][09 01:55.5 / 02:06.5 / 03:36.5]` 常规变速读到 `1.97x`（4.2s）、`0.46x`（9.1s）、`0.10x`（41.4s）；慢放读数基本满足“时长 ≈ 源时长 ÷ 倍率”，快放读数存在调整中的不一致。
-- `[画面][09 02:56–03:18]` 30fps 网格示意 `1.0x → 0.9x → 0.5x`，出现空白格和“重复帧”格；这是 0.1x 卡顿的直接解释。`智能补帧` 提供 `帧融合`（默认、较快、易重影）和 `光流法`（较慢、效果更好）。
-- `[画面][09 04:36.5]` 相机监视器读到 `4096×2160`、`800 fps`（720/750/780/800 可选、24x/25x/26x）、ISO400、Rec.709、4800K；这是相机菜单，不是剪映序列帧率。讲师另建议前期拍 60/120fps。
-- `[画面][09 07:10.5 / 08:14.5 / 09:04.5]` 曲线编辑器为 4 秒、纵轴 `10x/1x/0.1x`、三组把手；平顶山曲线可做“加速–匀速–减速”。预设名含 `无/自定义/蒙太奇/英雄时刻/子弹时间/跳跃/闪进/闪出`。
-- `[画面][09 09:52–10:06]` 变速卡点预设为 `无/闪光/摇摆模糊/闪黑变焦/复古运镜/彩虹`；案例选 `闪光`，音乐来源 `Master`，节拍频率 `踩节拍II`，变速速度 `一般`。
-- `[画面][08 09:18.5]` 项目设置显示 `草稿帧率：30.00帧/秒`；源视频为 1920×1080、29.97fps。检查供帧时要以实际输出帧率为准。
+- `[sampled stills][09 01:55.5 / 02:06.5 / 03:36.5]` Regular speed change reads `1.97x` (4.2s), `0.46x` (9.1s), `0.10x` (41.4s); the slow-motion readings basically satisfy “duration ≈ source duration ÷ multiplier”, while the fast-motion readings show inconsistency during adjustment.
+- `[sampled stills][09 02:56–03:18]` The 30fps grid illustration runs `1.0x → 0.9x → 0.5x`, with blank cells and “repeated frame” cells; this directly explains the stutter at 0.1x. `智能补帧` (Smart frame interpolation) offers `帧融合` (default, faster, prone to ghosting) and `光流法` (optical flow; slower, better results).
+- `[sampled stills][09 04:36.5]` The camera monitor reads `4096×2160`, `800 fps` (720/750/780/800 selectable, 24x/25x/26x), ISO400, Rec.709, 4800K; this is the camera menu, not the CapCut sequence frame rate. The instructor separately recommends shooting at 60/120fps in production.
+- `[sampled stills][09 07:10.5 / 08:14.5 / 09:04.5]` The curve editor spans 4 seconds, its vertical axis is `10x/1x/0.1x`, and it has three sets of handles; a flat-topped curve can produce “accelerate–constant–decelerate”. Preset names include `无/自定义/蒙太奇/英雄时刻/子弹时间/跳跃/闪进/闪出` (None / Custom / Montage / Hero moment / Bullet time / Jump / Flash in / Flash out).
+- `[sampled stills][09 09:52–10:06]` The speed-change beat presets are `无/闪光/摇摆模糊/闪黑变焦/复古运镜/彩虹` (None / Flash / Sway blur / Flash-black zoom / Retro camera move / Rainbow); the example selects `闪光` (Flash), with music source `Master`, beat frequency `踩节拍II` (Beat Sync II), and speed-change rate `一般` (Normal).
+- `[sampled stills][08 09:18.5]` Project settings show `草稿帧率：30.00帧/秒` (draft frame rate: 30.00 frames/second); the source video is 1920×1080 at 29.97fps. When checking frame supply, use the actual output frame rate as the basis.
 
-## 验收
+## Acceptance
 
-1. 源素材帧率与动作复杂度记录完成。
-2. 变速目的明确，非单纯填空。
-3. 慢放全段以正常输出速度检查，不用稀疏抽帧替代。
-4. 光流/融合伪影、运动抖动和尾部越界已检查。
-5. 音乐或动作峰值实际对齐，而非只看时间码。
+1. Source-material frame rate and motion complexity have been recorded.
+2. The purpose of the speed change is clear and not merely filling a gap.
+3. The entire slow-motion section is checked at normal output speed, not replaced by sparse frame sampling.
+4. Optical-flow/frame-blending artifacts, motion judder, and out-of-range tails have been checked.
+5. Music or action peaks are actually aligned, not judged only from timecodes.
 
-## 当前待验
+## Currently pending verification
 
-第 09 课慢放前后、光流瑕疵、动作峰值与音乐对齐仍需连续画面和原声复核。
+The before/after slow motion, optical-flow defects, and action-peak-to-music alignment in lesson 09 still require continuous video and original-audio review.

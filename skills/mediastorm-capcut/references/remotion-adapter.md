@@ -1,12 +1,12 @@
-# Remotion / TypeScript 适配
+# Remotion / TypeScript adapter
 
-本参考把 10 个子 Skill 的剪辑判断映射到 Remotion 官方 API。它是**实现建议**，不是已渲染验收；课程画面证据仍以 CapCut 路径为准。
+This reference maps the editing judgments of the 10 child skills to official Remotion APIs. It is an **implementation suggestion**, not a rendered acceptance; course picture evidence still follows the CapCut path.
 
-## 先决条件
+## Prerequisites
 
-- Node.js、Git；新建工程用 `npx create-video@latest`，已有工程直接安装所需包。
-- 用 `npx remotion add <package>` 安装，版本由当前 Remotion 解析；不要手工拼不兼容版本。
-- Studio 用 `npx remotion studio` 打开；渲染是另一个明确动作：`npx remotion render`。
+- Node.js and Git; for a new project, use `npx create-video@latest`; for an existing project, install the required packages directly.
+- Install with `npx remotion add <package>`; the version is resolved by the current Remotion; do not hand-assemble incompatible versions.
+- Open Studio with `npx remotion studio`; rendering is a separate, explicit action: `npx remotion render`.
 
 ```bash
 npx create-video@latest --yes --blank --no-tailwind mediastorm-remotion
@@ -22,24 +22,24 @@ npx remotion add @remotion/shapes
 npx remotion studio
 ```
 
-## 子 Skill 映射
+## Child skill mapping
 
-| 子 Skill | 建议包 / API | 不能直接映射的部分 |
+| Child skill | Suggested packages / APIs | What cannot be mapped directly |
 | --- | --- | --- |
-| `mediastorm-project-prep` | `mediabunny`、`calculateMetadata`、`staticFile()`、`zod`、`@remotion/zod-types` | 剪映的媒体重链接、缓存/代理 UI；需自建 manifest 与错误处理 |
-| `mediastorm-story-structure` | `Sequence`、`Series`、`@remotion/transitions` 的 `TransitionSeries`、`@remotion/layout-utils` | 自动踩点、剪映的磁吸/主轨 UI |
-| `mediastorm-dialogue-interview` | `@remotion/captions` 的 `Caption`、`@remotion/media`、`@remotion/whisper-webgpu`、`@huggingface/transformers` | 剪映智能剪口播的逐字稿面板、多机位 4/9 宫格 |
-| `mediastorm-music-sound` | `@remotion/media` 的 `<Audio>`、`@remotion/media-utils`、`mediabunny` | 剪映“回音/大厅混响”预设、复合片段容器 |
-| `mediastorm-speed-time` | `<Video playbackRate>`、`trimBefore`、`durationInFrames`、`@remotion/motion-blur`、`mediabunny` | 剪映速度曲线编辑器、内置光流补帧 |
-| `mediastorm-motion-graphics` | `interpolate`、`Easing`、`spring`、`@remotion/shapes`、`@remotion/layout-utils`、`@remotion/motion-blur`、`@remotion/rough-notation` | 剪映的跟踪面板、数字闪变/计时器预设 |
-| `mediastorm-compositing-tracking` | `@remotion/effects` 的 `colorKey`/`cornerPin`/`mirror`/`blur`、CSS `mask`/`clip-path`、`@remotion/three` | 剪映平面跟踪求解器、智能抠像的发丝像素结果 |
-| `mediastorm-color-grading` | `colorCorrection()`、`lut()`、`@remotion/effects` 的 `glow`/`lightLeak`/`vignette` | 剪映色轮/示波器 UI、Log 自动识别 |
-| `mediastorm-generative-broll` | 外部生成 API + `staticFile()`、`@remotion/player`、`zod` | 剪映内置模型、积分/价格/可用性 |
-| `mediastorm-delivery-handoff` | `@remotion/cli`、`@remotion/renderer`、`@remotion/lambda`、`@remotion/player`、`mediabunny` | 平台二审、会员素材、剪映云空间 |
+| `mediastorm-project-prep` | `mediabunny`, `calculateMetadata`, `staticFile()`, `zod`, `@remotion/zod-types` | CapCut's media relinking and cache/proxy UI; you must build your own manifest and error handling |
+| `mediastorm-story-structure` | `Sequence`, `Series`, `TransitionSeries` from `@remotion/transitions`, `@remotion/layout-utils` | Automatic beat detection and CapCut's magnetic/main-track UI |
+| `mediastorm-dialogue-interview` | `Caption` from `@remotion/captions`, `@remotion/media`, `@remotion/whisper-webgpu`, `@huggingface/transformers` | CapCut's word-level transcript panel for smart talking-head cutting, and the multicam 4/9 grid |
+| `mediastorm-music-sound` | `<Audio>` from `@remotion/media`, `@remotion/media-utils`, `mediabunny` | CapCut's `回音/大厅混响` (Echo/Hall Reverb) presets and compound-clip container |
+| `mediastorm-speed-time` | `<Video playbackRate>`, `trimBefore`, `durationInFrames`, `@remotion/motion-blur`, `mediabunny` | CapCut's speed-curve editor and built-in optical-flow frame interpolation |
+| `mediastorm-motion-graphics` | `interpolate`, `Easing`, `spring`, `@remotion/shapes`, `@remotion/layout-utils`, `@remotion/motion-blur`, `@remotion/rough-notation` | CapCut's tracking panel and number-flicker/timer presets |
+| `mediastorm-compositing-tracking` | `colorKey`/`cornerPin`/`mirror`/`blur` from `@remotion/effects`, CSS `mask`/`clip-path`, `@remotion/three` | CapCut's planar-tracking solver and the hair-pixel result of smart keying |
+| `mediastorm-color-grading` | `colorCorrection()`, `lut()`, `glow`/`lightLeak`/`vignette` from `@remotion/effects` | CapCut's color-wheel/scopes UI and automatic Log detection |
+| `mediastorm-generative-broll` | External generation APIs + `staticFile()`, `@remotion/player`, `zod` | CapCut's built-in models, credits/pricing/availability |
+| `mediastorm-delivery-handoff` | `@remotion/cli`, `@remotion/renderer`, `@remotion/lambda`, `@remotion/player`, `mediabunny` | Platform second review, membership assets, CapCut cloud space |
 
-## 代码骨架
+## Code skeleton
 
-### 组合与时间线
+### Composition and timeline
 
 ```tsx
 import {Composition, Sequence, staticFile, useVideoConfig} from 'remotion';
@@ -82,7 +82,7 @@ export const Root = () => (
 );
 ```
 
-### 字幕
+### Captions
 
 ```tsx
 import type {Caption} from '@remotion/captions';
@@ -92,9 +92,9 @@ const captions: Caption[] = [
 ];
 ```
 
-字幕时间相对原素材；把 `trimBefore` 放在承载视频和字幕的同一个 `Sequence` 上，避免两层时钟错位。
+Caption times are relative to the source asset; put `trimBefore` on the same `Sequence` that carries both the video and the captions, to avoid a two-layer clock mismatch.
 
-### 调色
+### Color grading
 
 ```tsx
 import {Video} from '@remotion/media';
@@ -110,7 +110,7 @@ import {staticFile} from 'remotion';
 />
 ```
 
-### 动效
+### Motion
 
 ```tsx
 import {Easing, interpolate, useCurrentFrame} from 'remotion';
@@ -124,7 +124,7 @@ const scale = interpolate(frame, [0, 30], [1, 1.2], {
 });
 ```
 
-### 色度抠图
+### Chroma keying
 
 ```tsx
 import {Video} from '@remotion/media';
@@ -133,12 +133,12 @@ import {colorKey} from '@remotion/effects/color-key';
 <Video src={staticFile('green-screen.mp4')} effects={[colorKey({color: '#00ff00', similarity: 0.4})]} />
 ```
 
-实际参数名以当前 `@remotion/effects` 文档为准；课程中的 `强度/阴影/羽化/清除` 不是 Remotion 的同名参数。
+Actual parameter names follow the current `@remotion/effects` documentation; the course's `强度/阴影/羽化/清除` labels (Strength/Shadow/Feather/Clear) are not parameters with the same names in Remotion.
 
-## 边界
+## Boundaries
 
-- Remotion 没有剪映的平面跟踪求解器。需要先在 Mocha/AE 等工具得到四角数据，再用 `cornerPin` 或自定义 `transform` 关键帧。
-- Remotion 没有内置波形/矢量示波器。需要外部工具或自建 Canvas/WebGL 分析。
-- Remotion 没有剪映智能抠像、智能剪口播、多机位宫格、回音预设的等价 UI；这些只能近似或走外部处理。
-- 课程参数是案例值；Remotion 代码里的数值必须按当前素材、画布和输出目标重算。
-- 无论 CapCut 还是 Remotion，渲染成功都不等于平台验收；仍需实际播放、听辨和目标平台复核。
+- Remotion has no CapCut planar-tracking solver. Obtain four-corner data in a tool such as Mocha/AE first, then use `cornerPin` or custom `transform` keyframes.
+- Remotion has no built-in waveform/vectorscope. Use an external tool or build your own Canvas/WebGL analysis.
+- Remotion has no equivalent UI for CapCut smart keying, smart talking-head cutting, multicam grids, or echo presets; these can only be approximated or handled externally.
+- Course parameters are case values; numbers in Remotion code must be recomputed for the current assets, canvas, and output target.
+- Whether CapCut or Remotion, a successful render does not equal platform acceptance; you still need actual playback, listening, and review on the target platform.

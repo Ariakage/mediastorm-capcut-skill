@@ -39,6 +39,16 @@
 | 生成式 B-roll | 剪映 AI 生成、手机 AI 特效 | 外部生成 API + `staticFile()`；`@remotion/player` 审看 | 仅录课界面证据 |
 | 交付 | 封面、命名、导出、归档、跨端 | `@remotion/renderer`、`@remotion/cli`、`@remotion/lambda` | CapCut 有导出面板证据；平台规则需另查 |
 
+## Remotion 示例视频
+
+[![Remotion Skill Atlas 海报](assets/demo/skill-atlas-poster.jpg)](assets/demo/skill-atlas.mp4)
+
+- **24 秒 / 1920×1080 / 30fps / H.264 + AAC**，完全使用合成素材，不含课程原片。
+- 覆盖 6 个场景：标题、10 个 Skill 卡片、时间线与字幕、Log→调色对比、关键帧/曲线、渲染交付。
+- 使用 `TransitionSeries`、`@remotion/media`、`@remotion/captions`、`@remotion/effects` 的 `colorCorrection()`。
+- 工程源码：[remotion/README.md](remotion/README.md)；成片：[assets/demo/skill-atlas.mp4](assets/demo/skill-atlas.mp4)。
+- 边界：这是 Remotion 实现路径的视觉冒烟测试，不证明 CapCut 路径、课程音轨或平台验收。
+
 ## Skill 安装
 
 ### 1. 安装到 Codex 用户技能目录
@@ -180,7 +190,8 @@ cheese/                 本地课程素材与分析缓存（被 .gitignore 排�
 - 第二轮 **2 秒细抽帧**：6,656 帧 / 1,658 张时间码索引页逐张查看；18 篇分课解析，合计约 4,600 行。
 - 组合 Skill 已回写本轮画面修正：入口新增 [视觉证据参考](skills/mediastorm-capcut/references/visual-evidence-2026-10.md)，10 个子 Skill 补入精确时间码与参数。
 - **未完成**：连续视频理解、原声听辨、音乐/音效/语气/声道、快速动作与跟踪稳定性；Skill 仍为 `provisional-unverified-audiovisual`。
-- Remotion 路径尚未在本仓库创建工程、运行 Studio 或渲染成片；它是基于官方文档的 API 映射，不是已验收产物。
+- Remotion 路径已建立可运行工程并渲染 24 秒合成示例（[remotion/](remotion/README.md)）；但示例不含课程原片，也不等于课程音画或平台验收。
+- 全部 Skill prompt 与 references 已改为英文；中文界面标签仅作为界面证据保留在反引号/引号中，并附英文释义。
 
 详细证据见 [progress/status.md](progress/status.md)、[progress/remaining-review.md](progress/remaining-review.md) 与 [18 课细粒度画面解析](notes/visual-analysis/README.md)。
 

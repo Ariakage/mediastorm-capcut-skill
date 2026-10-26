@@ -1,53 +1,53 @@
-# 技术还原与调色流程
+# Technical Restoration and Color-Grading Workflow
 
-## 顺序
+## Order
 
-1. `[课程][11 01:27–03:36]` 识别素材真实 Log/色域，再选择匹配技术还原；画面灰不等于可随便套 LUT。
-2. `[课程][11 01:27–03:36]` 已还原素材不能重复还原。
-3. `[课程][11 03:36–05:44]` 先判断亮度、饱和度、色相，再用高光/阴影等分区工具。
-4. `[课程][11 05:44–06:30]` 独立调节层便于开关对比；片段内调节不是物理破坏原片。
-5. `[课程][11 06:30–08:31]` 色轮按明度区域处理偏色和亮度，以目标与参考为准。
-6. `[课程][16 10:19–12:40]` RGB 曲线横轴为输入、纵轴为输出；S 曲线会影响范围和细节，不能无条件套用。
-7. `[课程][16 12:40–13:28]` 智能调色/色彩克隆只作匹配起点，仍查肤色、亮度、场景光源和重复还原。
+1. `[course evidence][11 01:27–03:36]` Identify the footage's true Log/gamut, then choose a matching technical restoration; a gray-looking image does not mean a LUT can be applied arbitrarily.
+2. `[course evidence][11 01:27–03:36]` Already-restored footage must not be restored again.
+3. `[course evidence][11 03:36–05:44]` Judge brightness, saturation, and hue first, then use zone tools such as highlights/shadows.
+4. `[course evidence][11 05:44–06:30]` An independent adjustment layer makes on/off comparison easy; adjustments inside a clip are not physical destruction of the original footage.
+5. `[course evidence][11 06:30–08:31]` Color wheels handle casts and brightness by luminance zone, judged against the target and reference.
+6. `[course evidence][16 10:19–12:40]` In RGB curves the horizontal axis is input and the vertical axis is output; an S-curve affects range and detail and must not be applied unconditionally.
+7. `[course evidence][16 12:40–13:28]` Smart color adjustment / color cloning serves only as a matching starting point; still check skin tones, brightness, scene lighting, and double restoration.
 
-## 示波器判读
+## Reading the Scopes
 
-- `[课程][11 08:31–10:41]` 波形按画面横向位置显示明度分布；RGB 分量只在确有中性参考时辅助观察白平衡。
-- 三通道不重合不自动等于白平衡错误。
-- `[课程][11 10:41–12:07]` 矢量图方向和离中心距离可辅助判断色相/饱和度；有意色彩分布不应一律拉回中心。
-- 示波器触顶后能否恢复，仍需结合信号范围和原始素材，不可直接断言。
+- `[course evidence][11 08:31–10:41]` The waveform displays luminance distribution according to horizontal position in the image; RGB components help observe white balance only when a neutral reference actually exists.
+- Non-alignment of the three channels does not automatically equal a white-balance error.
+- `[course evidence][11 10:41–12:07]` The vectorscope's direction and distance from center can help judge hue/saturation; intentional color distributions should not all be pulled back to center.
+- Whether clipping at the top of a scope can be recovered still requires considering the signal range and the original footage, and cannot be asserted outright.
 
-## 2026-10 画面复核补充
+## 2026-10 Sampled Stills Review Supplement
 
-- `[画面][11 02:14–02:24]` LUT 库导入显示“正在导入素材 0/86”；内置风格 LUT 含 `黑白.cube`、`绿谷.cube`、`罗马.cube`、`曼哈顿.cube` 等；02:18 点 `黑白.cube` 后画面变黑白，说明风格 LUT 不能当技术还原。
-- `[画面][11 02:22]` 选中 `XH2S_FLog2_FGamut_to_ETERN…_BT.709_33grid_V.0.90.cube`（部分可见），套在 Apple Log 素材上作为“不匹配”示例。
-- `[画面][11 03:04.4–03:06.2]` 03:04.4 卡片为 `C-Log3 To Rec709.cube`；03:05.6 过渡帧同时露出 `C-Log3 To Rec709.cube` 与 `AppleLog2 To R…`；03:06.2 起完整显示 `AppleLog2 To Rec709.cube`。旧笔记的“同屏”只发生在切换帧，正确 LUT 从 03:06.2 起。
-- `[画面][11 03:50–03:52]` 基础面板案例值：色调 -5、饱和度 12、自然饱和度 4、亮度 7、对比度 -4、高光 8、阴影 -6、白色 7、黑色 0、光感 0、效果 0、锐化 5、清晰 0。注意“明度”是分组标题，不是独立滑块。
-- `[画面][11 04:10–04:14]` 亮度 -25 时画面近黑，+50 时整体过曝；`04:28–04:32` 高光 47/阴影 0 → 高光 47/阴影 -6 → 高光 0/阴影 12；`04:40` 饱和度 -50 时画面黑白。
-- `[画面][11 05:16–05:18]` HSL 绿色环：色相 100、饱和度 -28、亮度 0；可单独调整某一颜色。
-- `[画面][11 06:26–06:32]` `log色轮` 标签为“阴影/中间调/高光/偏移”；`一级色轮` 可见“暗部/中灰”，与旁白用词不同；下排“高光/偏移”未完整入镜，[待验]。
-- `[画面][11 07:42–07:46]` 高光色轮锚点往橙红拖 + 亮度滑轨上推，数值从 `0.18/-0.02/-0.38` 变为 `0.41/0.22/-0.15`。
-- `[画面][11 08:42–09:58]` 三个示波器：RGB 分量图、波形图（刻度 1023/512/0）、矢量图；平顶只说明该区域在示波器上触顶，不能直接断言原始信息不可恢复。
-- `[画面][11 10:46–11:42]` 偏移校正：马场素材 `0.02/0.00/-0.10 → 0.07/0.01/-0.30`；紫红山体 `-0.15/0.00/-0.30 → -0.17/0.00/-0.31`；矢量图圆环标注 RED/YELLOW/GREEN/CYAN/BLUE/MAGENTA。
-- `[画面][16 11:00–12:34]` RGB 曲线横轴“画面原亮度”、纵轴“调整后亮度”，45 度线为无变化；左下压暗部、右上提亮部形成 S 曲线；R/G/B 单通道可做色彩平衡。烧录字幕明确“往上拖变亮、往下拖变暗”。
-- `[画面][16 12:56.5–13:18]` 色彩克隆 `强度 80`、色彩校正 `强度 80`、智能调色 `场景 通用/强度 80`、LUT `强度 100/肤色保护 0`；色彩克隆是匹配起点，不是最终保证。
-- `[画面][16 10:30.5]` 基础色彩参数可见色温/色调/饱和度/自然饱和度均为 0；亮度滑块数值被面板下沿裁切。
+- `[sampled stills][11 02:14–02:24]` The LUT library import shows “正在导入素材 0/86” (Importing material 0/86); built-in style LUTs include `黑白.cube` (Black & White), `绿谷.cube` (Green Valley), `罗马.cube` (Rome), `曼哈顿.cube` (Manhattan), and others; after clicking `黑白.cube` at 02:18 the image turns black and white, showing that a style LUT cannot serve as technical restoration.
+- `[sampled stills][11 02:22]` `XH2S_FLog2_FGamut_to_ETERN…_BT.709_33grid_V.0.90.cube` is selected (partially visible) and applied to Apple Log footage as a “mismatch” example.
+- `[sampled stills][11 03:04.4–03:06.2]` At 03:04.4 the card is `C-Log3 To Rec709.cube`; the transition frame at 03:05.6 reveals both `C-Log3 To Rec709.cube` and `AppleLog2 To R…`; from 03:06.2 `AppleLog2 To Rec709.cube` is fully displayed. The old note's “same screen” only occurs on the transition frame; the correct LUT starts at 03:06.2.
+- `[sampled stills][11 03:50–03:52]` Basic-panel case values: tint -5, saturation 12, vibrance 4, brightness 7, contrast -4, highlights 8, shadows -6, whites 7, blacks 0, light 0, effect 0, sharpen 5, clarity 0. Note that “明度” (Lightness) is a group heading, not a standalone slider.
+- `[sampled stills][11 04:10–04:14]` At brightness -25 the image is nearly black, and at +50 it is overexposed overall; at `04:28–04:32` highlights 47 / shadows 0 → highlights 47 / shadows -6 → highlights 0 / shadows 12; at `04:40` saturation -50 makes the image black and white.
+- `[sampled stills][11 05:16–05:18]` HSL green ring: hue 100, saturation -28, lightness 0; a single color can be adjusted independently.
+- `[sampled stills][11 06:26–06:32]` The `log色轮` (Log Color Wheel) tab reads “阴影/中间调/高光/偏移” (Shadows / Midtones / Highlights / Offset); the `一级色轮` (Primary Color Wheel) shows “暗部/中灰” (Shadows / Mid-gray), differing from the narration's wording; the lower row's “高光/偏移” (Highlights / Offset) is not fully in frame, [pending verification].
+- `[sampled stills][11 07:42–07:46]` Dragging the highlight-wheel anchor toward orange-red plus pushing the luminance slider up changes the values from `0.18/-0.02/-0.38` to `0.41/0.22/-0.15`.
+- `[sampled stills][11 08:42–09:58]` Three scopes: RGB parade, waveform (scale 1023/512/0), and vectorscope; a flat top only means that area clips on the scope, and it cannot be directly asserted that the original information is unrecoverable.
+- `[sampled stills][11 10:46–11:42]` Offset correction: horse-ranch footage `0.02/0.00/-0.10 → 0.07/0.01/-0.30`; purple-red mountain `-0.15/0.00/-0.30 → -0.17/0.00/-0.31`; the vectorscope ring is labeled RED/YELLOW/GREEN/CYAN/BLUE/MAGENTA.
+- `[sampled stills][16 11:00–12:34]` The RGB curve's horizontal axis is “画面原亮度” (Original Image Luminance) and the vertical axis is “调整后亮度” (Adjusted Luminance), with the 45-degree line meaning no change; pressing down the lower left and lifting the upper right forms an S-curve; individual R/G/B channels can perform color balance. The burned-in subtitle states explicitly “往上拖变亮、往下拖变暗” (drag up to brighten, drag down to darken).
+- `[sampled stills][16 12:56.5–13:18]` Color cloning `强度 80` (Strength 80), color correction `强度 80` (Strength 80), smart color adjustment `场景 通用/强度 80` (Scene: General / Strength 80), LUT `强度 100/肤色保护 0` (Strength 100 / Skin Tone Protection 0); color cloning is a matching starting point, not a final guarantee.
+- `[sampled stills][16 10:30.5]` In the basic color parameters, temperature / tint / saturation / vibrance are all visibly 0; the brightness slider value is clipped by the panel's lower edge.
 
-## 已知纠偏
+## Known Corrections
 
-- `[画面][11 03:04.4–03:06.2]` Apple Log2 与 C-Log3 LUT 同屏是错误匹配示范，不是正确配对；正确 LUT 在 03:06.2 才完整显示。
-- `[画面][16 12:31–12:34]` 烧录字幕是“往上拖**变亮**”；SRT 的“往上拖变暗”是误识别，旧笔记的“课程自相矛盾”疑问可以结案。
-- `[推论]` 调色验收顺序：技术输入 → 曝光/白平衡 → 镜头匹配 → 风格 → 动态与示波器联合复查。
+- `[sampled stills][11 03:04.4–03:06.2]` Apple Log2 and C-Log3 LUTs appearing on the same screen is a wrong-matching demonstration, not a correct pairing; the correct LUT is fully displayed only from 03:06.2.
+- `[sampled stills][16 12:31–12:34]` The burned-in subtitle is “往上拖**变亮**” (drag up to **brighten**); the SRT's “往上拖变暗” (drag up to darken) is a misrecognition, and the old note's question about “the course contradicting itself” can be closed.
+- `[inference]` Color acceptance order: technical input → exposure/white balance → shot matching → style → combined motion and scope re-check.
 
-## 失败条件
+## Failure Conditions
 
-- Log 来源未知仍自动套 LUT。
-- 对同一素材重复技术还原。
-- 无中性物却强行拉 RGB 重合。
-- 把艺术偏色当错误。
-- 单帧匹配但运动或相邻镜头失败。
-- 将课程案例参数写成所有项目的固定风格。
+- Applying a LUT automatically while the Log source is unknown.
+- Repeated technical restoration of the same footage.
+- Forcing the RGB channels to align when there is no neutral object.
+- Treating an artistic cast as an error.
+- Matching on a single frame but failing on motion or adjacent shots.
+- Writing the course case's parameters up as a fixed style for all projects.
 
-## 当前待验
+## Currently Pending Verification
 
-第 11 课正确还原操作、示波器连续变化和第 16 课曲线/匹配前后效果仍需连续画面对比。
+The correct restoration operations in Lesson 11, the continuous scope changes, and the before/after effects of the curves/matching in Lesson 16 still require continuous-video comparison.

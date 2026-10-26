@@ -1,49 +1,49 @@
-# 结构与镜头组接手册
+# Structure and shot-assembly playbook
 
-## 核心判断
+## Core judgments
 
-- `[课程][01 00:19–01:11]` 先判断信息组织、节奏和声画文字关系；软件功能只是落地手段。
-- `[课程][05 01:02–02:51]` 无对白素材从共同特征、景别与音乐段落建立框架，先决定观看节奏，再选画面。
-- `[课程][16 03:25–06:23]` Vlog 先收集主题、人物、事件和呼应关系，再形成叙事顺序；拍摄时间不是天然结构。
-- `[课程][15 08:52–11:29]` 长视频按阶段做段落单元，每段交代事件、状态、变化和结果，再总装衔接。
+- `[course evidence][01 00:19–01:11]` Judge information organization, rhythm, and the sound–picture–text relationship first; software features are only the means of implementation.
+- `[course evidence][05 01:02–02:51]` For dialogue-free material, build a framework from shared characteristics, shot size, and music sections; decide the viewing rhythm first, then select shots.
+- `[course evidence][16 03:25–06:23]` For a Vlog, collect themes, people, events, and echoing relationships first, then form the narrative order; shooting time is not an inherent structure.
+- `[course evidence][15 08:52–11:29]` For long videos, build paragraph units by stage; each segment covers the event, state, change, and result, and then the units are assembled and joined.
 
-## 镜头关系
+## Shot relationships
 
-- `[课程][05 03:18–04:16]` 舒缓铺垫可配平稳镜头；远景—中景—细节是一种组织方法，不是固定公式。
-- `[课程][05 04:16–05:13]` 匹配剪辑要找到形状、位置、运动或方向上的跨镜头联系。
-- `[课程][05 05:13–07:04]` 并置会改变观众理解；检查是否制造错误因果或虚假情绪。
-- `[课程][05 08:46–10:59]` 转场优先服务关键转折，特效服务氛围；素材关系不成立时先修结构。
+- `[course evidence][05 03:18–04:16]` A gentle build-up can pair with steady shots; wide shot–medium shot–detail is one organizing method, not a fixed formula.
+- `[course evidence][05 04:16–05:13]` Match cuts must find a cross-shot connection in shape, position, motion, or direction.
+- `[course evidence][05 05:13–07:04]` Juxtaposition changes audience understanding; check whether it creates false causality or false emotion.
+- `[course evidence][05 08:46–10:59]` Transitions should primarily serve key turning points, while effects serve atmosphere; when the material relationship does not hold, fix the structure first.
 
-## 信息与节奏
+## Information and rhythm
 
-- `[课程][12 02:22–03:35]` 镜头长度要让观众消化信息；案例开头约 1 秒不是统一规则。
-- `[课程][12 03:35–05:49]` 主次文字和信息台阶比盲目加转场/BGM更重要。
-- `[课程][03 08:04–09:32]` 自动踩点只给候选坐标，不等于节奏判断完成。
-- `[课程][15 02:45–07:56]` 开头建立与观众有关的问题和承诺，后文必须兑现；压缩无新增信息的过程，保留真实状态变化。
-- `[推论][源自 15 11:29–15:12]` “时钟图”可映射为总长 T 的 0、T/4、T/2、3T/4 检查点；它不是“每 3 分钟必须刺激一次”的定律。
+- `[course evidence][12 02:22–03:35]` Shot length must let the audience digest information; the roughly 1-second opening in the case is not a universal rule.
+- `[course evidence][12 03:35–05:49]` Primary/secondary text and information steps matter more than blindly adding transitions/BGM.
+- `[course evidence][03 08:04–09:32]` Automatic beat detection only provides candidate coordinates; it does not mean the rhythm judgment is complete.
+- `[course evidence][15 02:45–07:56]` The opening establishes a question and promise relevant to the audience, which later content must fulfill; compress processes that add no new information, and retain genuine state changes.
+- `[inference][derived from 15 11:29–15:12]` The "clock diagram" can be mapped to checkpoints at 0, T/4, T/2, and 3T/4 of a total length T; it is not a law that "there must be a stimulus every 3 minutes".
 
-## 结构验收
+## Structure acceptance
 
-- 开头承诺与后文兑现一致。
-- 每段有明确信息或情绪职责。
-- 强度有峰谷对比，不是持续拉满。
-- B-roll 或并置没有改变事实含义。
-- 无对白段落仍经实际观看确认。
-- 删除或加速的过程没有牺牲必要解释。
+- The opening promise is consistent with its later fulfillment.
+- Each segment has a clear informational or emotional responsibility.
+- Intensity has peak–valley contrast rather than staying maxed out continuously.
+- B-roll or juxtaposition has not changed the factual meaning.
+- Dialogue-free segments have still been confirmed by actual viewing.
+- Deleted or accelerated processes do not sacrifice necessary explanation.
 
-## 2026-10 画面复核补充
+## 2026-10 sampled stills review supplement
 
-- `[画面][05 03:18–04:16]` 无对白混剪用 4×4 网格与四格故事板演示“远景—中景—近景/特写”的景别框架；这是组织方法，不是固定顺序。
-- `[画面][05 05:28–05:38]` “Kuleshov Effect / 库里肖夫效应”标题卡后，左右分屏先标“注视”、再标“想象”：同一张脸配不同画面会被读成不同含义。并置检查必须看它是否改变了事实或情绪。
-- `[画面][05 08:46–10:59]` “炫光”转场时长从 `1.0s` 调到 `0.9s`；特效以独立轨道叠加，只用于关键氛围。10:08–10:14 的“光晕/边缘发光/丁达尔光线/胶片漏光”是同一类氛围预设，不是每个镜头都要加。
-- `[画面][12 02:22–03:35]` 案例镜头长度为 `1.2 / 1.2 / 2.2 / 2.2 / 3.3 / 4.2` 秒，首段只有“人物 + 粉丝信息卡”所以最短；开头约 1 秒是案例设计。
-- `[画面][12 03:35–05:49]` 价格阶梯 `50k → 200k → 500k → 1M → ?` 是叙事骨架；设备型号标签服务信息递进，不靠转场堆叠。
-- `[画面][15 05:10–05:20]` 开场结构可直接落成三个时间线块：`抛出问题 → 揭示主题 → 混剪预告`。
-- `[画面][15 09:52–09:55]` 长视频分段检查用“我在干什么 / 我的状态 / 测试数值”三栏；分段后打包复合片段再总装。
-- `[画面][15 12:34–13:16]` “完成测试题”卡片标在 3 点，时钟指针却指向 6 点；这是课程画面内部不一致，不能当作精确节奏定律。
-- `[画面][16 05:18–06:22]` Vlog 思维导图四个主分支为巨杉、圣巴巴拉、电影之城、威尼斯海滩；主题墙把切换位置标在 0/3/6/9 点。
-- `[画面][01]` 第 01 课是宣传/频道介绍片，不是剪辑教学；不能从宣传语提炼手法。
+- `[sampled stills][05 03:18–04:16]` The dialogue-free montage uses a 4×4 grid and a four-panel storyboard to demonstrate the wide shot–medium shot–close-up shot-size framework; this is an organizing method, not a fixed order.
+- `[sampled stills][05 05:28–05:38]` After the `Kuleshov Effect / 库里肖夫效应` title card, the left/right split screen labels `注视` (gaze) first and `想象` (imagination) second: the same face paired with different images is read as different meanings. The juxtaposition check must examine whether it changed the fact or the emotion.
+- `[sampled stills][05 08:46–10:59]` The `炫光` (flare) transition duration is adjusted from `1.0s` to `0.9s`; effects are overlaid on an independent track and used only for key atmosphere. The `光晕/边缘发光/丁达尔光线/胶片漏光` (halo/edge glow/Tyndall light/film light leak) at 10:08–10:14 are the same class of atmosphere presets, not something that must be added to every shot.
+- `[sampled stills][12 02:22–03:35]` The case shot lengths are `1.2 / 1.2 / 2.2 / 2.2 / 3.3 / 4.2` seconds; the first segment contains only a person plus a fan info card, so it is the shortest; the roughly 1-second opening is a design choice of the case.
+- `[sampled stills][12 03:35–05:49]` The price ladder `50k → 200k → 500k → 1M → ?` is the narrative skeleton; device-model labels serve the information progression rather than relying on stacked transitions.
+- `[sampled stills][15 05:10–05:20]` The opening structure can be laid out directly as three timeline blocks: `抛出问题 → 揭示主题 → 混剪预告` (raise the question → reveal the theme → montage teaser).
+- `[sampled stills][15 09:52–09:55]` The long-video segment check uses three columns: `我在干什么 / 我的状态 / 测试数值` (what I am doing / my state / test values); after segmenting, package compound clips and then assemble.
+- `[sampled stills][15 12:34–13:16]` The `完成测试题` (complete the test question) card is marked at 3 o'clock, but the clock hand points to 6 o'clock; this is an internal inconsistency in the course visuals and cannot be treated as a precise rhythm law.
+- `[sampled stills][16 05:18–06:22]` The Vlog mind map has four main branches: Giant Sequoia, Santa Barbara, Movie City, and Venice Beach; the theme wall marks the switch positions at 0/3/6/9 o'clock.
+- `[sampled stills][01]` Lesson 01 is a promotional/channel-introduction film, not editing instruction; techniques cannot be extracted from promotional language.
 
-## 当前待验
+## Currently pending verification
 
-第 05、15、16 课的少对白演示、实际节奏峰谷、音乐卡点和声音桥仍需连续音画复核；静态结构已按 2 秒抽帧核对，但本 Skill 仍是未验收草稿。
+The sparse-dialogue demonstrations, actual rhythm peaks and valleys, music beat sync, and sound bridges in lessons 05, 15, and 16 still require continuous video review; the static structure has been checked with 2-second sampled stills, but this Skill is still a draft pending verification.

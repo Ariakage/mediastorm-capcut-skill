@@ -1,47 +1,47 @@
-# 生成式补充素材
+# Generative Supplementary Footage
 
-## 授权前置
+## Authorization Prerequisites
 
-- `[课程][17 08:43–10:50]` 生成前确定比例、时长、分辨率和成本；案例模型与价格是录课时界面信息，不代表当前可用性。
-- `[课程][18 01:02–03:50]` 手机端 AI 可先跑方向，但用户允许剪辑不自动等于允许消耗积分。
-- 外部上传、API 调用、云端生成和付费模型必须逐项授权。
+- `[course evidence][17 08:43–10:50]` Before generating, determine aspect ratio, duration, resolution, and cost; the case's model and pricing are UI information from when the course was recorded and do not represent current availability.
+- `[course evidence][18 01:02–03:50]` Mobile AI can explore direction first, but the user's permission to edit does not automatically mean permission to spend credits.
+- External uploads, API calls, cloud generation, and paid models must be authorized item by item.
 
-## 提示词方法
+## Prompt Method
 
-- `[课程][17 10:50–12:57]` 从口述中提取可见主体、场景、动作和风格，清理与画面无关的赘述。
-- 明确输出规格、镜头关系、禁止项和用途。
-- 先生成小样本候选，再扩展，不为“多生成”而增加成本。
+- `[course evidence][17 10:50–12:57]` Extract visible subjects, scene, action, and style from the spoken description, and remove digressions unrelated to the image.
+- Specify output specs, shot relationships, prohibited items, and intended use.
+- Generate a small sample of candidates first, then expand; do not increase cost merely to “generate more”.
 
-## 真实性与验收
+## Authenticity and Acceptance
 
-- `[课程][17 12:57–14:30]` AI 可补 B-roll 或概念画面，但生成说明性镜头不能冒充实拍证据。
-- `[课程][18 06:35–09:40]` 局部视觉钩子应有内容价值；不默认整片覆盖特效。
-- 检查主体、动作、物理一致性、文字、边缘、材质和连续镜头风格。
-- 在项目记录中保存生成/实拍来源、提示意图、模型、规格、授权和人工验收结果。
+- `[course evidence][17 12:57–14:30]` AI can supplement B-roll or concept imagery, but generated explanatory shots must not pass as live-action evidence.
+- `[course evidence][18 06:35–09:40]` A local visual hook should carry content value; do not default to covering the entire piece with effects.
+- Check subject, motion, physical consistency, text, edges, materials, and style across continuous shots.
+- Record in the project log the generated/live-action source, prompt intent, model, specs, authorization, and human acceptance results.
 
-## 失败条件
+## Failure Conditions
 
-- 未经同意花积分或上传素材。
-- 按过期课程界面承诺模型、价格、积分或权益。
-- 提示词遗漏主体动作或画幅。
-- 生成镜头被当作真实记录。
-- 只有“生成成功”证据，没有人工视觉验收。
-- 用生成内容遮盖叙事或素材问题。
+- Spending credits or uploading media without consent.
+- Promising models, prices, credits, or entitlements based on an outdated course UI.
+- The prompt omits subject action or aspect ratio.
+- Treating a generated shot as a genuine record.
+- Having only “generation succeeded” evidence with no human visual acceptance.
+- Using generated content to cover up narrative or footage problems.
 
-## 2026-10 画面复核补充
+## 2026-10 Sampled Stills Review Supplement
 
-- `[画面][17 02:08–02:18]` 智能剪口播逐字稿面板筛选含 `气息/重复/停顿`，`最短停顿时长 0.5s`；正文用黄/绿高亮并带 `[0.6s]` 等徽标。未发现独立的 take 选择面板。
-- `[画面][17 02:54–03:10]` 智能粗剪窗口只有“输入文稿”、`配音解说/原声剪辑` 和“开始粗剪”，没有时间线或素材列表；入口在时间线右键菜单 `智能粗剪[限免]`。
-- `[画面][17 03:42 / 04:24 / 06:30 / 07:52]` 四个可读提示词：保留情绪高涨/去掉结巴重复；自动切除失败 take/只留最好一段；访谈主题筛选；找出并删掉所有“绿色产品”口播。
-- `[画面][17 07:18–07:24]` 字幕导出 TXT、`文字编码 Unicode / UTF-8`；音频 MP3 320kbps / 48000Hz；GIF 320P。
-- `[画面][17 09:24–10:56]` 视频生成面板：`生成视频/历史记录`；模式 `全能参考 / 图转视频 / 首尾帧`；默认模型 `Seedance 2.0 Fast`，另有 `Seedance 2.0 Mini`（性价比高、更快、不支持人脸）与 `Seedance 1.0`（价格更低、仅单图参考）；分辨率 `480p / 720p`，案例选 720p；时长滑杆读到 10 秒；画幅“与草稿一致”。
-- `[画面][17 09:30 / 10:10 / 10:44]` 积分徽标随参数读到 `✦200`、`✦1070`、`✦856`；10:50 占位片段显示“生成中60.0% 00:00:04:00”，与面板时长 10 秒不一致，[待验]。
-- `[画面][17 09:28]` 图片生成面板：模型 `Seedream 5.0`、纵横比 `适应（原始）`、底部“本次消耗积分 0 / 16”。
-- `[画面][17 12:18–12:52]` 文本模型默认 `豆包 Pro`，下拉另有 `DeepSeek-R1`；改写后的提示词生成城堡跑动、餐车、卡牌等镜头。
-- `[画面][18 01:50]` AI 文字成片页显示“本次消耗积分 ◈ 0.100 / 积分余额 3200”；这是录制时账号状态。
-- `[画面][18 08:26–08:38]` AI 特效“脑洞大开”列表含 `子弹时间 / 超远飞行运镜 / 3D环绕运镜 / 局部追踪 / 万物生长 / 悬浮 / 空隙出现`；选“万物生长”后显示“预计消耗积分 ◆ 0.44”，生成后出现 `+44` 徽标；特效轨道被缩短到只覆盖片头几秒。
-- `[画面][18 03:34]` AI 初版结果明确显示“视频比例 3:4”和“去成片”，预览标题“乐园大冒险 / 和闺蜜的元气一日游”。
+- `[sampled stills][17 02:08–02:18]` The Smart Cut Talking-Head transcript panel's filters include `气息/重复/停顿` (Breaths / Repetitions / Pauses), with `最短停顿时长 0.5s` (Minimum Pause Duration 0.5s); the body text is highlighted in yellow/green with badges such as `[0.6s]`. No separate take-selection panel was found.
+- `[sampled stills][17 02:54–03:10]` The Smart Rough Cut window has only “输入文稿” (Enter Transcript), `配音解说/原声剪辑` (Voiceover Narration / Original Audio Editing), and “开始粗剪” (Start Rough Cut), with no timeline or media list; the entry is in the timeline right-click menu under `智能粗剪[限免]` (Smart Rough Cut [Free for a Limited Time]).
+- `[sampled stills][17 03:42 / 04:24 / 06:30 / 07:52]` Four readable prompts: keep the emotionally high moments / remove stutters and repetitions; automatically cut failed takes / keep only the best segment; filter by interview theme; find and delete all spoken mentions of “绿色产品” (green products).
+- `[sampled stills][17 07:18–07:24]` Subtitle export TXT, `文字编码 Unicode / UTF-8` (Text Encoding Unicode / UTF-8); audio MP3 320kbps / 48000Hz; GIF 320P.
+- `[sampled stills][17 09:24–10:56]` Video generation panel: `生成视频/历史记录` (Generate Video / History); modes `全能参考 / 图转视频 / 首尾帧` (Omni-Reference / Image to Video / First and Last Frame); default model `Seedance 2.0 Fast`, plus `Seedance 2.0 Mini` (better value, faster, no face support) and `Seedance 1.0` (lower price, single-image reference only); resolution `480p / 720p`, with the case choosing 720p; the duration slider reads 10 seconds; aspect ratio “与草稿一致” (Match Draft).
+- `[sampled stills][17 09:30 / 10:10 / 10:44]` The credit badge reads `✦200`, `✦1070`, and `✦856` as parameters change; at 10:50 the placeholder clip shows “生成中60.0% 00:00:04:00” (Generating 60.0% 00:00:04:00), inconsistent with the panel's 10-second duration, [pending verification].
+- `[sampled stills][17 09:28]` Image generation panel: model `Seedream 5.0`, aspect ratio `适应（原始）` (Fit (Original)), and at the bottom “本次消耗积分 0 / 16” (Credits consumed this time 0 / 16).
+- `[sampled stills][17 12:18–12:52]` The text model defaults to `豆包 Pro` (Doubao Pro), with `DeepSeek-R1` also in the dropdown; the rewritten prompts generate shots of a running castle, a food truck, playing cards, and others.
+- `[sampled stills][18 01:50]` The AI text-to-video page shows “本次消耗积分 ◈ 0.100 / 积分余额 3200” (Credits consumed this time ◈ 0.100 / Credit balance 3200); this is the account state at recording time.
+- `[sampled stills][18 08:26–08:38]` The AI effects “脑洞大开” (Wild Ideas) list includes `子弹时间 / 超远飞行运镜 / 3D环绕运镜 / 局部追踪 / 万物生长 / 悬浮 / 空隙出现` (Bullet Time / Ultra-Long Flight Camera Move / 3D Orbit Camera Move / Local Tracking / Everything Grows / Floating / Gap Appears); after choosing “万物生长” (Everything Grows) it shows “预计消耗积分 ◆ 0.44” (Estimated credits ◆ 0.44), and after generation a `+44` badge appears; the effect track is shortened to cover only the first few seconds of the opening.
+- `[sampled stills][18 03:34]` The first AI result explicitly shows “视频比例 3:4” (Video ratio 3:4) and “去成片” (Go to Finished Video), with the preview titled “乐园大冒险 / 和闺蜜的元气一日游” (Park Adventure / An Energetic Day Trip with My Best Friend).
 
-## 当前待验
+## Currently Pending Verification
 
-第 17–18 课的生成演示、操作前后状态和实际效果仍需完整音画与当前产品界面复核。模型名、积分、分辨率档位和价格都是录课界面证据，不保证当前可用；生成画面的运动连贯性、音轨和真实性未验收。
+The generation demonstrations in Lessons 17–18, the states before and after operations, and the actual results still require full audio-visual review and review against the current product UI. Model names, credits, resolution tiers, and prices are all course-recording UI evidence and are not guaranteed to be currently available; the motion coherence, audio tracks, and authenticity of generated images have not been accepted.

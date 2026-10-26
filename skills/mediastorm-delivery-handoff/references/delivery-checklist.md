@@ -1,58 +1,58 @@
-# 导出、版本与跨端交付清单
+# Export, Versioning, and Cross-Device Delivery Checklist
 
-## 版本与封面
+## Versions and Covers
 
-- `[课程][07 00:52–02:21]` 单独选择封面；首帧可能是黑场，不应默认使用首帧。
-- `[课程][07 02:21–05:03]` 文件名携带日期、片名、分辨率、版本和用途；归档要包含素材与工程。
-- `[课程][16 13:28–14:49]` 小样和最终导出分目录并保留版本；归档后重开验证。
+- `[course evidence][07 00:52–02:21]` Select the cover separately; the first frame may be black, so the first frame should not be used by default.
+- `[course evidence][07 02:21–05:03]` The filename carries the date, title, resolution, version, and purpose; archiving must include media and the project.
+- `[course evidence][16 13:28–14:49]` Samples and final exports go into separate directories with versions retained; verify by reopening after archiving.
 
-## 参数决策
+## Parameter Decisions
 
-- `[课程][03 10:29–11:10]` 03 课示例为 4K/60fps/HEVC/PCM/48kHz；它是一次练习设置，不是通用预设。
-- `[课程][07 05:03–07:53]` 分辨率不虚构源素材细节，帧率先看草稿与原片，再按场景和目标选择。
-- `[课程][18 09:40–10:50]` 手机课程的 1080p/30fps 是另一类工作条件起点，不与桌面示例合并。
-- `[课程][07 07:53–09:09]` AI 超分/补帧要逐段检查纹理伪影、过度平滑和运动错误。
-- `[课程][07 09:09–10:59]` 码率受复杂度、帧率、分辨率和编码效率影响；极高码率不保证平台二压后更好。
-- `[课程][07 00:10:38]` 表格的 `KB/s` 单位存在歧义；不要直接转成 FFmpeg 参数或平台官方要求。
-- `[课程][07 10:59–11:56]` 区分容器和编码器；H.264 是兼容性起点，HEVC 是需实测的压缩效率选项。
-- `[课程][07 12:22–13:55]` AAC、PCM、48kHz 等选择由目标决定；字幕中的误识别不能当正式格式。
-- `[课程][07 13:55–14:20]` 导出前检查会员素材或功能依赖，不把当时限免当永久事实。
+- `[course evidence][03 10:29–11:10]` The Lesson 03 example is 4K/60fps/HEVC/PCM/48kHz; it is a one-time exercise setting, not a universal preset.
+- `[course evidence][07 05:03–07:53]` Resolution must not fabricate detail the source footage lacks; for frame rate, check the draft and the original footage first, then choose according to scene and goal.
+- `[course evidence][18 09:40–10:50]` The mobile course's 1080p/30fps is a starting point for a different set of working conditions and is not merged with the desktop examples.
+- `[course evidence][07 07:53–09:09]` AI upscaling/frame interpolation requires checking texture artifacts, over-smoothing, and motion errors segment by segment.
+- `[course evidence][07 09:09–10:59]` Bitrate is affected by complexity, frame rate, resolution, and encoding efficiency; an extremely high bitrate does not guarantee a better result after platform re-compression.
+- `[course evidence][07 00:10:38]` The table's `KB/s` unit is ambiguous; do not convert it directly into FFmpeg parameters or platform official requirements.
+- `[course evidence][07 10:59–11:56]` Distinguish container from codec; H.264 is the compatibility starting point, and HEVC is a compression-efficiency option that requires testing.
+- `[course evidence][07 12:22–13:55]` Choices such as AAC, PCM, and 48kHz are determined by the goal; misrecognitions in the subtitles must not be treated as official formats.
+- `[course evidence][07 13:55–14:20]` Before exporting, check for membership-based media or feature dependencies, and do not treat a feature that was free for a limited time then as a permanent fact.
 
-## 2026-10 画面复核补充
+## 2026-10 Sampled Stills Review Supplement
 
-- `[画面][03 10:44–11:04]` 首次导出演示：分辨率 `4K`、格式 `MP4`、帧率 `30 → 60 fps`、视频码率 `更高`、编码 `HEVC`、音频 `PCM 无损 / 48000 Hz`、色彩空间 `Rec.709 SDR`；估计 `1分21秒 / 357MB`，改参数后曾显示 `387MB`。
-- `[画面][07 10:38.5–10:46]` 码率参考表逐格：抖音 1080p–4K/30/推荐/`20000–35000 KB/s`；小红书 1080p–4K/30/推荐/`10000–25000`；B站 2K–4K/60/更高/`40000–45000`；YouTube 2K–4K/60/更高/`40000–45000`。表内单位确为 `KB/s`，导出面板是 `Kbps`，字面差 8 倍，不能直接当 FFmpeg 参数或平台上限。
-- `[画面][07 05:09 / 07:35]` 分辨率下拉全项：`480P 854*480 / 720P 1280*720 / 1080P 1920*1080 / 2K 2560*1440 / 4K 3840*2160 / 8K 7680*4320 / 原始 1920*1080`；草稿帧率下拉 `24.00 / 25.00 / 29.97 / 30.00 / 50.00 / 59.94 帧/秒`，案例勾选 30.00。
-- `[画面][07 11:27]` 编码器下拉：`H.264`（更通用）、`HEVC`（更省空间）、`HEVC (Alpha)`、`Apple ProRes 422 / 422 LT / 422 HQ`。
-- `[画面][07 13:46.5 / 13:54.8]` 正在导出弹窗：`2026-01-10_混剪教学_4k_成片1_抖音`、42 秒、138MB（估计）、4K 3840×2160、推荐码率、H.264、MP4、Rec.709 SDR、30fps、进度 11.0%；会员权益 3 项。13:50.8 另读到 `1分2秒 / 117MB`，与 42 秒/138MB 不一致，未看到对应工程或导出记录，[待验]。
-- `[画面][07 12:22–12:34]` 音频质量下拉：`AAC 192kbps / AAC 256kbps / AAC 320kbps / PCM 无损`；案例最终停在 `AAC 320kbps`。
-- `[画面][07 13:42–13:44]` 音频导出区：格式 `MP3`、`320kbps`、`48000Hz`；GIF 关闭、分辨率 `320P`；字幕导出关闭、格式 `SRT`、`Unicode / UTF-8`。
-- `[画面][07 15:27–16:31]` 概念动画：H.264 文件 `1.25GB` vs HEVC `650MB`（同一示例）；HEVC 导出更慢、老设备兼容性差。
-- `[画面][07 00:52–05:03]` 封面可从导出面板或时间线最左端封面图标进入；默认取首帧，首帧黑场时需手动选帧。命名示例 `2026-01-10_混剪教学_4k_成片1_抖音`；归档含 `导出/成片/小样`、`视频/其他素材/Aroll/Broll`、`图片/包装设计素材/图片素材`、`音频/音效/BGM`。
-- `[画面][18 09:50]` 手机导出设置：顶部 `视频 / GIF / 实况(New)`；分辨率 `480P / 720P / 1080P / 2K / 4K`；帧率 `24 / 25 / 30 / 50 / 60 / 120`；案例停在 1080P/30。
-- `[画面][18 10:08–10:14]` 手机平台表：抖音 1080P/30/推荐或更高/9:16；小红书 1080P/30/推荐或更高/9:16 或 3:4；微信视频号 1080P 或 4K/30/推荐/9:16 或 16:9；B站 1080P/30/更高/16:9；快手 1080P/30/推荐或更高/9:16；TikTok 1080P/30/推荐或更高/9:16；多平台按成片比例。表是录制时经验预设，不是平台永久规则。
-- `[画面][18 10:32]` 桌面导出对话框：`720×1280` 草稿尺寸、格式 `MP4`（下拉含 MOV）、30fps、码率“推荐”、音频导出 `MP3`、时长 41 秒 / 38MB（估计）。
-- `[画面][16 13:40–13:42]` 导出 `4K / MOV / 30fps / AI补帧开启`；路径分为 `导出/成片` 与 `导出/小样`，并出现模板 `年份-月份-日期_项目名字`。
-- `[画面][12 11:05]` 竖屏综艺包装导出：`2160×3840`、30fps、`50000 kbps`、H.264、MOV、Rec.709 SDR；时长约 18 秒，估计 110MB。这是竖屏案例，不是通用预设。
+- `[sampled stills][03 10:44–11:04]` First export demonstration: resolution `4K`, format `MP4`, frame rate `30 → 60 fps`, video bitrate `更高` (Higher), codec `HEVC`, audio `PCM 无损 / 48000 Hz` (PCM Lossless / 48000 Hz), color space `Rec.709 SDR`; estimate `1分21秒 / 357MB` (1 min 21 s / 357MB), and after changing parameters it once showed `387MB`.
+- `[sampled stills][07 10:38.5–10:46]` Bitrate reference table, cell by cell: Douyin 1080p–4K/30/Recommended/`20000–35000 KB/s`; Xiaohongshu 1080p–4K/30/Recommended/`10000–25000`; Bilibili 2K–4K/60/Higher/`40000–45000`; YouTube 2K–4K/60/Higher/`40000–45000`. The table's unit is indeed `KB/s`, while the export panel uses `Kbps`, a literal 8× difference; it cannot be used directly as FFmpeg parameters or platform limits.
+- `[sampled stills][07 05:09 / 07:35]` Full resolution dropdown: `480P 854*480 / 720P 1280*720 / 1080P 1920*1080 / 2K 2560*1440 / 4K 3840*2160 / 8K 7680*4320 / 原始 1920*1080` (Original 1920*1080); draft frame-rate dropdown `24.00 / 25.00 / 29.97 / 30.00 / 50.00 / 59.94 帧/秒` (frames/sec), with the case checking 30.00.
+- `[sampled stills][07 11:27]` Codec dropdown: `H.264` (more universal), `HEVC` (saves more space), `HEVC (Alpha)`, `Apple ProRes 422 / 422 LT / 422 HQ`.
+- `[sampled stills][07 13:46.5 / 13:54.8]` Exporting dialog: `2026-01-10_混剪教学_4k_成片1_抖音` (2026-01-10_Mashup Tutorial_4k_Final Cut 1_Douyin), 42 seconds, 138MB (estimated), 4K 3840×2160, recommended bitrate, H.264, MP4, Rec.709 SDR, 30fps, progress 11.0%; 3 membership entitlements. At 13:50.8 a different reading of `1分2秒 / 117MB` (1 min 2 s / 117MB) appears, inconsistent with 42 seconds/138MB; no corresponding project or export record was seen, [pending verification].
+- `[sampled stills][07 12:22–12:34]` Audio quality dropdown: `AAC 192kbps / AAC 256kbps / AAC 320kbps / PCM 无损` (PCM Lossless); the case ends on `AAC 320kbps`.
+- `[sampled stills][07 13:42–13:44]` Audio export section: format `MP3`, `320kbps`, `48000Hz`; GIF off, resolution `320P`; subtitle export off, format `SRT`, `Unicode / UTF-8`.
+- `[sampled stills][07 15:27–16:31]` Concept animation: H.264 file `1.25GB` vs HEVC `650MB` (same example); HEVC exports more slowly and has worse compatibility with older devices.
+- `[sampled stills][07 00:52–05:03]` The cover can be entered from the export panel or from the cover icon at the far left end of the timeline; the first frame is taken by default, and when the first frame is black you must select a frame manually. Naming example `2026-01-10_混剪教学_4k_成片1_抖音` (2026-01-10_Mashup Tutorial_4k_Final Cut 1_Douyin); archive contains `导出/成片/小样`, `视频/其他素材/Aroll/Broll`, `图片/包装设计素材/图片素材`, `音频/音效/BGM` (Exports/Finished/Samples, Video/Other Media/Aroll/Broll, Images/Packaging Design Assets/Image Assets, Audio/Sound Effects/BGM).
+- `[sampled stills][18 09:50]` Mobile export settings: top `视频 / GIF / 实况(New)` (Video / GIF / Live Photo (New)); resolution `480P / 720P / 1080P / 2K / 4K`; frame rate `24 / 25 / 30 / 50 / 60 / 120`; the case stays at 1080P/30.
+- `[sampled stills][18 10:08–10:14]` Mobile platform table: Douyin 1080P/30/Recommended or Higher/9:16; Xiaohongshu 1080P/30/Recommended or Higher/9:16 or 3:4; WeChat Channels 1080P or 4K/30/Recommended/9:16 or 16:9; Bilibili 1080P/30/Higher/16:9; Kuaishou 1080P/30/Recommended or Higher/9:16; TikTok 1080P/30/Recommended or Higher/9:16; for multiple platforms, follow the finished video's aspect ratio. The table is an experience-based preset from recording time, not a permanent platform rule.
+- `[sampled stills][18 10:32]` Desktop export dialog: `720×1280` draft size, format `MP4` (dropdown includes MOV), 30fps, bitrate “推荐” (Recommended), audio export `MP3`, duration 41 seconds / 38MB (estimated).
+- `[sampled stills][16 13:40–13:42]` Export `4K / MOV / 30fps / AI补帧开启` (AI Frame Interpolation on); paths are divided into `导出/成片` and `导出/小样` (Exports/Finished and Exports/Samples), and the template `年份-月份-日期_项目名字` (Year-Month-Date_Project Name) appears.
+- `[sampled stills][12 11:05]` Vertical variety-show packaging export: `2160×3840`, 30fps, `50000 kbps`, H.264, MOV, Rec.709 SDR; duration about 18 seconds, estimated 110MB. This is a vertical-video case, not a universal preset.
 
-## 跨端接力
+## Cross-Device Handoff
 
-- `[课程][18 10:50–12:46]` 继续精修时传可编辑草稿，而不是只拷成片；命名和封面用于辨识版本。
-- `[课程][18 12:46–13:52]` 同步后确认素材、效果、时间线一致；手机/桌面磁吸规则可能不同，主轨有空隙时必须测试。
-- 云容量、特效权益和版本差异需要当前实际核对。
+- `[course evidence][18 10:50–12:46]` When continuing fine-tuning, transfer the editable draft rather than only copying the finished video; naming and covers serve to identify versions.
+- `[course evidence][18 12:46–13:52]` After syncing, confirm media, effects, and timeline are consistent; mobile/desktop snapping rules may differ, and gaps in the main track must be tested.
+- Cloud capacity, effect entitlements, and version differences require actual current verification.
 
-## 工具边界
+## Tool Boundaries
 
-- `[工具][capcut-cli 0.31.1]` `render` 是低分辨率 FFmpeg 代理预览；`--strict` 可拒绝不忠实内容，但不是剪映最终导出。
-- `[工具][capcut-cli 0.31.1]` `export` 是实验性 macOS UI 自动批量导出，尚未实测，不作为默认安全路径。
-- 结构检查、代理预览、剪映重开保存、最终听视觉验收、目标平台预览是不同证据层级。
+- `[tool boundary][capcut-cli 0.31.1]` `render` is a low-resolution FFmpeg proxy preview; `--strict` can reject unfaithful content, but it is not CapCut's final export.
+- `[tool boundary][capcut-cli 0.31.1]` `export` is an experimental automated batch export via the macOS UI; it has not yet been tested and is not treated as a default safe path.
+- Structural checks, proxy previews, reopening and saving in CapCut, final audio-visual acceptance, and target-platform previews are different evidence levels.
 
-## 最终交付门
+## Final Delivery Gate
 
-- 源参数与导出参数匹配，无虚构细节。
-- 无离线媒体，代理没有误当原片。
-- 字幕、安全区、声道、响度和结尾检查完成。
-- 文件名、封面、版本、用途可辨识。
-- 工程与素材可重开，跨端效果一致。
-- 付费/会员/上传/发布已获用户明确授权。
-- 当前平台要求已重新核对，不依赖课程录制时期界面。
+- Source parameters and export parameters match, with no fabricated detail.
+- No offline media, and proxies are not mistaken for the original footage.
+- Subtitle, safe-area, audio-channel, loudness, and ending checks are complete.
+- Filename, cover, version, and purpose are identifiable.
+- Project and media can be reopened, and cross-device results are consistent.
+- Payment/membership/upload/publishing has received explicit user authorization.
+- Current platform requirements have been re-checked, not relying on the UI from when the course was recorded.

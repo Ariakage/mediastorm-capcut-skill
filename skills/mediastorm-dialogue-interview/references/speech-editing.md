@@ -1,53 +1,53 @@
-# 口播、采访与多机位
+# Talking-head, interview, and multicam
 
-## 语义剪辑
+## Semantic editing
 
-- `[课程][04 03:01–04:39]` 波形只能定位停顿候选，重复、口误和表达完整性需要语义判断。
-- `[课程][04 04:39–06:29]` 智能口播粗剪可加速，但要保留表达需要的呼吸与停顿；剪点过紧再考虑间隔、短叠化或房间底噪。
-- `[课程][17 01:22–03:53]` 停顿裁切和语义筛选是两类工作，不要把低音量当无价值。
-- `[课程][17 03:53–05:16]` 逐字稿可辅助选 take；保留原素材、选择依据和可回退版本。
-- `[课程][17 05:16–07:33]` 主题检索得到候选集合，不等同完整采访。
-- `[课程][17 07:33–08:43]` 给 AI 指令时明确保留、排除、主题和输出形式；音频删掉某词不证明画面也已移除。
+- `[course evidence][04 03:01–04:39]` The waveform can only locate pause candidates; repetition, slips of the tongue, and completeness of expression require semantic judgment.
+- `[course evidence][04 04:39–06:29]` Smart talking-head rough cutting can speed things up, but preserve the breaths and pauses the delivery needs; if the cut points feel too tight, then consider spacing, short dissolves, or room tone.
+- `[course evidence][17 01:22–03:53]` Pause trimming and semantic filtering are two different kinds of work; do not treat low volume as no value.
+- `[course evidence][17 03:53–05:16]` The verbatim transcript can assist take selection; keep the original media, the selection rationale, and a rollback version.
+- `[course evidence][17 05:16–07:33]` Topic search yields a candidate set, which is not the same as the complete interview.
+- `[course evidence][17 07:33–08:43]` When instructing the AI, explicitly state what to keep, what to exclude, the topic, and the output format; deleting a word from the audio does not prove the picture has also been removed.
 
 ## A-roll / B-roll
 
-- `[课程][04 06:29–08:59]` A-roll 承载主信息，B-roll 补充说明；先浏览候选，再选完整语义区间。
-- `[课程][04 08:59–10:56]` B-roll 成组服务一个完整意思；裸露跳剪可用相关画面或有意的景别变化处理。
-- 不要永久静音所有 B-roll；叙事同期声应单独判断。
+- `[course evidence][04 06:29–08:59]` A-roll carries the main information and B-roll supplements it; browse the candidates first, then select complete semantic intervals.
+- `[course evidence][04 08:59–10:56]` B-roll should work in groups to serve one complete idea; exposed jump cuts can be handled with related footage or intentional changes in shot size.
+- Do not permanently mute all B-roll; narrative sync sound should be judged separately.
 
-## 补录、字幕与声道
+## Pickups, subtitles, and audio channels
 
-- `[课程][04 10:56–12:59]` 补录优先改善距离和环境；后期统一响度不等于给所有片段相同增益。
-- `[课程][04 12:59–14:28]` 加入 BGM 前尽量识别并校正字幕，检查平台 UI 安全区。
-- 检查左右声道、底噪和爆音需要实际听辨；当前 ASR 不能替代。
+- `[course evidence][04 10:56–12:59]` For pickups, prioritize improving distance and the environment; unifying loudness in post is not the same as giving every clip the same gain.
+- `[course evidence][04 12:59–14:28]` Before adding BGM, identify and correct subtitles as much as possible, and check the platform UI safe zone.
+- Checking left/right channels, noise floor, and clipping requires actual listening; current ASR cannot replace it.
 
-## 多机位
+## Multicam
 
-- `[课程][14 01:09–02:50]` 合板先证明所有机位属于同一真实时刻；峰值、拍手、时码可作同步依据。
-- `[课程][14 03:24–04:40]` 自动对齐和多机位视图可降低粗剪负担，但之后仍要查口型、共同事件和长期漂移。
-- `[课程][14 04:40–06:52]` 以说话者为主，反应镜头为辅；反应不能伪造上下文。
-- `[课程][14 06:52–08:23]` 角标和金句包装服务识别与切片，不承诺播放量。
+- `[course evidence][14 01:09–02:50]` Before syncing, first prove that all cameras belong to the same real moment; peaks, claps, and timecode can serve as synchronization evidence.
+- `[course evidence][14 03:24–04:40]` Auto-alignment and the multicam view can reduce the rough-cut burden, but afterward still check lip sync, shared events, and long-term drift.
+- `[course evidence][14 04:40–06:52]` Favor the speaker, with reaction shots as support; reactions must not fabricate context.
+- `[course evidence][14 06:52–08:23]` Lower-thirds and highlight-quote packaging serve recognition and clip segmentation; they do not promise view counts.
 
-## 2026-10 画面复核补充
+## 2026-10 sampled stills review supplement
 
-- `[画面][04 03:44–03:46]` 轨道调节弹层里“波形占比”有 60% 悬浮提示；拉高波形后，平直段只是停顿候选，不能证明无人声。
-- `[画面][04 03:56–04:16]` 手动粗剪顺序：播放头对准平波形起点 → `Command+B`（Windows `Ctrl+B`）切第一刀 → 在结束处再切一刀 → 选中中间段删除，即“两刀删中间”。
-- `[画面][04 05:04–05:18]` 智能剪口播为左文字稿、右播放器、下时间线；文字稿标出 `停顿 [...0.2s]`、`语气词 这个` 等 token，删除文字会同步删除对应视频。
-- `[画面][04 05:50–06:08]` 气口修补：分割成前后两段 → 拖动音频把手（提示 `0.1s`）加小叠化 → 在第二轨垫一小段房间底噪；这是操作证据，最终听感仍待听辨。
-- `[画面][04 12:42–12:54]` “声道配置”只有三项：`无`、`将左侧声道填充至右侧声道`、`将右侧声道填充至左侧声道`。
-- `[画面][04 13:45.5–13:57.5]` 字幕字体 `系统`（字号 8）→ `思源黑体 CN`（字号 5）；白字、字间距/行间距 0；阴影最终 `不透明度 59%、模糊 7%、距离 5、角度 -45°`，其中 68% 是拖动中间值。
-- `[画面][04 14:02–14:10]` 预览叠加“16:9视频播放安全区”遮罩；字幕不要贴边，发布前检查平台 UI 遮挡。
-- `[画面][14 01:34–02:40]` 合板依据为音频波形/打板声与硬件时码器；01:50 四机位时码为 A `1:10:04:27`、B `1:10:03:24`、C `1:10:03:26`、D `1:10:03:26`。A 与 B 相差约 1 秒 3 帧，不能按文件开头直接对齐；旧笔记“相差约 3 秒”应以此画面读数修正。
-- `[画面][14 02:22–02:30]` 时间线四条轨道为 `TimCook机位.mov`、`Tim机位.mov`、`Links机位.mov`、`全景机位.mov`，时长均约 `00:16:42:29`，起点均为 `1:10:03:25`。
-- `[画面][14 03:32–04:16]` “新建多机位片段”对话框：片段名称 `多机位片段1`；对齐方式 `自动`（勾选）/`声音`；代理模式开关，说明“可提升剪辑流畅度，不影响最终导出视频质量”；创建后左为多机位预览、右为节目监视器。
-- `[画面][14 04:15–04:22]` 多机位预览右上角可在 `4机位`/`9机位` 视图间切换。
-- `[画面][14 05:20–06:40]` 多机位切换：播放头停在目标帧，左预览变剃刀，点机位即自动切一刀；切错可再点正确机位改回，时间线用不同颜色区分。04:16 与 05:30 的机位编号顺序不同（01 Tim Cook/02 Tim/03 全景/04 Links vs 01 全景/02 Tim/03 Links/04 Tim Cook），未看到重排操作，[待验]。
-- `[画面][14 06:54–08:00]` 角标走“文字 → 文字模板 → 搜索人名条/角标”，案例为 `Tim / 采访者`、`Links / 采访者`、`Tim Cook / 被访者`；模板文本面板可见字体 `剪映简明`、字号 15。模板占位文字为 `姓名`、`xingming`、`某某公司亚太地区执行副总裁`。
-- `[画面][17 02:08–02:18]` 智能剪口播逐字稿面板筛选含 `气息/重复/停顿`，`最短停顿时长 0.5s`；未发现独立的 take 选择面板，最接近的是逐字稿勾选/替换。
-- `[画面][17 04:24]` 长提示词明确“比较情绪与流畅度、自动切除失败 Take、只保留效果最好的一段放在主轨”，结果片段密度高且首尾相接。
+- `[sampled stills][04 03:44–03:46]` In the track adjustment popover, `波形占比` (waveform proportion) has a 60% hover tooltip; after raising the waveform, flat segments are only pause candidates and cannot prove that no one is speaking.
+- `[sampled stills][04 03:56–04:16]` Manual rough-cut sequence: place the playhead at the start of the flat waveform → `Command+B` (Windows `Ctrl+B`) for the first cut → cut again at the end → select the middle segment and delete, i.e. `两刀删中间` (two cuts, delete the middle).
+- `[sampled stills][04 05:04–05:18]` Smart talking-head cut presents the transcript on the left, the player on the right, and the timeline below; the transcript marks tokens such as `停顿 [...0.2s]` (pause [...0.2s]) and `语气词 这个` (filler word "this"); deleting text also deletes the corresponding video.
+- `[sampled stills][04 05:50–06:08]` Breath-gap repair: split into two segments → drag the audio handle (tooltip `0.1s`) to add a small dissolve → lay a short piece of room tone on the second track; this is operational evidence, and the final listening impression still requires listening verification.
+- `[sampled stills][04 12:42–12:54]` `声道配置` (channel configuration) has only three entries: `无` (none), `将左侧声道填充至右侧声道` (fill the right channel from the left channel), and `将右侧声道填充至左侧声道` (fill the left channel from the right channel).
+- `[sampled stills][04 13:45.5–13:57.5]` Subtitle font `系统` (system), size 8 → `思源黑体 CN` (Source Han Sans CN), size 5; white text, letter/line spacing 0; the shadow ends at `不透明度 59%、模糊 7%、距离 5、角度 -45°` (opacity 59%, blur 7%, distance 5, angle -45°), of which 68% was an intermediate value during dragging.
+- `[sampled stills][04 14:02–14:10]` The preview overlays a `16:9视频播放安全区` (16:9 video playback safe zone) mask; do not place subtitles against the edge, and check platform UI occlusion before publishing.
+- `[sampled stills][14 01:34–02:40]` The sync basis is the audio waveform/slate clap and a hardware timecode generator; at 01:50 the four-camera timecodes are A `1:10:04:27`, B `1:10:03:24`, C `1:10:03:26`, and D `1:10:03:26`. A and B differ by about 1 second 3 frames, so they cannot be aligned directly by the file start; the old note `相差约 3 秒` (about 3 seconds apart) should be corrected with this on-screen reading.
+- `[sampled stills][14 02:22–02:30]` The timeline's four tracks are `TimCook机位.mov`, `Tim机位.mov`, `Links机位.mov`, and `全景机位.mov` (Tim Cook camera, Tim camera, Links camera, wide camera), all about `00:16:42:29` long and all starting at `1:10:03:25`.
+- `[sampled stills][14 03:32–04:16]` `新建多机位片段` (New Multicam Clip) dialog: clip name `多机位片段1` (Multicam Clip 1); alignment `自动` (Automatic, checked)/`声音` (Sound); a proxy mode switch described as `可提升剪辑流畅度，不影响最终导出视频质量` (can improve editing smoothness without affecting final exported video quality); after creation, the multicam preview is on the left and the program monitor on the right.
+- `[sampled stills][14 04:15–04:22]` The top-right of the multicam preview can switch between `4机位` (4-camera) and `9机位` (9-camera) views.
+- `[sampled stills][14 05:20–06:40]` Multicam switching: park the playhead on the target frame; the left preview becomes a razor, and clicking a camera cuts automatically; if the cut is wrong, click the correct camera again to change it back, and the timeline distinguishes them by color. The camera numbering order differs between 04:16 and 05:30 (01 Tim Cook/02 Tim/03 wide/04 Links vs 01 wide/02 Tim/03 Links/04 Tim Cook); no reordering operation was seen, [pending verification].
+- `[sampled stills][14 06:54–08:00]` The lower-third workflow goes `文字 → 文字模板 → 搜索人名条/角标` (Text → Text templates → search name bar/lower third); the cases are `Tim / 采访者` (Tim / interviewer), `Links / 采访者` (Links / interviewer), and `Tim Cook / 被访者` (Tim Cook / interviewee); the template text panel shows font `剪映简明` (CapCut Jianming), size 15. The template placeholder text is `姓名`, `xingming`, and `某某公司亚太地区执行副总裁` (name, xingming, Executive Vice President, Asia Pacific, XX Company).
+- `[sampled stills][17 02:08–02:18]` The smart talking-head cut transcript panel filters include `气息/重复/停顿` (breath/repetition/pause) and `最短停顿时长 0.5s` (minimum pause duration 0.5s); no separate take-selection panel was found; the closest thing is transcript check/replace.
+- `[sampled stills][17 04:24]` The long prompt explicitly states `比较情绪与流畅度、自动切除失败 Take、只保留效果最好的一段放在主轨` (compare emotion and fluency, automatically cut failed takes, keep only the best-performing segment on the main track); the resulting segments are dense and butt end to end.
 
-## 工具边界
+## Tool boundary
 
-- `[工具][capcut-cli 0.31.1]` `detect-silence` 只产静音候选。
-- `[工具][capcut-cli 0.31.1]` `detect-retakes` 用字幕词序相似度并偏好后一次，不判断情绪与流畅度。
-- 写入前先保存可回退版本，删除已有时间线前先预览候选范围。
+- `[tool boundary][capcut-cli 0.31.1]` `detect-silence` only produces silence candidates.
+- `[tool boundary][capcut-cli 0.31.1]` `detect-retakes` uses subtitle word-order similarity and prefers the later occurrence; it does not judge emotion or fluency.
+- Save a rollback version before writing; preview the candidate range before deleting an existing timeline.

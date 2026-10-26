@@ -1,44 +1,44 @@
-# 音乐与声音叙事
+# Music and Sound Narrative
 
-## 音乐收束
+## Music closure
 
-- `[课程][06 00:39–03:43]` 在合适重拍收束音乐；尾音被截断时，可通过延长容器、复合片段和回声/混响保留衰减，只接入需要的尾迹。
-- 验收时确认尾迹没有再次截断、主体音乐没有意外重复、尾迹音量不遮对白。
+- `[course evidence][06 00:39–03:43]` Close the music on a suitable strong beat; when the tail is cut off, you can preserve the decay by extending the container, using a compound clip, and adding echo/reverb, so that only the needed tail is brought in.
+- During acceptance, confirm that the tail is not cut off again, that the main music does not repeat unexpectedly, and that the tail volume does not mask dialogue.
 
-## 声音先行与延续
+## Sound-first and continuation
 
-- `[课程][06 03:43–05:22]` 从画面联想环境声，用声音先行建立场景预期；上一画面的声音延续可形成 L-cut。
-- 海浪提前约 2–3 秒只是课程案例，不是 J-cut 的固定提前量。
+- `[course evidence][06 03:43–05:22]` Associate ambient sound from the picture, and use sound-first to establish expectations for the scene; continuing the previous shot's sound can form an L-cut.
+- Advancing the wave sound by about 2–3 seconds is only the course example, not a fixed lead time for a J-cut.
 
-## 设计音效
+## Designed sound effects
 
-- `[课程][06 05:22–07:16]` rise、低频等音效可改变期待、强化动作和转折，但必须说明叙事目的。
-- `[课程][06 09:34–10:51]` 生活录音可经变速、变调、叠层、混响形成设计声音；参数由听感决定。
-- 避免为“有动静”堆叠音效。
+- `[course evidence][06 05:22–07:16]` Sound effects such as rises and low frequencies can change expectation and reinforce actions and turns, but their narrative purpose must be stated.
+- `[course evidence][06 09:34–10:51]` Everyday recordings can become designed sound through speed changes, pitch shifting, layering, and reverb; the parameters are decided by listening.
+- Avoid stacking sound effects just to have “something happening”.
 
-## 资源与授权
+## Resources and licensing
 
-- `[课程][06 08:24–09:34]` 建立可检索且许可清晰的音效库；Musicbed、Artlist、Storyblocks、Envato Elements 是课程资源表示例。
-- 使用前逐条核对曲目、项目、平台和期限授权。AI 音效只是候选来源，不自动等于可商用或适合成片。
+- `[course evidence][06 08:24–09:34]` Build a sound-effects library that is searchable and clearly licensed; Musicbed, Artlist, Storyblocks, and Envato Elements are examples from the course's resource table.
+- Before use, check the license item by item for track, project, platform, and term. AI sound effects are only candidate sources; they are not automatically commercially usable or suitable for the final cut.
 
-## 响度与混音检查
+## Loudness and mix checks
 
-- `[课程][04 10:56–12:59]` 补录质量和环境一致性优先；统一响度不等于所有片段相同增益。
-- `[课程][04 14:28–15:26]` 音乐末尾淡出避免硬断，但具体时长要听感决定。
-- `[工具][capcut-cli 0.31.1]` `loudness` 默认测量，`--target` 计算增益，只有 `--apply` 才写入 segment volume；`--per-clip` 会改变整体混音平衡策略。
-- `[工具]` `render` 是 FFmpeg 代理预览，不能证明最终导出或剪映音频行为。
+- `[course evidence][04 10:56–12:59]` The quality of re-recorded audio and consistency of ambience take priority; uniform loudness does not mean the same gain on every clip.
+- `[course evidence][04 14:28–15:26]` Fade out the end of the music to avoid a hard cut, but the specific duration must be decided by listening.
+- `[tool boundary][capcut-cli 0.31.1]` `loudness` measures by default, `--target` calculates gain, and only `--apply` writes segment volume; `--per-clip` changes the overall mix-balance strategy.
+- `[tool boundary]` `render` is an FFmpeg proxy preview and cannot prove the final export or CapCut audio behavior.
 
-## 2026-10 画面复核补充
+## 2026-10 visual review supplement
 
-- `[画面][06 01:37]` 音频片段面板页签为 `基础 / 换音色 / 声音效果 / 变速 / 改词翻唱`；“声音效果”下有 `场景音`、`声音成曲`，分类 `热门 / 环境 / 美化 / 模拟`。
-- `[画面][06 02:48–02:58]` 尾音处理实际是：复制两段音乐 → 第二段静音 → 拖到原片段后面 → `Option+G`（Mac）/ `Alt+G`（Windows）封装为音频复合片段 → 在“声音效果”选 `回音` → 二次修剪只保留尾迹。没有复合片段这一步，直接在截断音频上点回音“没有用”。
-- `[画面][06 04:24]` `海浪声` 的起点比下一段视频入点提前约 2–3 秒，并加渐入；这是 J-cut 的案例提前量，不是固定值。
-- `[画面][06 06:15 / 07:06]` 音效库列表可见 `RISE_TRANSITION_FX_*`、`Noise Riser`、`大鼓重击`、`电影级低音音效素材`、`转场低音`、`boom, 低音波` 等；列表是案例检索结果，不是推荐清单或授权证明。
-- `[画面][06 07:06]` 烧录字幕明确为“这个英文叫做 sub 或者 **Drone**”；SRT 的 `drum` 是误识别。
-- `[画面][06 10:07–10:14]` 原创音效的变速演示读到 `1.00x / 3.0s → 0.58x / 5.1s → 0.19x / 15.6s → 0.26x / 11.4s（声音变调开）→ 0.71x / 4.4s`；参数由听感决定，不是固定链。画面没有独立的“音调”数值滑块。
-- `[画面][04 12:42–12:54]` 声道配置三项：`无`、`将左侧声道填充至右侧声道`、`将右侧声道填充至左侧声道`；修复前要先确认是哪一侧缺失。
-- `[画面][06 08:30–08:52]` 资源表逐字可读：`https://www.musicbed.com/`、`https://artlist.io/`、`https://www.storyblocks.com/`、`https://elements.envato.com/audio`；本地素材库按“音效/BGM”两级组织，文件名如 `人名条动效.wav`、`过场标题.wav`、`高能预警.wav`、`鼠标.wav`、`耳鸣.wav`。课程素材中的 Musicbed 文件名只证明来源标注，不构成再分发授权。
+- `[sampled stills][06 01:37]` The audio clip panel tabs are `基础 / 换音色 / 声音效果 / 变速 / 改词翻唱` (Basic / Change voice / Sound effects / Speed / Rewrite lyrics and cover); under “声音效果” there are `场景音` (Scene sound) and `声音成曲` (Sound to song), with categories `热门 / 环境 / 美化 / 模拟` (Trending / Ambient / Beautify / Simulation).
+- `[sampled stills][06 02:48–02:58]` Tail handling is actually: duplicate the music into two segments → mute the second → drag it behind the original clip → press `Option+G` (Mac) / `Alt+G` (Windows) to wrap it as an audio compound clip → choose `回音` (Echo) under “声音效果” → trim a second time to keep only the tail. Without the compound-clip step, clicking Echo directly on the truncated audio “does not work”.
+- `[sampled stills][06 04:24]` The start of `海浪声` (Wave sounds) is about 2–3 seconds ahead of the next video segment's in-point and has a fade-in; this is the example's lead time for a J-cut, not a fixed value.
+- `[sampled stills][06 06:15 / 07:06]` The sound-effects library list shows `RISE_TRANSITION_FX_*`, `Noise Riser`, `大鼓重击` (heavy bass drum hit), `电影级低音音效素材` (cinematic low-frequency sound effects), `转场低音` (transition bass), `boom, 低音波` (boom, low-frequency wave), and others; the list is a search result from the example, not a recommendation list or proof of licensing.
+- `[sampled stills][06 07:06]` The burned-in subtitle clearly reads “this is called sub in English, or **Drone**”; the `drum` in the SRT is a misrecognition.
+- `[sampled stills][06 10:07–10:14]` The speed-change demo for the original sound effect reads `1.00x / 3.0s → 0.58x / 5.1s → 0.19x / 15.6s → 0.26x / 11.4s（声音变调开）→ 0.71x / 4.4s` (`声音变调开` = pitch shift on); the parameters are decided by listening, not a fixed chain. The screen has no separate “音调” (pitch) numeric slider.
+- `[sampled stills][04 12:42–12:54]` Three channel-configuration options: `无` (None), `将左侧声道填充至右侧声道` (fill the right channel from the left channel), `将右侧声道填充至左侧声道` (fill the left channel from the right channel); before repairing, first confirm which side is missing.
+- `[sampled stills][06 08:30–08:52]` The resource table is readable word for word: `https://www.musicbed.com/`, `https://artlist.io/`, `https://www.storyblocks.com/`, `https://elements.envato.com/audio`; the local asset library is organized in two levels, “音效/BGM” (sound effects/BGM), with file names such as `人名条动效.wav`, `过场标题.wav`, `高能预警.wav`, `鼠标.wav`, `耳鸣.wav`. The Musicbed file names in the course materials only prove source attribution; they do not constitute permission to redistribute.
 
-## 当前待验
+## Currently pending verification
 
-第 06 课音乐收束和前后对比、第 04 课淡出、第 16 课声音桥均未完成原声听辨。给用户的方案必须标注“待实际听验”。2 秒抽帧能确认波形、轨道和参数名，但不能确认尾音是否自然、J-cut 是否顺滑或声道修复是否有效。
+The music closure and before/after comparison in lesson 06, the fade-out in lesson 04, and the sound bridge in lesson 16 have not yet been verified by listening to the original audio. Any plan given to the user must be marked “pending actual listening verification”. Frame sampling at 2-second intervals can confirm the waveform, tracks, and parameter names, but cannot confirm whether the tail sounds natural, whether the J-cut is smooth, or whether the channel repair is effective.

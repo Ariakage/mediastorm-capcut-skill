@@ -425,3 +425,14 @@ cheese/.analysis/.venv/bin/python scripts/course_audit.py transcribe 01
 - 10 个子 Skill 各增加“Remotion / TypeScript 适配”段；安装副本已同步并通过 quick_validate。
 - **未创建 Remotion 工程、未运行 Studio、未渲染成片**；该路径是基于官方文档的 API 建议，不是本仓库的已验收产物。
 - 项目主路径仍是 CapCut；Remotion 适配不改变现有课程证据边界，也不把 Skill 标为最终版。
+
+## 16. 2026-10-26 Remotion 示例与 Skill 细化
+
+- 新增 `remotion/` 可运行工程：Remotion 4.0.538 + React 19 + TypeScript，合成素材，无课程原片。
+- 合成演示 `SkillAtlas`：1920×1080、30fps、720 帧（24 秒），六个场景——标题、10 个 Skill 卡片、时间线与字幕、Log→调色、关键帧/曲线、渲染交付。
+- 渲染成片在 `assets/demo/skill-atlas.mp4`（约 5.9MB），海报在 `assets/demo/skill-atlas-poster.jpg`；`remotion/out/` 与 `node_modules/` 被忽略。
+- 工程说明与场景表在 `remotion/README.md`；合成素材可由 `remotion/scripts/make-assets.sh` 重新生成。
+- 11 个 SKILL.md 已充分细化（合计约 1,080 行）：新增 When to use / Inputs / detailed Workflow / Decision rules / CapCut notes / Remotion Adapter / Failure conditions / Acceptance checklist / Output contract。
+- 全部 Skill references 已翻译为英文；证据标签统一为 `[course evidence]`、`[sampled stills]`、`[course narration]`、`[inference]`、`[tool boundary]`、`[pending verification]`。中文 UI 标签只作为界面证据保留并附英文释义。
+- 11 个源码 Skill 通过 `quick_validate.py`；安装副本待同步并复核。
+- 边界：示例视频是 Remotion 实现路径的视觉冒烟测试，不含课程媒体，也没有经过听辨或平台验收；Skill 仍是 provisional。

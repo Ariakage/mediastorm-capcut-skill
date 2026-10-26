@@ -1,45 +1,49 @@
-# 证据与安全边界
+# Evidence and safety boundaries
 
-本组合 Skill 保存原创归纳、判断框架和工具适配，不保存课程原片、完整字幕、音频、抽帧或全文转写。
+This bundle stores original synthesis, judgment frameworks, and tool adaptations; it does not store course footage, full subtitles, audio, frame extracts, or full transcripts.
 
-## 当前证据状态
+## Current evidence status
 
-- 已读：18 课共 6,198 条 AI 中文字幕。
-- 已看：第一轮 36 页 / 674 个 20 秒间隔画面；第二轮 18 课全部按 **2 秒间隔**抽帧，共 **6,656 帧 / 1,658 张时间码索引页**，逐张查看，并对界面参数做全分辨率定点抓帧。
-- 已跑：18 课全音轨本地 ASR、453 个 30 秒窗口比对和少量局部复识别。
-- 未完成：连续视频理解、原声听辨、音乐/音效/语气/节奏感知、快速动作逐帧验收。
-- 2026-10-26 本会话补充探针：用户以 `@` 引用本地 MP4；上下文只提供路径，Read 返回“Cannot display content of binary file”。Kimi API 文档说明可通过 `video_url` 的 Base64 或文件上传发送视频，但用户当时尚未授权外部 API 上传、Key 使用或费用；本轮决定先制作未验收 Skill。
-- 画面修正与课程内部矛盾见 [visual-evidence-2026-10.md](visual-evidence-2026-10.md)；2 秒抽样不是连续视频，不能替代听辨与运动验收。
+- Read: all 6,198 AI-generated Chinese subtitle cues across 18 lessons.
+- Viewed: first pass, 36 sheets / 674 sampled stills at 20-second intervals; second pass, all 18 lessons sampled at **2-second intervals**, totaling **6,656 frames / 1,658 timestamped index sheets**, reviewed sheet by sheet, with targeted full-resolution grabs of interface parameters.
+- Run: local ASR on the full audio tracks of all 18 lessons, comparison of 453 30-second windows, and a small number of localized re-recognitions.
+- Not completed: continuous video understanding, original-audio listening, perception of music/sound effects/tone/rhythm, and frame-by-frame acceptance of fast motion.
+- 2026-10-26 supplemental probe in this session: the user referenced a local MP4 with `@`; the context supplied only the path, and Read returned "Cannot display content of binary file". Kimi API documentation says video can be sent through Base64 in `video_url` or through file upload, but the user had not yet authorized external API uploads, API-key use, or costs; this round chose to build the not-yet-accepted skill first.
+- Picture corrections and course-internal contradictions are in [visual-evidence-2026-10.md](visual-evidence-2026-10.md); 2-second sampling is not continuous video and cannot replace listening or motion acceptance.
 
-## 标签约定
+## Tag conventions
 
-- `[课程]`：来自课程字幕、抽样画面或已核画面的原创归纳，必须保留课号和时间码。
-- `[推论]`：助手根据课程或工程逻辑得到的建议，不能写成讲师原话。
-- `[工具]`：本机命令契约、独立实验或脚本结果，不能外推到剪映界面未验证能力。
-- `[待验]`：仍需要连续音画、界面操作或真实输出确认。
+- `[course evidence]`: original synthesis derived from course subtitles, sampled stills, or verified frames; retain the lesson number and timecode.
+- `[sampled stills]`: a fact visible in the 2-second sampled frames or a targeted full-resolution grab, not proof of continuous motion.
+- `[course narration]`: a claim taken from the burned-in subtitle or spoken explanation, not independently verified from the picture.
+- `[inference]`: advice derived from the course or engineering logic; do not present it as the instructor's own words.
+- `[tool boundary]`: local command contracts, independent experiments, or script results; do not extrapolate them to unverified CapCut interface capabilities.
+- `[pending verification]`: still requires continuous audio/video, interface operation, or real output for confirmation.
 
-## 数值规则
+Chinese UI labels inside backticks or quotes are literal interface evidence, followed by an English gloss. They are not a second language for the prompt.
 
-默认把课程中的数值视为案例参数，包括 2–3 秒、0.3×/0.1×、约 2 帧、0.4 秒、45%、1080p/30fps、4K/60fps 等。只有用户项目条件匹配且实际验收通过，才把它们转为项目参数。
+## Numeric rules
 
-第 07 课 10:38 的码率表印有 `KB/s` 且数值为万级；不要把这个单位直接转换成 FFmpeg 参数或平台规则。
+By default, treat values in the course as case parameters, including 2–3 seconds, 0.3×/0.1×, about 2 frames, 0.4 seconds, 45%, 1080p/30fps, 4K/60fps, and so on. Convert them into project parameters only when the user's project conditions match and actual acceptance has passed.
 
-## 外部动作
+The bitrate table at 10:38 in lesson 07 is printed in `KB/s` with values in the tens of thousands; do not convert this unit directly into FFmpeg parameters or platform rules.
 
-以下动作必须单独取得用户授权：
+## External actions
 
-- 上传课程、客户素材或私有项目；
-- 调用云端模型、云端 AI、同步或发布；
-- 消耗积分、API 额度、订阅权益或产生费用；
-- 覆盖已有草稿、强制写入、删除素材、清空缓存；
-- 公开分发包含付费课程信息的材料。
+The following actions require separate user authorization:
 
-## 验收层级
+- uploading course material, client assets, or private projects;
+- calling cloud models or cloud AI, syncing, or publishing;
+- consuming credits, API quota, or subscription benefits, or incurring costs;
+- overwriting existing drafts, force-writing, deleting assets, or clearing caches;
+- publicly distributing material that contains paid-course information.
 
-1. 结构层：JSON/schema/lint 成功。
-2. 代理层：FFmpeg 预览生成且时长/媒体检查通过。
-3. 界面层：剪映能打开、保存、显示预期结构与效果。
-4. 视听层：正常速度看过并听过最终结果。
-5. 交付层：目标设备或平台复核通过。
+## Acceptance layers
 
-任何一层成功都不能自动替代后续层级。
+1. Structure layer: JSON/schema/lint succeeds.
+2. Proxy layer: an FFmpeg preview is generated and duration/media checks pass.
+3. Interface layer: CapCut can open and save the draft and shows the expected structure and effects.
+4. Audiovisual layer: the final result has been watched and listened to at normal speed.
+5. Delivery layer: review on the target device or platform passes.
+
+Success at any one layer does not automatically substitute for subsequent layers.

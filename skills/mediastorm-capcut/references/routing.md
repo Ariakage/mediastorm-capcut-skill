@@ -1,40 +1,40 @@
-# 路由矩阵
+# Routing matrix
 
-本参考把用户请求映射到子 Skill。入口只负责识别目标、组合顺序和证据边界，不承载所有细节。
+This reference maps user requests to child skills. The entry point only identifies the target, composition order, and evidence boundary; it does not carry all the detail.
 
-## 先判断交付形态
+## Determine the delivery form first
 
-- 如果只是改 CapCut 草稿里的字幕、时间、速度、音量或普通素材，优先使用现有 `capcut-edit` 的通用能力；本组合 Skill 负责编辑判断和验收。
-- 如果请求涉及“为什么这样剪、如何判断、怎么验收”，使用本组合 Skill。
-- 如果请求要求上传私有素材、调用云端 AI、消耗积分、发布内容或覆盖磁盘状态，先停下来取得明确授权。
+- If the request only changes subtitles, timing, speed, volume, or ordinary assets in an existing CapCut draft, prefer the generic capabilities of the existing `capcut-edit`; this bundle is responsible for editorial judgment and acceptance.
+- If the request involves "why edit it this way, how to judge it, how to accept it", use this bundle.
+- If the request requires uploading private assets, calling cloud AI, spending credits, publishing content, or overwriting disk state, stop first and obtain explicit authorization.
 
-## 子 Skill 路由
+## Child skill routing
 
-| 用户目标或材料状态 | 路由 | 不应误判为 |
+| User goal or material state | Route | Do not mistake it for |
 | --- | --- | --- |
-| 素材能否导入、编码/帧率不明、媒体离线、目录混乱、代理卡顿 | `mediastorm-project-prep` | 叙事问题 |
-| 视频讲不清、段落顺序、信息密度、B-roll 是否服务叙事、长短片节奏 | `mediastorm-story-structure` | 单纯卡点或转场 |
-| 口播精剪、采访、take 选择、气口、字幕、多机位同步 | `mediastorm-dialogue-interview` | 音乐/音效设计 |
-| 音乐收束、声音先行/延续、环境声、设计音效、尾音、响度意图 | `mediastorm-music-sound` | 对白语义取舍 |
-| 慢放、加速、动作峰值、源帧率是否够、补帧风险 | `mediastorm-speed-time` | 普通关键帧动画 |
-| 推近/平移、逐参数缓动、点跟踪标签、数字闪变、计时器 | `mediastorm-motion-graphics` | 平面跟踪或抠像 |
-| 智能/色度抠像、蒙版、混合模式、图层遮挡、平面跟踪失效 | `mediastorm-compositing-tracking` | 调色或普通点跟踪 |
-| Log 还原、示波器、曲线、跨镜头匹配、肤色和风格 | `mediastorm-color-grading` | 导出参数 |
-| AI 生成 B-roll、概念镜头、局部生成特效、成本与真实性 | `mediastorm-generative-broll` | AI 选 take 或超分验收 |
-| 封面、版本、导出、归档、手机/桌面接力、发布前检查 | `mediastorm-delivery-handoff` | 创作阶段 |
+| Whether assets can be imported, unknown codec/frame rate, offline media, disordered directories, proxy stutter | `mediastorm-project-prep` | Story problem |
+| Unclear video message, section order, information density, whether B-roll serves the narrative, long-form/short-form pacing | `mediastorm-story-structure` | Beat-sync or transitions alone |
+| Talking-head fine cut, interviews, take selection, breath pauses, captions, multicam sync | `mediastorm-dialogue-interview` | Music/sound design |
+| Musical resolution, sound leading/continuing, ambience, designed sound effects, tail sound, loudness intent | `mediastorm-music-sound` | Dialogue semantic choices |
+| Slow motion, speed-up, action peaks, whether the source frame rate is sufficient, frame-interpolation risk | `mediastorm-speed-time` | Ordinary keyframe animation |
+| Push-in/pan, per-parameter easing, point-tracked labels, number flicker, timers | `mediastorm-motion-graphics` | Planar tracking or keying |
+| Smart/chroma keying, masks, blend modes, layer occlusion, planar-tracking failure | `mediastorm-compositing-tracking` | Color grading or ordinary point tracking |
+| Log restoration, scopes, curves, shot-to-shot matching, skin tone and style | `mediastorm-color-grading` | Export settings |
+| AI-generated B-roll, concept shots, localized generative effects, cost and authenticity | `mediastorm-generative-broll` | AI take selection or upscaling acceptance |
+| Cover images, versions, export, archiving, phone/desktop handoff, pre-publication checks | `mediastorm-delivery-handoff` | Creative stage |
 
-## 常见组合顺序
+## Common composition orders
 
-1. 口播短片：项目接入 → 语义粗剪/气口 → B-roll 结构 → 字幕 → 音乐/音效 → 交付。
-2. 无对白混剪：项目接入 → 素材关系与段落 → 音乐/声音 → 变速/动态 → 色彩 → 交付。
-3. 教程包装：项目接入 → 结构 → 参数动画/数字包装 → 空间跟踪/合成 → 声音 → 交付。
-4. 采访：项目接入 → 多机位同步与主收音 → 语义剪辑 → 反应镜头与 B-roll → 字幕 → 交付。
-5. 手机到桌面：手机初剪 → 可编辑草稿接力 → 桌面精修 → 跨端一致性 → 导出与归档。
+1. Talking-head short: project intake → semantic rough cut/breath pauses → B-roll structure → captions → music/sound effects → delivery.
+2. Dialogue-free montage: project intake → asset relationships and sections → music/sound → speed/motion → color → delivery.
+3. Tutorial packaging: project intake → structure → parameter animation/number packaging → spatial tracking/compositing → sound → delivery.
+4. Interview: project intake → multicam sync and primary audio → semantic editing → reaction shots and B-roll → captions → delivery.
+5. Phone to desktop: phone rough cut → editable draft handoff → desktop fine cut → cross-device consistency → export and archiving.
 
-## 路由输出
+## Routing output
 
-在动手前写出一句话路由，例如：
+Write a one-line route before starting work, for example:
 
-`项目接入 → 语义口播剪辑 → 声音桥 → 平面跟踪包装 → 交付检查。`
+`Project intake → semantic talking-head edit → sound bridge → planar-tracking packaging → delivery check.`
 
-如果任何一步缺乏输入、授权或验证路径，把该步骤标为阻塞，不要跳过验收仍宣布完成。
+If any step lacks inputs, authorization, or a verification path, mark that step blocked; do not skip acceptance and still declare completion.
