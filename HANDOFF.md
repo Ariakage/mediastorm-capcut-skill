@@ -73,7 +73,7 @@
 | 原件保护 | 上一阶段重新计算全部 36 个视频/字幕 SHA256，与初始清单一致 | 后续操作仍需保护原件 |
 | 完整音画验收 | 18 课均为 false；本地 MP4 的 `@` 路径引用仍只提供路径，Read 返回二进制不可显示 | 不可宣布全课程学完；草稿 Skill 不能冒充已验收知识 |
 | 组合 Skill | `skills/` 已建立 1 入口 + 10 子 Skill 草稿，官方结构验证通过 | 未经过完整课程音画复核和剪映界面最终验收 |
-| Skill 安装与发现 | 已安装为 `~/.codex/skills/capcut-mediastorm-*`；Codex 提示上下文实际列出全部 11 项 | 只证明可发现、结构和链接正确，不证明路由质量与成片效果 |
+| Skill 安装与发现 | 已安装为 `~/.codex/skills/mediastorm-*`；用户检查确认技能注入成功 | 只证明可发现、结构和链接正确，不证明路由质量与成片效果 |
 | 独立前向测试 | 两个只读测试子任务均因 429 频率限制未执行 | 不能记为测试通过；当前仅有本地结构与发现性验证 |
 
 输入能力的实际探针：
@@ -97,7 +97,7 @@
 | `notes/course-reading-01-07.md`、`notes/course-reading-08-18.md` | 初轮原创归纳与时间码，非最终 Skill |
 | `notes/tool-observations.md` | CLI 契约观察、混合模式合成实验、ASR 局限 |
 | `notes/multimodal-options.md` | 2026-10-26 官方文档调查；候选接口均未实测 |
-| `skills/` | 草稿组合 Skill 源码；入口 `capcut-mediastorm-capcut` 与 10 个任务子 Skill，均标注未完成音画验收 |
+| `skills/` | 草稿组合 Skill 源码；入口 `mediastorm-capcut` 与 10 个任务子 Skill，均标注未完成音画验收 |
 | `scripts/course_audit.py` | 清单、无遗漏字幕输出、抽帧索引、本地 ASR；支持缓存复用 |
 | `scripts/compare_dialogue.py` | 本地转写比对；完整文本结果只写私有目录 |
 | `scripts/check_progress.py` | 状态一致性、私有证据哈希、Git 媒体排除检查及状态表生成 |
@@ -233,6 +233,6 @@ cheese/.analysis/.venv/bin/python scripts/course_audit.py transcribe 01
 
 本文件的提交记录请以 `git log` 为准，避免自引用提交哈希。此前没有执行远程推送。本地 ASR、抽帧与局部识别任务已结束，没有安排自动后台续跑或定时任务。
 
-本轮新增阶段提交（哈希以 `git log` 为准）为 `feat(skills): 新增影视飓风剪映组合 Skill 草稿`，包含 1 个入口、10 个子 Skill、CLI 契约检查脚本及“未做多模态视频读取”的证据更新；不包含课程媒体或全文转写。
+本轮新增阶段提交（哈希以 `git log` 为准）为 `feat(skills): 新增影视飓风剪映组合 Skill 草稿`，包含 1 个入口、10 个子 Skill、CLI 契约检查脚本及“未做多模态视频读取”的证据更新；不包含课程媒体或全文转写。随后按用户要求恢复 `mediastorm-*` 前缀，另以 `refactor(skills)` 提交命名调整；用户已检查确认技能注入成功。
 
 交接完成后应继续保留两项事实：**调查已经完成，完整音画学习及最终组合 Skill 交付仍未完成。**

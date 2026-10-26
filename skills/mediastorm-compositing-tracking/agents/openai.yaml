@@ -1,0 +1,4 @@
+interface:
+  display_name: "MediaStorm Compositing"
+  short_description: "Composite, mask, and track footage safely"
+  default_prompt: "Use $mediastorm-compositing-tracking to solve this layered shot."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "MediaStorm Color Grading"
+  short_description: "Correct, match, and grade CapCut footage"
+  default_prompt: "Use $mediastorm-color-grading to match and grade these shots."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "MediaStorm Project Prep"
+  short_description: "Audit media and prepare CapCut projects"
+  default_prompt: "Use $mediastorm-project-prep to audit this media project."

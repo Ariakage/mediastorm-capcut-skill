@@ -1,4 +1,0 @@
-interface:
-  display_name: "MediaStorm Generative B-roll"
-  short_description: "Plan and review generated B-roll"
-  default_prompt: "Use $capcut-mediastorm-generative-broll to plan a generated insert."

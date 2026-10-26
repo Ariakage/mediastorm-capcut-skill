@@ -1,0 +1,4 @@
+interface:
+  display_name: "MediaStorm Music Sound"
+  short_description: "Shape music edits and sound narrative"
+  default_prompt: "Use $mediastorm-music-sound to design this sound edit."

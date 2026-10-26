@@ -1,0 +1,4 @@
+interface:
+  display_name: "MediaStorm Motion Graphics"
+  short_description: "Design motion graphics and tracked labels"
+  default_prompt: "Use $mediastorm-motion-graphics to animate this package."

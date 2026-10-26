@@ -1,0 +1,4 @@
+interface:
+  display_name: "MediaStorm Delivery"
+  short_description: "Export, archive, and hand off CapCut edits"
+  default_prompt: "Use $mediastorm-delivery-handoff to prepare this delivery."

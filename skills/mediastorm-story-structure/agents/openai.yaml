@@ -1,0 +1,4 @@
+interface:
+  display_name: "MediaStorm Story Structure"
+  short_description: "Design story, pacing, and montage structure"
+  default_prompt: "Use $mediastorm-story-structure to design this edit structure."

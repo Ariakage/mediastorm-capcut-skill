@@ -16,7 +16,7 @@
 - `progress/`：可提交的课程清单、证据覆盖记录、阶段进度；不含课程全文或截图。
 - `notes/`：原创归纳及课程编号、时间码来源，不复制完整讲稿。
 - `scripts/`：课程盘点、证据检查等可复用工具。
-- `skills/`：组合 Skill 源码（一个入口 `capcut-mediastorm-capcut` 与按任务边界划分的 10 个子 Skill）；当前为未完成音画验收的草稿版，已安装到 Codex 用户技能目录。
+- `skills/`：组合 Skill 源码（一个入口 `mediastorm-capcut` 与按任务边界划分的 10 个子 Skill）；当前为未完成音画验收的草稿版，已安装到 Codex 用户技能目录。
 - `HANDOFF.md`：会话交接快照、已确认约定、现有产物与后续执行入口；实时进度以 `progress/` 和实际核查为准。
 - Skill 采用一个入口 Skill 路由至具体 Skill；源码在 `skills/` 维护，验证后复制安装到 Codex。
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "MediaStorm CapCut"
+  short_description: "Route course-informed CapCut editing work"
+  default_prompt: "Use $mediastorm-capcut to plan and route a CapCut editing task."

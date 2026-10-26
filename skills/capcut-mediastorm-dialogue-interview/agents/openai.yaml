@@ -1,4 +1,0 @@
-interface:
-  display_name: "MediaStorm Dialogue Interview"
-  short_description: "Edit dialogue, interviews, and multicam"
-  default_prompt: "Use $capcut-mediastorm-dialogue-interview to edit this interview."

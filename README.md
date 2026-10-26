@@ -23,10 +23,10 @@
 
 ## 🚀 使用入口
 
-Skill 源码位于 [skills/](skills/)，已安装到 `~/.codex/skills/capcut-mediastorm-*`。在 Codex 中显式调用：
+Skill 源码位于 [skills/](skills/)，已安装到 `~/.codex/skills/mediastorm-*`。在 Codex 中显式调用：
 
 ```text
-Use $capcut-mediastorm-capcut to route this CapCut editing task.
+Use $mediastorm-capcut to route this CapCut editing task.
 ```
 
 入口会按任务组合 10 个子 Skill。通用 CapCut 草稿读写仍使用现有 `capcut-edit`，本组合 Skill 侧重剪辑判断、路由、证据边界和验收。
