@@ -1,0 +1,4 @@
+interface:
+  display_name: "MediaStorm Speed Time"
+  short_description: "Plan speed changes and slow motion"
+  default_prompt: "Use $capcut-mediastorm-speed-time to evaluate this speed change."
