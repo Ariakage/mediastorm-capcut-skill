@@ -16,7 +16,7 @@
 
 - 已完成：18 课全部字幕阅读、全音轨本地 ASR、20 秒与 2 秒两轮画面抽样、局部回查、原创笔记、逐课证据账本。
 - 已完成：18 课按 2 秒间隔抽帧，6,656 帧 / 1,658 张时间码索引页逐张查看；18 篇分课解析合计约 4,600 行。
-- 已完成：1 个入口 Skill + 10 个按任务边界划分的子 Skill，源码在 `skills/`，已安装到 `~/.agents/skills/mediastorm-*`；11 个 SKILL.md 已细化为约 1,080 行，references 已英文化。旧 Codex 副本已移到 `~/.codex/uninstalled-skills/mediastorm-2026-10-26/` 备份。
+- 已完成：1 个入口 Skill + 10 个按任务边界划分的子 Skill，源码在 `skills/`，已安装到 `~/.agents/skills/mediastorm-*`，并通过 `~/.claude/skills/mediastorm-*` 符号链接供 Claude Code / Claude Desktop 使用；11 个 SKILL.md 已细化为约 1,080 行，references 已英文化。旧 Codex 副本已移到 `~/.codex/uninstalled-skills/mediastorm-2026-10-26/` 备份。
 - 已完成：Remotion 4.0.538 + React 19 + TypeScript 合成示例（24 秒 / 1080p / 30fps），源码在 `remotion/`，成片在 `assets/demo/skill-atlas.mp4`。
 - 已完成：Skill 结构、命名、Markdown 链接、界面 YAML、源码与安装副本一致性验证；11 个源码与安装副本均通过 `quick_validate.py`。
 - 已完成：capcut-cli 0.31.1 的运行时契约检查脚本；实测 24 个相关命令契约齐全。
@@ -130,7 +130,7 @@
 
 ### 5.1 架构
 
-源码目录：`skills/`。安装目录：`~/.agents/skills/mediastorm-*`。`~/.codex/skills/capcut-edit` 仍作为通用 CapCut 参考 Skill 保留，不属于本组合。
+源码目录：`skills/`。安装目录：`~/.agents/skills/mediastorm-*`；Claude Code / Claude Desktop 通过 `~/.claude/skills/mediastorm-*` 符号链接使用同一份副本。`~/.codex/skills/capcut-edit` 仍作为通用 CapCut 参考 Skill 保留，不属于本组合。
 
 入口：
 
@@ -238,6 +238,7 @@ $mediastorm-capcut
 | `codex` | `codex-cli 0.144.1` |
 | Skill 源码 | 11 个目录，38 个文件（其中 25 个 Markdown） |
 | Skill 安装 | `~/.agents/skills/mediastorm-*`，11 个目录 |
+| Claude 链接 | `~/.claude/skills/mediastorm-*`，11 个符号链接 |
 | Codex 旧副本 | `~/.codex/uninstalled-skills/mediastorm-2026-10-26/`，11 个目录备份 |
 | Remotion | `4.0.538`；React `19.2.3`；TypeScript `5.9.3` |
 | Remotion 依赖 | `remotion/node_modules` 约 268 MB；Headless Shell 已下载 |
@@ -422,6 +423,7 @@ skills/mediastorm-capcut/scripts/check_capcut_contract.py
 ```sh
 for dir in skills/mediastorm-*; do
   diff -qr "$dir" "$HOME/.agents/skills/$(basename "$dir")"
+  diff -qr "$dir" "$HOME/.claude/skills/$(basename "$dir")"
 done
 ```
 
@@ -541,4 +543,5 @@ git push origin main
 - topics：`capcut`、`capcut-cli`、`remotion`、`video-editing`、`ai-skill`、`codex-skill`、`motion-graphics`、`color-grading`、`typescript`、`react`、`mediastorm`。
 - Codex 卸载：11 个 `~/.codex/skills/mediastorm-*` 已移到 `~/.codex/uninstalled-skills/mediastorm-2026-10-26/` 备份；`~/.codex/skills/capcut-edit` 保留。
 - `.agents` 安装：11 个目录复制到 `~/.agents/skills/mediastorm-*`，与 `skills/` 源码 `diff -qr` 零差异，全部通过 `quick_validate.py`。
-- 安装位置以本节的 `~/.agents/skills` 为准；README、AGENTS 与快速命令已同步。
+- Claude 安装（2026-10-27）：在 `~/.claude/skills` 建立 11 个指向 `~/.agents/skills/mediastorm-*` 的符号链接；Claude Code / Claude Desktop 当前会话已识别 11 个 Skill，全部通过 `quick_validate.py`。
+- 安装位置以本节的 `~/.agents/skills` + `~/.claude/skills` 链接为准；README、AGENTS 与快速命令已同步。

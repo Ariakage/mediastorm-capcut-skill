@@ -62,9 +62,22 @@ done
 
 更新时重复执行即可；不带 `--delete`，不会删除你手动加在安装目录里的文件。Windows 可把 `rsync -a` 换成资源管理器复制或 `robocopy`。
 
-当前机器的安装状态：11 个 `mediastorm-*` 已从 `~/.codex/skills` 卸载并移到 `~/.codex/uninstalled-skills/mediastorm-2026-10-26/` 备份，随后安装到 `~/.agents/skills/mediastorm-*`。`capcut-edit` 仍保留在 `~/.codex/skills/capcut-edit`，不随本组合 Skill 迁移。
+当前机器的安装状态：11 个 `mediastorm-*` 已从 `~/.codex/skills` 卸载并移到 `~/.codex/uninstalled-skills/mediastorm-2026-10-26/` 备份，随后安装到 `~/.agents/skills/mediastorm-*`，并在 `~/.claude/skills` 建立 11 个符号链接。`capcut-edit` 仍保留在 `~/.codex/skills/capcut-edit`，不随本组合 Skill 迁移。
 
-### 2. 调用入口
+### 2. 安装到 Claude Desktop / Claude Code
+
+Claude 的用户技能目录 `~/.claude/skills` 在本机是符号链接农场；按同样约定链接到 `.agents` 源：
+
+```bash
+mkdir -p "$HOME/.claude/skills"
+for src in "$HOME"/.agents/skills/mediastorm-*; do
+  ln -sfn "$src" "$HOME/.claude/skills/$(basename "$src")"
+done
+```
+
+这会让 Claude Code 与 Claude Desktop 的 Code 标签页发现同一套 Skill；修改 `.agents` 源后无需重新复制。Claude Desktop 的普通聊天不等同于本地 Code 会话，是否加载本地 Skill 取决于该入口的能力。
+
+### 3. 调用入口
 
 ```text
 Use $mediastorm-capcut to route this CapCut or Remotion editing task.
@@ -77,14 +90,14 @@ $mediastorm-capcut 帮我把这段口播做成 60 秒短片：
 先用 CapCut 做语义粗剪，再给出 Remotion 版的字幕与调色实现。
 ```
 
-### 3. 校验
+### 4. 校验
 
 ```bash
 python3 "$HOME/.codex/skills/.system/skill-creator/scripts/quick_validate.py" \
   "$HOME/.agents/skills/mediastorm-capcut"
 ```
 
-### 4. 创建 Remotion 工程（可选）
+### 5. 创建 Remotion 工程（可选）
 
 ```bash
 npx create-video@latest --yes --blank --no-tailwind mediastorm-remotion

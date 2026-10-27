@@ -18,9 +18,9 @@
 - `scripts/`：课程盘点、证据检查等可复用工具。
 - `assets/`：README 头图、Remotion 示例海报与成片等静态资源。
 - `remotion/`：可运行的 Remotion 示例工程（合成素材，24 秒 Skill Atlas 演示）；`node_modules/` 与 `out/` 不提交。
-- `skills/`：组合 Skill 源码（一个入口 `mediastorm-capcut` 与按任务边界划分的 10 个子 Skill）；当前为未完成音画验收的草稿版，已安装到 `~/.agents/skills/mediastorm-*`。
+- `skills/`：组合 Skill 源码（一个入口 `mediastorm-capcut` 与按任务边界划分的 10 个子 Skill）；当前为未完成音画验收的草稿版，已安装到 `~/.agents/skills/mediastorm-*`，并通过 `~/.claude/skills/mediastorm-*` 符号链接供 Claude Code / Claude Desktop 使用。
 - `HANDOFF.md`：会话交接快照、已确认约定、现有产物与后续执行入口；实时进度以 `progress/` 和实际核查为准。
-- Skill 采用一个入口 Skill 路由至具体 Skill；源码在 `skills/` 维护，验证后复制安装到 Codex。
+- Skill 采用一个入口 Skill 路由至具体 Skill；源码在 `skills/` 维护，验证后安装到 `~/.agents/skills`，再按需链接到 `~/.claude/skills`。
 
 ## 内容红线（最高优先级）
 
@@ -83,7 +83,7 @@ chore: 添加 .gitignore
 
 - 目的：把影视飓风课程中的剪辑判断、经验、手法及交付发布知识转化为可执行的组合 Skill，支持 capcut-cli 和其他视频制作流程。
 - 先研读全部 18 课，再根据课程内容确定子 Skill 分类，不提前以工具命令或目录名代替知识结构。
-- 新 Skill 在本仓库维护源码，完成后安装到 Codex；保留现有 `capcut-edit`。
+- 新 Skill 在本仓库维护源码，完成后安装到 `~/.agents/skills`，并通过符号链接供 Claude Code / Claude Desktop 使用；保留现有 `capcut-edit`。
 - 用户允许使用助手的多模态能力；未授权将原始课程上传至第三方服务或产生额外付费。
 - 按有实质价值的阶段成果进行本地 Conventional Commits 提交，不强制逐课提交，不自动推送。
 - 原始课程始终只读。所有字幕全文、截图、音频、视频副本及分析缓存位于被忽略的 `cheese/` 下。
@@ -110,8 +110,9 @@ chore: 添加 .gitignore
 ## 安装位置约定（2026-10-26）
 
 - 本组合 Skill 的当前安装目录是 `~/.agents/skills/mediastorm-*`。
+- Claude Code / Claude Desktop：`~/.claude/skills/mediastorm-*` 是指向 `~/.agents/skills/mediastorm-*` 的符号链接；这是本机既有约定，修改 `.agents` 源即可同步。
 - 2026-10-26 已从 `~/.codex/skills` 卸载 11 个 `mediastorm-*`，移到 `~/.codex/uninstalled-skills/mediastorm-2026-10-26/` 备份；`capcut-edit` 仍保留在 Codex。
-- 未经用户明确要求，不要把本组合重新装回 `~/.codex/skills`；README 与安装命令以 `.agents` 为准。
+- 未经用户明确要求，不要把本组合重新装回 `~/.codex/skills`；README 与安装命令以 `.agents` + `.claude` 为准。
 - 安装副本应与 `skills/` 源码保持 `diff -qr` 零差异，并分别通过 `quick_validate.py`。
 
 ## 详细执行计划与验收标准
@@ -186,4 +187,5 @@ chore: 添加 .gitignore
 - 2026-10-26 推送：用户明确授权本次 `git push origin main`；已推送 `5749052..910e0b5`，`main` 与 `origin/main` 同步。
 - 2026-10-26 GitHub 元数据：仓库简介更新为 CapCut + Remotion 双路径说明；topics 含 `capcut`、`capcut-cli`、`remotion`、`video-editing`、`ai-skill`、`codex-skill`、`motion-graphics`、`color-grading`、`typescript`、`react`、`mediastorm`。
 - 2026-10-26 安装迁移：11 个 `mediastorm-*` 从 `~/.codex/skills` 移到备份并安装到 `~/.agents/skills`；安装副本与源码零差异，`quick_validate.py` 通过。
+- 2026-10-27 Claude 安装：在 `~/.claude/skills` 建立 11 个指向 `~/.agents/skills/mediastorm-*` 的符号链接；Claude Code / Claude Desktop 当前会话已识别 11 个 Skill，全部通过 `quick_validate.py`。
 - 更新进度后运行 `python3 scripts/check_progress.py --write-summary`，使逐课表与账本同步。该检查只能约束记账一致性，不能判断学习质量。
