@@ -18,6 +18,7 @@
 - 已完成：18 课按 2 秒间隔抽帧，6,656 帧 / 1,658 张时间码索引页逐张查看；18 篇分课解析合计约 4,600 行。
 - 已完成：1 个入口 Skill + 10 个按任务边界划分的子 Skill，源码在 `skills/`，已安装到 `~/.agents/skills/mediastorm-*`，并通过 `~/.claude/skills/mediastorm-*` 符号链接供 Claude Code / Claude Desktop 使用；11 个 SKILL.md 已细化为约 1,080 行，references 已英文化。旧 Codex 副本已移到 `~/.codex/uninstalled-skills/mediastorm-2026-10-26/` 备份。
 - 已完成：Remotion 4.0.538 + React 19 + TypeScript 合成示例（24 秒 / 1080p / 30fps），源码在 `remotion/`，成片在 `assets/demo/skill-atlas.mp4`。
+- 已完成：用 `video-storyboard` 对 18 课做场景变化扫描（5,582 个切点 / 03:41:55），并把切点密度、异常值与工具方法写入 `mediastorm-story-structure`；索引页与 JSON 只留在 `cheese/.analysis/storyboard*`。
 - 已完成：Skill 结构、命名、Markdown 链接、界面 YAML、源码与安装副本一致性验证；11 个源码与安装副本均通过 `quick_validate.py`。
 - 已完成：capcut-cli 0.31.1 的运行时契约检查脚本；实测 24 个相关命令契约齐全。
 - 未完成：18 课连续视频理解、原声听辨、音乐/音效/语气/节奏感知、快速动作和音画同步验收。
@@ -188,6 +189,8 @@ $mediastorm-capcut
 - `scripts/combine_visual_analysis.py`：合并 18 篇分课解析。
 - `scripts/check_progress.py`：账本一致性、原件哈希、课程媒体拦截；合成演示媒体通过 `assets/demo/synthetic-media.json` 的 SHA256 白名单放行。
 - `remotion/scripts/make-assets.sh`：重新生成合成演示视频与环境音。
+- `scripts/run_storyboard_metrics.sh`：对单课运行 `video-storyboard` 并输出 cut-density JSON；可用 `VIDEO_STORYBOARD_DIR` 覆盖工具路径。
+- `scripts/storyboard_metrics.py`：把 18 课 JSON 汇总成 Markdown 切点密度表。
 
 ## 6. Skill 验证与安装状态
 
@@ -205,6 +208,9 @@ $mediastorm-capcut
 - 11 个 SKILL.md 已扩写为约 1,080 行，references 已英文化，证据标签统一为英文。
 - Remotion 示例 `npx tsc --noEmit` 通过；24 秒 1080p 成片已渲染（H.264/AAC）。
 - `check_progress.py` 通过；合成演示媒体通过 SHA256 白名单，课程媒体仍被拦截。
+- `video-storyboard` doctor：ffmpeg/ffprobe 可用；yt-dlp 与 ASR 不可用，本地文件 + 课程 SRT 路径可用。
+- `scripts/storyboard_metrics.py` 已对 18 个 `sheet.json` 实际运行，输出 5,582 切点 / 03:41:55。
+- `mediastorm-story-structure` 的 reference 与 SKILL 已加入切点密度方法、18 课表和异常值说明。
 
 未完成：
 
@@ -247,6 +253,7 @@ $mediastorm-capcut
 | ASR 模型 | `mlx-community/whisper-small-mlx`，revision `45f3915923c7a79a5a5b5a7d909d39aeb0e5630e` |
 | 验证依赖 | ASR 环境已含 PyYAML；系统 Python 3 当前缺 `yaml` |
 | ffmpeg | 8.1.2 |
+| video-storyboard | `~/.claude/skills/video-storyboard`；ffmpeg 可用，ASR/yt-dlp 不可用；本地文件 + SRT 可用 |
 
 其他环境事实：
 
@@ -291,6 +298,8 @@ $mediastorm-capcut
 | `scripts/fine_frames.py` | 2 秒索引页、定点抓帧与裁剪 |
 | `scripts/update_fine_visual_ledger.py` | 细抽帧写入课程账本 |
 | `scripts/combine_visual_analysis.py` | 合并 18 篇分课解析 |
+| `scripts/run_storyboard_metrics.sh` | 单课 video-storyboard 扫描 |
+| `scripts/storyboard_metrics.py` | 汇总 18 课切点密度表 |
 | `scripts/check_progress.py` | 账本一致性、原件哈希、课程媒体拦截、合成媒体白名单 |
 | `scripts/course-analysis-requirements.txt` | 分析环境依赖 |
 
@@ -310,6 +319,8 @@ cheese/
     ├── visual/01 ... 18/        # 20 秒抽样索引页
     ├── fine/01 ... 18/          # 2 秒细抽帧索引页与 manifest
     ├── grabs/                   # 全分辨率定点抓帧
+    ├── storyboard/01 ... 18/    # video-storyboard 阅读索引页（brief）
+    ├── storyboard-metrics/      # video-storyboard 完整扫描 JSON（compact）
     ├── fine-pilot/              # 早期 01 课试点（已并入 fine/01）
     ├── details/
     ├── cli-command-index.json
@@ -378,7 +389,16 @@ cheese/
 4. 重新渲染后更新 `assets/demo/skill-atlas.mp4` 与海报；只在确认 `ffprobe`、`tsc`、画面检查通过后替换。
 5. Remotion 示例通过不等于课程音画、CapCut 路径或平台验收；不要据此改变 `provisional` 状态。
 
-### D. 任何时候都不要
+### D. 如果继续用 video-storyboard 复核
+
+1. 先 `probe` 目标视频，确认时长、帧率和是否存在音轨/字幕。
+2. 本地课程用 `--transcript-file` 传入课程 SRT；不要误以为 ASR 不可用就等于没有台词。
+3. 用 `--strategy compact` 做完整切点扫描；`--max-sheets` 只控制阅读页数量，不改切点数。
+4. 读完全部索引页，再用 `zoom --cell-id` 放大关键格；引用 cell + 绝对时间码。
+5. 切点数是场景变化代理，不把讲座切点率当目标；对用户自己的成片比较时才使用同一口径。
+6. 索引页、JSON 和日志只留在 `cheese/.analysis/storyboard*`，不提交。
+
+### E. 任何时候都不要
 
 - 把字幕、抽帧、ASR 或技能注入成功当成完整音画理解。
 - 把课程案例数值写成所有项目固定预设。
@@ -444,6 +464,13 @@ cheese/.analysis/.venv/bin/python scripts/course_audit.py transcribe 01
 cheese/.analysis/.venv/bin/python scripts/fine_frames.py sheets 03 --interval 2 --out cheese/.analysis/fine --clean
 cheese/.analysis/.venv/bin/python scripts/update_fine_visual_ledger.py
 python3 scripts/combine_visual_analysis.py
+```
+
+分镜切点密度（可选，需 `video-storyboard`）：
+
+```sh
+ls cheese/视频/*.mp4 | xargs -P 4 -I{} bash scripts/run_storyboard_metrics.sh "{}"
+python3 scripts/storyboard_metrics.py --dir cheese/.analysis/storyboard-metrics
 ```
 
 Remotion 示例：
@@ -535,6 +562,20 @@ git push origin main
 - 全部 Skill references 已翻译为英文；证据标签统一为 `[course evidence]`、`[sampled stills]`、`[course narration]`、`[inference]`、`[tool boundary]`、`[pending verification]`。中文 UI 标签只作为界面证据保留并附英文释义。
 - 11 个源码 Skill 通过 `quick_validate.py`；安装副本已同步，`diff -qr` 为零。
 - 边界：示例视频是 Remotion 实现路径的视觉冒烟测试，不含课程媒体，也没有经过听辨或平台验收；Skill 仍是 provisional。
+
+## 18. 2026-11-01 video-storyboard 切点密度分析
+
+- 工具：`~/.claude/skills/video-storyboard`；`doctor` 显示 ffmpeg/ffprobe 可用，yt-dlp 与 ASR 不可用；本地文件 + 课程 SRT 可用。
+- 对 18 课运行完整 `compact` 场景扫描（阈值 20），共 **5,582 个切点 / 03:41:55**，约 **25.2 切/分钟**。
+- 代表值：05 混剪 335 切 / 2.1s；14 采访 143 切 / 3.7s；15 长视频 467 切 / 2.6s；12 包装 374 切 / 3.0s。
+- 异常值：13 为 1,163 切 / 0.6s，主要来自屏幕/跟踪 UI 变化，不是剪辑教学节奏；不得当作目标。
+- 写入 Skill：
+  - `mediastorm-story-structure/references/structure-playbook.md` 新增 18 课密度表、异常值说明、复现命令与“讲座切点≠学生目标”边界。
+  - `mediastorm-story-structure/SKILL.md` 新增 Shot-density diagnostic、输入项、决策规则与验收项。
+  - 入口新增“分析现有成片切点密度”路由，并说明 `video-storyboard` 结果标为 `[tool boundary]`。
+- 原始索引页/JSON/日志在 `cheese/.analysis/storyboard` 与 `storyboard-metrics`，不进入 Git。
+- 新增 `scripts/run_storyboard_metrics.sh` 与 `scripts/storyboard_metrics.py`；后者可复算密度表。
+- 边界：这是场景变化代理，不是原声听辨、连续运动或剪辑意图验收；Skill 仍为 provisional。
 
 ## 17. 2026-10-26 GitHub 元数据与安装迁移
 

@@ -192,7 +192,7 @@ skills/                 1 个入口 + 10 个子 Skill 源码
   mediastorm-*/         10 个任务子 Skill
 notes/visual-analysis/  18 课 2 秒细抽帧解析、索引、合并版
 progress/               证据账本、逐课状态、待验清单
-scripts/                细抽帧、合并、账本校验等工具
+scripts/                细抽帧、分镜切点、合并、账本校验等工具
 assets/                 README 头图等静态资源
 cheese/                 本地课程素材与分析缓存（被 .gitignore 排除）
 ```
@@ -201,6 +201,7 @@ cheese/                 本地课程素材与分析缓存（被 .gitignore 排�
 
 - 18 课共 03:41:55；6,198 条 AI 字幕已读；全音轨本地 ASR 与 453 个分窗比对已完成。
 - 第二轮 **2 秒细抽帧**：6,656 帧 / 1,658 张时间码索引页逐张查看；18 篇分课解析，合计约 4,600 行。
+- 第三轮 **video-storyboard 切点密度**：18 课 5,582 个场景切点 / 03:41:55（约 25.2 切/分钟）；密度表与方法写入 `mediastorm-story-structure`，原始索引页与 JSON 不入库。切点数是场景变化代理，不是原声听辨或剪辑意图。
 - 组合 Skill 已回写本轮画面修正：入口新增 [视觉证据参考](skills/mediastorm-capcut/references/visual-evidence-2026-10.md)，10 个子 Skill 补入精确时间码与参数。
 - **未完成**：连续视频理解、原声听辨、音乐/音效/语气/声道、快速动作与跟踪稳定性；Skill 仍为 `provisional-unverified-audiovisual`。
 - Remotion 路径已建立可运行工程并渲染 24 秒合成示例（[remotion/](remotion/README.md)）；但示例不含课程原片，也不等于课程音画或平台验收。

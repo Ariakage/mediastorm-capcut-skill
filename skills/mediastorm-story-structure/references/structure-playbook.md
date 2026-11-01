@@ -44,6 +44,53 @@
 - `[sampled stills][16 05:18–06:22]` The Vlog mind map has four main branches: Giant Sequoia, Santa Barbara, Movie City, and Venice Beach; the theme wall marks the switch positions at 0/3/6/9 o'clock.
 - `[sampled stills][01]` Lesson 01 is a promotional/channel-introduction film, not editing instruction; techniques cannot be extracted from promotional language.
 
+## 2026-11 shot-density scan with video-storyboard
+
+`[tool boundary][video-storyboard]` A full-frame scene-change scan (threshold 20) was run on all 18 lesson videos, using the course SRT as the transcript. Generated sheets and JSON stayed in the local analysis cache; only this aggregate table is kept in the Skill. The metric is **scene changes in the lecture recording**, not the cut rhythm of the exercise being taught.
+
+| Lesson | Duration | Scene cuts | Avg interval | Cuts/min | What the sheet shows |
+| --- | ---: | ---: | ---: | ---: | --- |
+| 01 | 1:52 | 53 | 2.1s | 28.3 | Promo/lecture montage; not a teaching edit |
+| 02 | 5:05 | 112 | 2.7s | 22.0 | Setup, screen switches, examples |
+| 03 | 11:37 | 198 | 3.5s | 17.1 | Basic edit; UI + demo cuts |
+| 04 | 15:59 | 268 | 3.6s | 16.8 | Interview/talking head + B-roll |
+| 05 | 11:34 | 335 | 2.1s | 29.0 | Densest editorial lecture: montage, Kuleshov, transitions |
+| 06 | 11:31 | 221 | 3.1s | 19.2 | Sound examples, waveform/UI changes |
+| 07 | 14:53 | 310 | 2.9s | 20.8 | Export/delivery screens + examples |
+| 08 | 10:54 | 196 | 3.3s | 18.0 | Keyframe/curve demos |
+| 09 | 10:51 | 269 | 2.4s | 24.8 | Speed demos; fast visual changes |
+| 10 | 12:10 | 266 | 2.7s | 21.9 | Keying/mask/UI demos |
+| 11 | 12:52 | 256 | 3.0s | 19.9 | Color panels/scopes |
+| 12 | 18:43 | 374 | 3.0s | 20.0 | Packaging examples, price cards, phone motion |
+| 13 | 10:54 | 1,163 | 0.6s | 106.7 | **Outlier**: screen/tracking UI changes, not editorial cutting |
+| 14 | 8:45 | 143 | 3.7s | 16.4 | Multicam interview; slowest pacing |
+| 15 | 20:34 | 467 | 2.6s | 22.7 | Long-form sections, clock/demo inserts |
+| 16 | 14:49 | 341 | 2.6s | 23.0 | Vlog/mind map/color examples |
+| 17 | 14:30 | 269 | 3.2s | 18.5 | AI panels and generated candidates |
+| 18 | 14:24 | 341 | 2.5s | 23.7 | Mobile/social examples |
+
+Total: 5,582 scene changes over 13,315 seconds (about 25.2 cuts/min).
+
+How to read the table:
+
+- A course's lecture cut rate is **not** a target for the student's edit. It mixes camera cuts, instructor cutaways, UI/panel changes, and demo footage.
+- 13's 106.7 cuts/min is a screen/UI/tracking outlier; it does not mean the lesson teaches 0.6-second cutting.
+- 05's 29.0 cuts/min is the densest editorial lecture, but it still includes instructor/UI cuts; use the sheet cells to separate the montage from the lecture.
+- 14's 16.4 cuts/min reflects interview pacing; do not turn it into a universal interview rule.
+- The interval is `duration / cuts` (arithmetic mean), not a median; a few long takes can shift it.
+- Use this table to find sections worth reviewing, then inspect the sheet cells and zoom the cells that matter. Do not approve or reject an edit from the number alone.
+
+Reproduce with the optional `video-storyboard` skill:
+
+```bash
+node "$CLAUDE_SKILL_DIR/bin/probe.mjs" "<video>" --json
+node "$CLAUDE_SKILL_DIR/bin/storyboard.mjs" "<video>" \
+  --transcript-file "<course.srt>" --strategy compact --max-sheets 3 --text --json
+node "$CLAUDE_SKILL_DIR/bin/zoom.mjs" "<video>" --cell-id 7 --out zoom.png --json
+```
+
+Read every generated sheet before citing it. Cite both the cell number and the absolute time range printed in the index. Keep course sheets and JSON in the ignored analysis directory; never commit them.
+
 ## Currently pending verification
 
 The sparse-dialogue demonstrations, actual rhythm peaks and valleys, music beat sync, and sound bridges in lessons 05, 15, and 16 still require continuous video review; the static structure has been checked with 2-second sampled stills, but this Skill is still a draft pending verification.

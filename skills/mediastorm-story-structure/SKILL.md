@@ -17,6 +17,7 @@ Build the edit around information, viewer attention, and relationships between s
 - A long video needs paragraph units, peak/valley planning, or a “clock” diagnostic.
 - A Vlog or documentary needs a mind map, narrative order, or a bridge between sections.
 - Juxtaposition may be creating a false causal or emotional reading.
+- The question is whether an existing cut is too fast, too slow, or structurally uneven.
 
 Do not use this skill for breath-level dialogue cleanup, music mixing, keyframe mechanics, or export specs; route those to the matching child skill.
 
@@ -25,6 +26,7 @@ Do not use this skill for breath-level dialogue cleanup, music mixing, keyframe 
 - Viewer promise: what question the piece answers, and what the ending must prove.
 - Material map: people, events, locations, themes, repetitions, contradictions, and usable visual/auditory echoes.
 - Delivery shape: duration range, platform context, aspect ratio, and whether music is required.
+- Optional shot-density map or cut list, if the question is about pacing rather than story order.
 - Evidence boundary: what the user has actually watched or listened to, and what is still assumed.
 
 ## Workflow
@@ -42,6 +44,18 @@ Do not use this skill for breath-level dialogue cleanup, music mixing, keyframe 
 11. For Vlogs, use an unordered mind map before a timeline. The course example has four branches: Giant Sequoia, Santa Barbara, Movie City, and Venice Beach [sampled stills][16 05:18–06:22].
 12. Review the full structure at normal speed: promise fulfillment, section jobs, peak/valley contrast, B-roll meaning, and whether any deletion removed necessary explanation.
 
+## Shot-density diagnostic
+
+Use this when the question is “is this cut too fast/slow/uneven”, not “what is the story”.
+
+1. Run `probe` on the actual cut or export. Do not estimate cut rate from a few still frames.
+2. If the optional `video-storyboard` skill is available, generate a compact storyboard with the transcript: `--strategy compact --max-sheets 3`. Read every sheet before citing it.
+3. Separate the cut sources: camera cuts, instructor cutaways, UI/panel changes, and demo footage. A screen tutorial can show a very high scene-change count without teaching fast cutting.
+4. Use the cut list as a **density map**: find sections whose rate is far from the piece's own median, then inspect those cells and time ranges.
+5. Compare only like with like: an interview, a montage, and a screen tutorial have different cut economies. Do not import a course's lecture cut rate as a preset.
+6. If the tool is unavailable, build the same map from the edit's cut points; the method matters more than the tool.
+7. Record the source of the metric (tool, threshold, window) and its caveat in the output.
+
 ## Decision rules
 
 - If a section has no informational or emotional job, cut or compress it; do not keep it because the footage is beautiful.
@@ -51,6 +65,8 @@ Do not use this skill for breath-level dialogue cleanup, music mixing, keyframe 
 - If a match cut relies only on “two similar shots”, check shape, position, motion, or direction; otherwise it is decoration.
 - If an effect or transition is added before the shot relationship works, remove it and re-check the cut.
 - Clock positions are diagnostic checkpoints, not audience-fatigue laws. The course’s own clock graphic is internally inconsistent at 15 12:34–13:16; do not treat it as a precise law.
+- A lecture video’s scene-change rate is not the student’s target; it includes camera cuts, instructor cutaways, UI changes, and demo footage.
+- If a cut-density number is the only evidence, do not approve or reject the edit; inspect the cells and the actual cut motivations.
 
 ## CapCut execution notes
 
@@ -87,9 +103,10 @@ Do not use this skill for breath-level dialogue cleanup, music mixing, keyframe 
 - [ ] Transitions/effects are used at real turning points.
 - [ ] The piece has contrast between intensity and relief.
 - [ ] The ending does not outstay its informational job.
+- [ ] If cut density was used, its source, threshold, window, and caveat are recorded.
 
 ## Output contract
 
-Return: the promise, the chosen organizing frame, the section map with jobs, the opening strategy, the montage/transition policy, the risks (especially false juxtaposition), and the unresolved evidence needs. Separate course evidence, inference, and pending verification.
+Return: the promise, the chosen organizing frame, the section map with jobs, the opening strategy, the montage/transition policy, the risks (especially false juxtaposition), and the unresolved evidence needs. If a shot-density map was used, include its source, threshold, window, and caveat. Separate course evidence, inference, and pending verification.
 
 Read [references/structure-playbook.md](references/structure-playbook.md) for practical patterns, checks, and source timecodes.

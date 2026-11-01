@@ -16,6 +16,7 @@ Route video-editing work by intent and evidence, then apply the matching child s
 - The request needs **editorial judgment**: what to cut, why, in what order, how to verify.
 - The work spans more than one stage: e.g. dialogue cleanup → B-roll → sound → color → delivery.
 - The user wants the same edit expressed in **CapCut** and/or **Remotion/TypeScript**.
+- The user asks whether an existing cut is too fast, too slow, or structurally uneven.
 - The request needs a boundary between course-derived knowledge, tool behavior, and unverified assumptions.
 
 ## Do not use this bundle when
@@ -41,6 +42,7 @@ Read [references/routing.md](references/routing.md) for the decision matrix. Rou
 | --- | --- |
 | Organize media, check codecs/frame rates, relink, prepare proxies or drafts | `mediastorm-project-prep` |
 | Design story, pacing, shot order, information density, B-roll meaning, or long-video structure | `mediastorm-story-structure` |
+| Analyze an existing cut's shot density, pacing, or structural beats | `mediastorm-story-structure` + optional `video-storyboard` |
 | Edit talking heads, interviews, takes, dialogue cuts, captions, or multicam sync | `mediastorm-dialogue-interview` |
 | Fit music, design sound bridges, J/L-cuts, ambience, effects, or loudness intent | `mediastorm-music-sound` |
 | Slow down, speed ramp, evaluate source frame rate, or reconstruct time around action peaks | `mediastorm-speed-time` |
@@ -71,6 +73,7 @@ Treat this bundle as a **provisional draft** until continuous video and original
 - Course references in this bundle use **actual file numbers 01–18**. The promo board uses 01–14; 03–16 map to board 01–14, 17–18 are DLC. Say which numbering you mean.
 - Read [references/visual-evidence-2026-10.md](references/visual-evidence-2026-10.md) for the verified picture corrections, course-internal conflicts, and exact case values from the 2-second pass.
 - Read [references/remotion-adapter.md](references/remotion-adapter.md) when implementing the same edit in Remotion/TypeScript. That path is an official-API mapping, not a rendered or accepted result in this repository.
+- Optional `video-storyboard` scans measure scene changes in a recording, not editorial intent. Label them `[tool boundary]`, record the threshold and window, and never treat a lecture's cut rate as a target. The 18-lesson density table is in the `mediastorm-story-structure` reference `structure-playbook.md`.
 
 ## Execute safely
 

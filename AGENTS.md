@@ -115,6 +115,13 @@ chore: 添加 .gitignore
 - 未经用户明确要求，不要把本组合重新装回 `~/.codex/skills`；README 与安装命令以 `.agents` + `.claude` 为准。
 - 安装副本应与 `skills/` 源码保持 `diff -qr` 零差异，并分别通过 `quick_validate.py`。
 
+## 视频分镜分析约定（2026-11-01）
+
+- `video-storyboard` 是可选分析工具；索引页、JSON 与日志只放在 `cheese/.analysis/storyboard*`，不得提交。
+- 切点数是场景变化代理，不等于剪辑意图；记录工具、阈值和窗口，不把课程讲座的切点率当成学生项目的目标。
+- 18 课切点密度表在 `skills/mediastorm-story-structure/references/structure-playbook.md`；它用于定位复查段落，不用于自动验收。
+- 使用课程 SRT 作为 `--transcript-file` 只补充台词索引，不等于原声听辨；音效、语气和节奏仍待人工听验。
+
 ## 详细执行计划与验收标准
 
 ### 阶段一：建立清单和真实证据边界
@@ -188,4 +195,5 @@ chore: 添加 .gitignore
 - 2026-10-26 GitHub 元数据：仓库简介更新为 CapCut + Remotion 双路径说明；topics 含 `capcut`、`capcut-cli`、`remotion`、`video-editing`、`ai-skill`、`codex-skill`、`motion-graphics`、`color-grading`、`typescript`、`react`、`mediastorm`。
 - 2026-10-26 安装迁移：11 个 `mediastorm-*` 从 `~/.codex/skills` 移到备份并安装到 `~/.agents/skills`；安装副本与源码零差异，`quick_validate.py` 通过。
 - 2026-10-27 Claude 安装：在 `~/.claude/skills` 建立 11 个指向 `~/.agents/skills/mediastorm-*` 的符号链接；Claude Code / Claude Desktop 当前会话已识别 11 个 Skill，全部通过 `quick_validate.py`。
+- 2026-11-01 分镜扫描：`video-storyboard` 对 18 课做场景变化扫描，共 5,582 个切点 / 03:41:55（约 25.2 切/分钟）；第 05 课 335 切/2.1s，第 13 课 1,163 切/0.6s 为屏幕/UI 异常值。该指标只作复查定位，已写入 `mediastorm-story-structure`，索引页与 JSON 不入库。
 - 更新进度后运行 `python3 scripts/check_progress.py --write-summary`，使逐课表与账本同步。该检查只能约束记账一致性，不能判断学习质量。
