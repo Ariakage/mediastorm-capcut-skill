@@ -73,7 +73,7 @@ Treat this bundle as a **provisional draft** until continuous video and original
 - Course references in this bundle use **actual file numbers 01–18**. The promo board uses 01–14; 03–16 map to board 01–14, 17–18 are DLC. Say which numbering you mean.
 - Read [references/visual-evidence-2026-10.md](references/visual-evidence-2026-10.md) for the verified picture corrections, course-internal conflicts, and exact case values from the 2-second pass.
 - Read [references/remotion-adapter.md](references/remotion-adapter.md) when implementing the same edit in Remotion/TypeScript. That path is an official-API mapping, not a rendered or accepted result in this repository.
-- Optional `video-storyboard` scans measure scene changes in a recording, not editorial intent. Label them `[tool boundary]`, record the threshold and window, and never treat a lecture's cut rate as a target. The 18-lesson density table is in the `mediastorm-story-structure` reference `structure-playbook.md`.
+- Optional `video-storyboard` scans measure scene changes in a recording, not editorial intent. Label them `[tool boundary]`, record the threshold and window, and never treat a lecture's cut rate as a target. Tool source: [video-storyboard](https://github.com/Ariakage/video-storyboard). The 18-lesson density table is in the `mediastorm-story-structure` reference `structure-playbook.md`.
 
 ## Execute safely
 

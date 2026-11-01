@@ -18,7 +18,7 @@
 - 已完成：18 课按 2 秒间隔抽帧，6,656 帧 / 1,658 张时间码索引页逐张查看；18 篇分课解析合计约 4,600 行。
 - 已完成：1 个入口 Skill + 10 个按任务边界划分的子 Skill，源码在 `skills/`，已安装到 `~/.agents/skills/mediastorm-*`，并通过 `~/.claude/skills/mediastorm-*` 符号链接供 Claude Code / Claude Desktop 使用；11 个 SKILL.md 已细化为约 1,080 行，references 已英文化。旧 Codex 副本已移到 `~/.codex/uninstalled-skills/mediastorm-2026-10-26/` 备份。
 - 已完成：Remotion 4.0.538 + React 19 + TypeScript 合成示例（24 秒 / 1080p / 30fps），源码在 `remotion/`，成片在 `assets/demo/skill-atlas.mp4`。
-- 已完成：用 `video-storyboard` 对 18 课做场景变化扫描（5,582 个切点 / 03:41:55），并把切点密度、异常值与工具方法写入 `mediastorm-story-structure`；索引页与 JSON 只留在 `cheese/.analysis/storyboard*`。
+- 已完成：用 `video-storyboard` 对 18 课做场景变化扫描（5,582 个切点 / 03:41:55），并把切点密度、异常值、教学三态语法与工具方法写入 `mediastorm-story-structure`；索引页与 JSON 只留在 `cheese/.analysis/storyboard*`。工具地址：<https://github.com/Ariakage/video-storyboard>。
 - 已完成：Skill 结构、命名、Markdown 链接、界面 YAML、源码与安装副本一致性验证；11 个源码与安装副本均通过 `quick_validate.py`。
 - 已完成：capcut-cli 0.31.1 的运行时契约检查脚本；实测 24 个相关命令契约齐全。
 - 未完成：18 课连续视频理解、原声听辨、音乐/音效/语气/节奏感知、快速动作和音画同步验收。
@@ -565,12 +565,14 @@ git push origin main
 
 ## 18. 2026-11-01 video-storyboard 切点密度分析
 
-- 工具：`~/.claude/skills/video-storyboard`；`doctor` 显示 ffmpeg/ffprobe 可用，yt-dlp 与 ASR 不可用；本地文件 + 课程 SRT 可用。
+- 工具：[video-storyboard](https://github.com/Ariakage/video-storyboard)；`doctor` 显示 ffmpeg/ffprobe 可用，yt-dlp 与 ASR 不可用；本地文件 + 课程 SRT 可用。
 - 对 18 课运行完整 `compact` 场景扫描（阈值 20），共 **5,582 个切点 / 03:41:55**，约 **25.2 切/分钟**。
 - 代表值：05 混剪 335 切 / 2.1s；14 采访 143 切 / 3.7s；15 长视频 467 切 / 2.6s；12 包装 374 切 / 3.0s。
 - 异常值：13 为 1,163 切 / 0.6s，主要来自屏幕/跟踪 UI 变化，不是剪辑教学节奏；不得当作目标。
+- 18 张索引页还显示稳定的教学语法：讲师中景 → 全屏 UI → 结果/对比演示，PIP 作为连接；按内容类型的切点区间约为采访 16–17、UI 教程 17–22、混剪/变速/手机 23–29 切/分钟。该观察标为 `[inference]`，已写入 story-structure。
+- 除上述教学语法与切点区间外，本轮 18 张索引页没有发现新的工具操作或未记录的技术步骤；原有 skills 已覆盖各课的具体菜单/参数。
 - 写入 Skill：
-  - `mediastorm-story-structure/references/structure-playbook.md` 新增 18 课密度表、异常值说明、复现命令与“讲座切点≠学生目标”边界。
+  - `mediastorm-story-structure/references/structure-playbook.md` 新增 18 课密度表、异常值说明、教学三态语法、内容类型切点区间、复现命令与“讲座切点≠学生目标”边界。
   - `mediastorm-story-structure/SKILL.md` 新增 Shot-density diagnostic、输入项、决策规则与验收项。
   - 入口新增“分析现有成片切点密度”路由，并说明 `video-storyboard` 结果标为 `[tool boundary]`。
 - 原始索引页/JSON/日志在 `cheese/.analysis/storyboard` 与 `storyboard-metrics`，不进入 Git。

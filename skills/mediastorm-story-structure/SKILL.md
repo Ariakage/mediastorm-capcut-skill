@@ -18,6 +18,7 @@ Build the edit around information, viewer attention, and relationships between s
 - A Vlog or documentary needs a mind map, narrative order, or a bridge between sections.
 - Juxtaposition may be creating a false causal or emotional reading.
 - The question is whether an existing cut is too fast, too slow, or structurally uneven.
+- A teaching/demo video needs a readable instructor / UI / result rhythm.
 
 Do not use this skill for breath-level dialogue cleanup, music mixing, keyframe mechanics, or export specs; route those to the matching child skill.
 
@@ -49,7 +50,7 @@ Do not use this skill for breath-level dialogue cleanup, music mixing, keyframe 
 Use this when the question is “is this cut too fast/slow/uneven”, not “what is the story”.
 
 1. Run `probe` on the actual cut or export. Do not estimate cut rate from a few still frames.
-2. If the optional `video-storyboard` skill is available, generate a compact storyboard with the transcript: `--strategy compact --max-sheets 3`. Read every sheet before citing it.
+2. If the optional `video-storyboard` skill is available, generate a compact storyboard with the transcript: `--strategy compact --max-sheets 3`. Read every sheet before citing it. Tool source: [video-storyboard](https://github.com/Ariakage/video-storyboard).
 3. Separate the cut sources: camera cuts, instructor cutaways, UI/panel changes, and demo footage. A screen tutorial can show a very high scene-change count without teaching fast cutting.
 4. Use the cut list as a **density map**: find sections whose rate is far from the piece's own median, then inspect those cells and time ranges.
 5. Compare only like with like: an interview, a montage, and a screen tutorial have different cut economies. Do not import a course's lecture cut rate as a preset.
@@ -67,6 +68,7 @@ Use this when the question is “is this cut too fast/slow/uneven”, not “wha
 - Clock positions are diagnostic checkpoints, not audience-fatigue laws. The course’s own clock graphic is internally inconsistent at 15 12:34–13:16; do not treat it as a precise law.
 - A lecture video’s scene-change rate is not the student’s target; it includes camera cuts, instructor cutaways, UI changes, and demo footage.
 - If a cut-density number is the only evidence, do not approve or reject the edit; inspect the cells and the actual cut motivations.
+- For a teaching/demo video, keep the instructor, full-screen UI, and result/demo modes distinct; do not cut away before a parameter is readable, and return to the result after a parameter change.
 
 ## CapCut execution notes
 

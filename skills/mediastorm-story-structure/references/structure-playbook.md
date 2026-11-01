@@ -48,6 +48,8 @@
 
 `[tool boundary][video-storyboard]` A full-frame scene-change scan (threshold 20) was run on all 18 lesson videos, using the course SRT as the transcript. Generated sheets and JSON stayed in the local analysis cache; only this aggregate table is kept in the Skill. The metric is **scene changes in the lecture recording**, not the cut rhythm of the exercise being taught.
 
+Tool source: [video-storyboard](https://github.com/Ariakage/video-storyboard).
+
 | Lesson | Duration | Scene cuts | Avg interval | Cuts/min | What the sheet shows |
 | --- | ---: | ---: | ---: | ---: | --- |
 | 01 | 1:52 | 53 | 2.1s | 28.3 | Promo/lecture montage; not a teaching edit |
@@ -70,6 +72,36 @@
 | 18 | 14:24 | 341 | 2.5s | 23.7 | Mobile/social examples |
 
 Total: 5,582 scene changes over 13,315 seconds (about 25.2 cuts/min).
+
+### Teaching/demo visual grammar
+
+`[inference][18 lesson sheets]` The same three visual modes recur across the lecture sheets:
+
+1. **Instructor medium shot** at the desk: the “why”, continuity, and human anchor.
+2. **Full-screen CapCut UI**: the “how”, parameters, menus, and timeline.
+3. **Result/demo footage or split-screen comparison**: the “what it looks like”.
+
+Picture-in-picture is the bridge: the instructor stays present while the UI fills the frame. The pattern is a production grammar, not an editing rule from the course.
+
+Practical rules for a teaching/demo video:
+
+- Use full-screen UI when the viewer must read a parameter; do not cut away before it is readable.
+- Use PIP when the explanation must stay connected to the UI; keep the instructor small enough not to cover the panel.
+- Return to the result/demo after a parameter change; do not leave the viewer staring at a panel.
+- Keep the instructor’s framing, lighting, and background stable; treat the UI as a neutral, high-contrast surface.
+- A teaching video is not a montage: a high scene-change count can come from UI switches, not narrative cutting. Check the content type before copying a cut rate.
+- `[pending verification]` The exact readable duration for a parameter and the best PIP size were not measured; verify on the target screen.
+
+### Content-type cut economy (observed ranges)
+
+`[inference]` From the same scan, not a rulebook:
+
+- Interview / multicam: about 16–17 cuts/min (3.6–3.7s average).
+- UI / tutorial: about 17–22 cuts/min (2.7–3.5s).
+- Montage / speed / mobile: about 23–29 cuts/min (2.1–2.5s).
+- Screen/UI outlier: lesson 13 at 106.7 cuts/min; not an editorial target.
+
+Compare only within the same content type, and confirm the cut motivation on the sheet before changing an edit.
 
 How to read the table:
 
